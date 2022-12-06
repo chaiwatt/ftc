@@ -69,8 +69,8 @@
                     ที่นี่คุณจะได้เรียน Font-end และ Back-end (Laravel9), ติดตั้งเว็บเซิร์ฟเวอร์(CentOS8 &PHP8), Deploy แอพลิเคชั่นเข้าสู่คลาวด์, คอนฟิก SSL โดเมน และการติดตั้งเมลเซิร์ฟเวอร์(Postfix, Dovecot) เรียนจบพร้อมรับงานได้เลย ตั้งแต่หลักแสนถึงหลักล้าน
                 </p>
 
-                <a href="#purchase" class="btn btn-sm btn-circle shadow-1 full-width-sm btnBuycourse" data-anima="fade-in" data-time="1000">ซื้อคอร์สเรียน</a><span class="space hidden-sm"></span>
-                <a href="#" class="btn btn-sm btn-circle shadow-1 full-width-sm btnDownload" data-anima="fade-in" data-time="1000">ตารางเรียน</a><span class="space hidden-sm"></span>
+                <a href="#purchase" class="btn btn-sm btn-circle shadow-1 full-width-sm btnBuycourse" data-anima="fade-in" data-time="1000" style="z-index: 1000">ซื้อคอร์สเรียน</a><span class="space hidden-sm"></span>
+                <a href="#" class="btn btn-sm btn-circle shadow-1 full-width-sm btnDownload" data-anima="fade-in" data-time="1000" style="z-index: 1001">ตารางเรียน</a><span class="space hidden-sm"></span>
                 
                 <hr class="space-sm visible-sm" />
                 {{-- <a href="https://www.youtube.com/watch?v=Lb4IcGF5iTQ" data-lightbox-anima="fade-top" class="btn-text btn-video lightbox" data-anima="fade-in" data-time="1000">View video</a> --}}
