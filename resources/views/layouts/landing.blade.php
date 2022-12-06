@@ -62,16 +62,6 @@
     <footer class="footer-parallax light">
         <div class="container">
             <div class="row">
-                {{-- <div class="col-lg-3">
-                    <h4>บริษัทเอ็นพีซีโซลูชั่นแอนด์เซอร์วิสจำกัด</h4>
-                    <div class="menu-inner menu-inner-vertical">
-                        <ul>
-                            <li>
-                                <a href="https://npcsolutionandservice.com/">บริษัทเอ็นพีซีโซลูชั่นแอนด์เซอร์วิสจำกัด</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> --}}
                 <div class="col-lg-3">
                     <h4>เมนู</h4>
                     <div class="menu-inner menu-inner-vertical">
@@ -91,9 +81,6 @@
                         </ul>
                     </div>
                 </div>
-                {{-- <div class="col-lg-3">
-                    
-                </div> --}}
                 <div class="col-lg-3">
                     <h4>Follow us</h4>
                     <div class="icon-links icon-social icon-links-grid social-colors">
@@ -112,13 +99,13 @@
         <script src="{{asset('assets/js/parallax.min.js')}}"></script>
         <script src="{{asset('assets/js/glide.min.js')}}"></script>
         <script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
-        <script src="{{asset('assets/js/tab-accordion.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/tab-accordion.js')}}"></script> --}}
         <script src="{{asset('assets/js/pagination.min.js')}}"></script>
         <script src="{{asset('assets/js/imagesloaded.min.js')}}"></script>
-        <script src="{{asset('assets/js/contact-form.js')}}"></script>
-        <script src="{{asset('assets/js/progress.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/contact-form.js')}}"></script> --}}
+        {{-- <script src="{{asset('assets/js/progress.js')}}"></script> --}}
         <script src="{{asset('assets/js/custom.js')}}"></script>
-        <script src="{{asset('assets/js/datepicker.min.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/datepicker.min.js')}}"></script> --}}
     </footer>
 </body>
 

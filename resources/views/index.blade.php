@@ -17,7 +17,7 @@
             <a href="#" class="btn btn-sm btn-circle shadow-1 full-width-sm btnDownload" data-anima="fade-in" data-time="1000">ตารางเรียน</a><span class="space hidden-sm"></span>
             
             <hr class="space-sm visible-sm" />
-            {{-- <a href="https://www.youtube.com/watch?v=Lb4IcGF5iTQ" data-lightbox-anima="fade-top" class="btn-text btn-video lightbox" data-anima="fade-in" data-time="1000">View video</a> --}}
+           
             <hr class="space" />
             <img src="{{asset('assets/images/responsive.png')}}" alt="" />
         </div>
