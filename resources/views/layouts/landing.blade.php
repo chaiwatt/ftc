@@ -604,16 +604,16 @@
                 <span><img src="{{asset('assets/images/npclogo.png')}}" alt="" /></span>
             </div>
         </div>
-        <script src="{{asset('assets/js/parallax.min.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/parallax.min.js')}}"></script> --}}
         <script src="{{asset('assets/js/glide.min.js')}}"></script>
         <script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
-        <script src="{{asset('assets/js/tab-accordion.js')}}"></script>
-        <script src="{{asset('assets/js/pagination.min.js')}}"></script>
-        <script src="{{asset('assets/js/imagesloaded.min.js')}}"></script>
-        <script src="{{asset('assets/js/contact-form.js')}}"></script>
-        <script src="{{asset('assets/js/progress.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/tab-accordion.js')}}"></script> --}}
+        {{-- <script src="{{asset('assets/js/pagination.min.js')}}"></script> --}}
+        {{-- <script src="{{asset('assets/js/imagesloaded.min.js')}}"></script> --}}
+        {{-- <script src="{{asset('assets/js/contact-form.js')}}"></script> --}}
+        {{-- <script src="{{asset('assets/js/progress.js')}}"></script> --}}
         <script src="{{asset('assets/js/custom.js')}}"></script>
-        <script src="{{asset('assets/js/datepicker.min.js')}}"></script>
+        {{-- <script src="{{asset('assets/js/datepicker.min.js')}}"></script> --}}
     </footer>
 </body>
 
