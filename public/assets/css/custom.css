@@ -97,4 +97,40 @@
         font-size: 24px;
         line-height:36px;
     }
+ 
+    .btnBuycourse
+    {
+        z-index: 15001;
+    }
+    .btnDownload
+    {
+        z-index: 15000;
+    }
+    .slider li img
+    {
+        width: 200px
+    }
+    .in-visible-md {
+        display: none;
+    }
+    
+}
+
+@media(max-width: 480px)
+{
+    .btnBuycourse
+    {
+        z-index: 15001;
+    }
+    .btnDownload
+    {
+        z-index: 15000;
+    }
+    .slider li img
+    {
+        width: 150px
+    }
+    .in-visible-sm {
+        display: none;
+    }
 }
