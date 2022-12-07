@@ -397,27 +397,28 @@
         <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือนธันวาคม 2565 <span class="promotionMessage blink_me"> พิเศษ!! โปรท้ายปีใช้โค้ด ENDY65 ลด 20%</span></h2>
         <div class="row" data-anima="fade-bottom" data-time="1000">
             <div class="col-lg-12">
-                <form action="https://templates.themekit.dev/codrop/assets/js/contact-form/contact-form.php" class="form-box form-ajax boxed-area paymentForm" method="post" data-email="example@domain.com">
+                <form method="POST" action="{{route('createqr')}}" class="form-box form-ajax boxed-area paymentForm" >
+                    @csrf
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
-                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required>
+                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
                             <p>นามสกุล</p>
-                            <input id="surname" name="surname" placeholder="นามสกุล" type="text" class="input-text" required>
+                            <input id="surname" name="surname" placeholder="นามสกุล" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email2" name="email2" placeholder="อีเมล" type="email" class="input-text" required>
+                            <input id="email2" name="email2" placeholder="อีเมล" type="email" class="input-text" >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>
-                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required>
+                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-12">
                             <p>ที่อยู่</p>
-                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่" required=""></textarea>
+                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่" ></textarea>
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนผู้เข้าเรียน</p>
@@ -437,7 +438,7 @@
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนเงิน (บาท)</p>
-                            <input id="price" name="price" placeholder="" type="text" value="15000" class="input-text" readonly required>
+                            <input id="price" name="price" placeholder="" type="text" value="15000" class="input-text" readonly >
                         </div>
                         <div class="col-lg-6">
                             <p>วันที่เรียน เดือนธันวาคม 2565</p>
@@ -460,15 +461,15 @@
                         </div>
                         <div class="col-lg-6">
                             <p>บริษัท (ถ้ามี)</p>
-                            <input id="company" name="company" placeholder="บริษัท" type="text" class="input-text" required>
+                            <input id="company" name="company" placeholder="บริษัท" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
                             <p>เลขประจำตัวผู้เสียภาษี (ถ้ามี)</p>
-                            <input id="vatnumber" name="vatnumber" placeholder="เลขที่ผู้เสียภาษี" type="text" class="input-text" required>
+                            <input id="vatnumber" name="vatnumber" placeholder="เลขที่ผู้เสียภาษี" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
                             <p>โค้ดส่วนลด</p>
-                            <input id="promocode" name="promocode" placeholder="โค้ดส่วนลด" type="text" class="input-text" required>
+                            <input id="promocode" name="promocode" placeholder="โค้ดส่วนลด" type="text" class="input-text" >
                         </div>
                     </div>
                     <div style="text-align:right">
