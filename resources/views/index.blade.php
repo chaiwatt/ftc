@@ -380,13 +380,13 @@
         <hr class="space" />
         <div class="row">
             <div class="col-lg-4" >
-                <img src="{{asset('assets/images/contract1.png')}}" style="text-align: center;width:100;object-fit: cover;" alt="">
+                <img src="{{asset('assets/images/contract1.png')}}"  alt="">
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('assets/images/contract2.png')}}" style="text-align: center;width:100;object-fit: cover;" alt="">
+                <img src="{{asset('assets/images/contract2.png')}}"  alt="">
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('assets/images/contract3.png')}}" style="text-align: center;width:100;object-fit: cover;" alt="">
+                <img src="{{asset('assets/images/contract3.png')}}"  alt="">
             </div>
         </div>
     </div>
