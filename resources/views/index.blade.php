@@ -15,7 +15,7 @@
         <a href="#" class="btn btn-sm btn-circle shadow-1 full-width-sm btnDownload" data-anima="fade-in" data-time="1000" style="z-index: 1001">ตารางเรียน</a><span class="space hidden-sm"></span>
         
         <hr class="space-sm visible-sm" />
-        <hr class="space" />
+        <hr class="space-50" />
         <img src="{{asset('assets/images/responsive.png')}}" alt="" />
     </div>
 </section>
@@ -59,7 +59,8 @@
                 <img src="{{asset('assets/images/logo-14.png')}}" alt="" />
             </li>
         </ul>
-        <hr class="space-lg" />
+        <hr class="space-50" />
+        <hr class="space-50 in-visible-sm" />
         <h2 id="overview" class="align-center width-850">
             ที่นี่เราสอน 4 เสาหลัก ที่ Full-stack developper จะต้องมีติดตัว <br>รับรองว่าคุณยังไม่เคยเรียนจากที่ไหน ๆ มาก่อน
         </h2>

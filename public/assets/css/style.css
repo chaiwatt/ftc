@@ -2090,7 +2090,7 @@ SPACE
 
 */
 
-hr.space, hr.space-xs, hr.space-sm, hr.space-md, hr.space-lg {
+hr.space, hr.space-xs, hr.space-sm, hr.space-md, hr.space-lg, hr.space-50 {
     border: none;
     clear: both;
     margin: 0;
@@ -2108,6 +2108,10 @@ hr.space {
     height: 60px;
 }
 
+hr.space-50 {
+    height: 50px;
+}
+
 hr.space-md {
     height: 75px;
 }
@@ -2116,7 +2120,7 @@ hr.space-lg {
     height: 100px;
 }
 
-span.space, span.space-xs, span.space-sm, span.space-md, span.space-lg {
+span.space, span.space-xs, span.space-sm, span.space-md, span.space-lg, span.space-50 {
     display: inline-block;
 }
 
