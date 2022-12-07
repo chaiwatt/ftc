@@ -372,7 +372,7 @@
 
 
 <section id="result" class="section-base">
-    <div class="container" data-anima="fade-bottom" data-time="1000" style="width:1200px">
+    <div class="container result" data-anima="fade-bottom" data-time="1000" style="width:1200px">
         <div class="row">
             <div class="col-lg-12" style="text-align: center">
                 <h2>ผลงานบางส่วน</h2>
@@ -382,9 +382,15 @@
             </div>
         </div>
         <hr class="space" />
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{asset('assets/images/contract.png')}}" alt="">
+        <div class="row contract">
+            <div class="imgBx">
+                <img src="{{asset('assets/images/contract1.png')}}" alt="">
+            </div>
+            <div class="imgBx">
+                <img src="{{asset('assets/images/contract2.png')}}" alt="">
+            </div>
+            <div class="imgBx">
+                <img src="{{asset('assets/images/contract3.png')}}" alt="">
             </div>
         </div>
     </div>
