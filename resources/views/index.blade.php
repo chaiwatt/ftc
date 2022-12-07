@@ -73,7 +73,7 @@
             <div class="grid-box">
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-4.svg')}}" alt="การพัฒนา Responsive เว็บไซต์" /></a>
+                        <a href="https://www.youtube.com/watch?v=dpnNEjBHbTU" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-4.svg')}}" alt="การพัฒนา Responsive เว็บไซต์" /></a>
                         <div class="caption">
                             <h2>การพัฒนา Responsive เว็บไซต์</h2>
                             <p>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-3.svg')}}" alt="ใช้ Backend Framework ยอดนิยม" /></a>
+                        <a href="https://www.youtube.com/watch?v=9NrhpR1lCbQ" data-lightbox-anima="fade-top"  class="img-box lightbox"><img src="{{asset('assets/images/icon-3.svg')}}" alt="ใช้ Backend Framework ยอดนิยม" /></a>
                         <div class="caption">
                             <h2>ใช้ Backend Framework ยอดนิยม</h2>
                             <p>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-1.svg')}}" alt="จัดการคลาวด์และติดตั้งโดเมน" /></a>
+                        <a href="https://www.youtube.com/watch?v=Rz59qOXlXn4" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-1.svg')}}" alt="จัดการคลาวด์และติดตั้งโดเมน" /></a>
                         <div class="caption">
                             <h2>จัดการคลาวด์และติดตั้งโดเมน</h2>
                             <p>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-2.svg')}}" alt="จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์" /></a>
+                        <a href="https://www.youtube.com/watch?v=Rz59qOXlXn4" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-2.svg')}}" alt="จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์" /></a>
                         <div class="caption">
                             <h2>จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์</h2>
                             <p>
