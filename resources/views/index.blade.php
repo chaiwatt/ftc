@@ -72,7 +72,7 @@
             <div class="grid-box">
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-4.svg')}}" alt="" /></a>
+                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-4.svg')}}" alt="การพัฒนา Responsive เว็บไซต์" /></a>
                         <div class="caption">
                             <h2>การพัฒนา Responsive เว็บไซต์</h2>
                             <p>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-3.svg')}}" alt="" /></a>
+                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-3.svg')}}" alt="ใช้ Backend Framework ยอดนิยม" /></a>
                         <div class="caption">
                             <h2>ใช้ Backend Framework ยอดนิยม</h2>
                             <p>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-1.svg')}}" alt="" /></a>
+                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-1.svg')}}" alt="จัดการคลาวด์และติดตั้งโดเมน" /></a>
                         <div class="caption">
                             <h2>จัดการคลาวด์และติดตั้งโดเมน</h2>
                             <p>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-2.svg')}}" alt="" /></a>
+                        <a href="#" class="img-box"><img src="{{asset('assets/images/icon-2.svg')}}" alt="จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์" /></a>
                         <div class="caption">
                             <h2>จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์</h2>
                             <p>
@@ -126,7 +126,7 @@
     <div class="container" >
         <div id="course" class="row align-items-center">
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/vscode_composer_node_js_php8_git.png')}}" alt="โปรแกรมและอิดิเตอร์ที่ใช้ในการพัฒนาเว็บไซต์" />
+                <img class="margin-23" src="{{asset('assets/images/vscode_composer_node_js_php8_git.png')}}" alt="ติดตั้งโปรแกรมและเครื่องมือที่ใช้ในการพัฒนาเว็บไซต์" />
             </div>
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2>ติดตั้งโปรแกรม<br />และเครื่องมือที่ใช้ในการพัฒนาเว็บไซต์</h2>
@@ -160,12 +160,12 @@
                 </ul>
             </div>
             <div class="col-lg-6 col-md-6" data-anima="fade-right" data-time="1000">
-                <img  src="{{asset('assets/images/devices.png')}}" alt="" />
+                <img  src="{{asset('assets/images/devices.png')}}" alt="HTML และ CSS ที่สำคัญสำหรับการออกแบบ Responsive เว็บไซต์" />
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/responsive.png')}}" alt="โปรแกรมและอิดิเตอร์ที่ใช้ในการพัฒนาเว็บไซต์" />
+                <img class="margin-23" src="{{asset('assets/images/responsive.png')}}" alt="HTML และ CSS ที่สำคัญสำหรับการออกแบบ Responsive เว็บไซต์" />
             </div>
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2>Workshop เว็บไซต์<br />พัฒนาหน้าแดชบอร์ด ลงทะเบียนและฟอร์ม</h2>
@@ -194,12 +194,12 @@
                 </ul>
             </div>
             <div class="col-lg-6 col-md-6" data-anima="fade-right" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/laravel.png')}}" alt="" />
+                <img class="margin-23" src="{{asset('assets/images/laravel.png')}}" alt="สร้างโปรเจคด้วย Laravel9 และเชื่อมต่อฐานข้อมูล" />
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/git.png')}}" alt="โปรแกรมและอิดิเตอร์ที่ใช้ในการพัฒนาเว็บไซต์" />
+                <img class="margin-23" src="{{asset('assets/images/git.png')}}" alt="สร้าง Github Repositoryและ Push โปรเจค" />
             </div>
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2>สร้าง Github Repository<br />และ Push โปรเจค</h2>
@@ -229,12 +229,12 @@
                 </ul>
             </div>
             <div class="col-lg-6 col-md-6" data-anima="fade-right" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/server.png')}}" alt="" />
+                <img class="margin-23" src="{{asset('assets/images/server.png')}}" alt="ติดตั้งเว็บเซิร์ฟเวอร์และ Deploy โปรเจคจาก Github" />
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/secure.png')}}" alt="โปรแกรมและอิดิเตอร์ที่ใช้ในการพัฒนาเว็บไซต์" />
+                <img class="margin-23" src="{{asset('assets/images/secure.png')}}" alt="สมัครโดเมนการคอนฟิก DNS และ SSL" />
             </div>
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2>สมัครโดเมน<br />การคอนฟิก DNS และ SSL</h2>
@@ -266,12 +266,12 @@
                 </ul>
             </div>
             <div class="col-lg-6 col-md-6" data-anima="fade-right" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/mailserver.png')}}" alt="" />
+                <img class="margin-23" src="{{asset('assets/images/mailserver.png')}}" alt="ติดตั้งเมลเซิร์ฟเวอร์และการทำ SMTP Relay" />
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
-                <img class="margin-23" src="{{asset('assets/images/bonus.png')}}" alt="โปรแกรมและเครื่องมือที่ใช้ในการพัฒนาเว็บไซต์" />
+                <img class="margin-23" src="{{asset('assets/images/bonus.png')}}" alt="โบนัสพิเศษ !!! เทคนิคการหางานโครงการหลักแสน - ล้าน" />
             </div>
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2 style="color: rgb(173, 3, 3)" ><span>โบนัสพิเศษ !!!</span><br />เทคนิคการหางานโครงการหลักแสน - ล้าน</h2>
@@ -360,10 +360,6 @@
                     </div>
                 </div>
              
-
-
-                
-               
                 
             </div>
         </div>
@@ -382,15 +378,15 @@
             </div>
         </div>
         <hr class="space" />
-        <div class="row contract">
-            <div class="imgBx">
-                <img src="{{asset('assets/images/contract1.png')}}" alt="">
+        <div class="row">
+            <div class="col-lg-4" >
+                <img src="{{asset('assets/images/contract1.png')}}" style="text-align: center;width:100;object-fit: cover;" alt="">
             </div>
-            <div class="imgBx">
-                <img src="{{asset('assets/images/contract2.png')}}" alt="">
+            <div class="col-lg-4">
+                <img src="{{asset('assets/images/contract2.png')}}" style="text-align: center;width:100;object-fit: cover;" alt="">
             </div>
-            <div class="imgBx">
-                <img src="{{asset('assets/images/contract3.png')}}" alt="">
+            <div class="col-lg-4">
+                <img src="{{asset('assets/images/contract3.png')}}" style="text-align: center;width:100;object-fit: cover;" alt="">
             </div>
         </div>
     </div>
