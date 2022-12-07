@@ -109,7 +109,7 @@
                 </div>
                 <div class="grid-item anima">
                     <div class="cnt-box cnt-box-top boxed">
-                        <a href="https://www.youtube.com/watch?v=Rz59qOXlXn4" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-2.svg')}}" alt="จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์" /></a>
+                        <a href="https://www.youtube.com/watch?v=xXGMaJS39gU" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-2.svg')}}" alt="จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์" /></a>
                         <div class="caption">
                             <h2>จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์</h2>
                             <p>
