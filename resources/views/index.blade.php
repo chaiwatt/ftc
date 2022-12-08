@@ -398,8 +398,9 @@
         <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือนธันวาคม 2565 <span class="promotionMessage blink_me"> พิเศษ!! โปรท้ายปีใช้โค้ด ENDY65 ลด 20%</span></h2>
         <div class="row" data-anima="fade-bottom" data-time="1000">
             <div class="col-lg-12">
-                <form class="form-box form-ajax boxed-area paymentForm" >
-                    {{-- @csrf --}}
+                {{-- <form class="form-box form-ajax boxed-area paymentForm" > --}}
+                <form class="form-box form-ajax boxed-area paymentForm" action="{{route('getCharge')}}" method="POST" >
+                    @csrf
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
@@ -474,7 +475,8 @@
                         </div>
                     </div>
                     <div style="text-align:right">
-                        <button id="btnGetCharge" class="btn btn-sm btn-circle float-right" type="button">ชำระเงิน</button>
+                        {{-- <button id="btnGetCharge" class="btn btn-sm btn-circle float-right" type="button">ชำระเงิน</button> --}}
+                        <button class="btn btn-sm btn-circle float-right" type="submit">ชำระเงิน</button>
                     </div>
                     <div class="success-box">
                         <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
