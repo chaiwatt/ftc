@@ -392,13 +392,14 @@
         </div>
     </div>
 </section>
+
 <section id="purchase" class="section-base section-color">
     <div class="container">
         <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือนธันวาคม 2565 <span class="promotionMessage blink_me"> พิเศษ!! โปรท้ายปีใช้โค้ด ENDY65 ลด 20%</span></h2>
         <div class="row" data-anima="fade-bottom" data-time="1000">
             <div class="col-lg-12">
-                <form method="POST" action="{{route('createqr')}}" class="form-box form-ajax boxed-area paymentForm" >
-                    @csrf
+                <form class="form-box form-ajax boxed-area paymentForm" >
+                    {{-- @csrf --}}
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
@@ -473,7 +474,7 @@
                         </div>
                     </div>
                     <div style="text-align:right">
-                        <button class="btn btn-sm btn-circle float-right" type="submit">ชำระเงิน</button>
+                        <button id="btnGetCharge" class="btn btn-sm btn-circle float-right" type="button">ชำระเงิน</button>
                     </div>
                     <div class="success-box">
                         <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
@@ -481,10 +482,96 @@
                     <div class="error-box">
                         <div class="alert alert-warning">Error, please retry. Your message has not been sent</div>
                     </div>
-                </form>
+                {{-- </form> --}}
             </div>
             
         </div>
     </div>
+
+    
+    <a class="popup-with-zoom-anim" href="#small-dialog" >Open with fade-zoom animation</a><br/>
+
+
+    <div id="small-dialog" class="mfp-hide">
+      {{-- <h2 id='loading'>Loading...</h2> --}}
+      {{-- <p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p> --}}
+      <img id="qrcode" src="" alt="">
+      {{-- <button class="btn mfp-close" style="font-weight: 300">ปิด</button> --}}
+    </div>
+
+
+    @push('js')
+        <script type="text/javascript">
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+                
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+            $(document).on('click', '#btnGetCharge', function(e) {
+                // $("#loading").show();
+                makeCharge($('#name').val(),$('#surname').val()).then(data => {
+                    console.log(data)
+
+                    $('#qrcode').attr("src", data);
+                        $("#qrcode").on("load", function() {
+                            $.magnificPopup.open({
+                            items: {
+                                src: '#small-dialog',
+                            },
+                            type: 'inline',        
+                            fixedContentPos: false,
+                            fixedBgPos: true,
+
+                            overflowY: 'auto',
+
+                            closeBtnInside: true,
+                            preloader: false,
+                            
+                            midClick: true,
+                            removalDelay: 300,
+                            mainClass: 'my-mfp-zoom-in',
+                            callbacks: {
+                                elementParse: function(item) {
+                                    console.log(item); // Do whatever you want with "item" object
+                                }
+                            }
+                        });
+                    })
+                })   
+            });
+
+            function makeCharge(name,surname){
+                return new Promise((resolve, reject) => {
+                    $.ajax({
+                    url: `${route.url}/getCharge`,
+                    type: 'POST',
+                    headers: {"X-CSRF-TOKEN":route.token},
+                    data: {
+                        'name': name,
+                        'surname': surname
+                    },
+                    success: function(data) {
+                        resolve(data)
+                    },
+                    error: function(error) {
+                        reject(error)
+                    },
+                    })
+                })
+            }
+
+        </script>
+    @endpush
 </section>
 @endsection

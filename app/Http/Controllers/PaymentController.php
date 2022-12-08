@@ -6,43 +6,34 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
+use ox01code\Omise\process\OmiseCharge;
+use ox01code\Omise\process\OmiseSource;
 
 class PaymentController extends Controller
 {
-    public function createqr(Request $request)
+    public function getCharge(Request $request)
     {
-        $amount = $request->amount;
-        $token = '0D/3uMcC1QWZrqO+0OTRzTRqa5ZidIIrFl3l/Boo+3fR25DbS3FOW/NSzn+SfvXrCLEFiyDeaOB2fv/DzXdXDzC/jDFNSfI/76DPRO3ROIRq+uf4+ly9iFiC3Vo/8mIrGpBZJbg/l3HQzsk4yG/0znMfLGMB2Zpu2ppcm7CP42LJOZSa';
-        $tokenKey = rawurlencode($token);      
-        $referenceNo = uniqid();
-        $backgroundUrl = 'https://fullstacktrainingclass.com/redirect';
-        $amount = 0.01;
-        print($backgroundUrl);
-        $field = 'token='.$tokenKey.'&referenceNo='.$referenceNo.'&backgroundUrl='.$backgroundUrl.'&amount='.$amount.'';
-
-        $url = "https://api.gbprimepay.com/v3/qrcode";
-  
-        // curl api grcode
-        $request_headers = array(
-            "Cache-Control: no-cache",
-          );
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $field);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-        curl_setopt($ch, CURLOPT_ENCODING, "");
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
-        $output = curl_exec($ch);
-        
-        curl_close($ch);
-        $body = 'data:image/png;base64,' . base64_encode($output) . '';
-        return view('qr',[
-            'res' => $body
+        $charge = null;
+        $amount = 20;
+        $source = OmiseSource::create([
+            // 'amount' => $request->amount * 100,
+            'amount' => $amount * 100,
+            // 'phone_number' => $request->phoneNo,
+            'currency' => 'THB',
+            'type' => 'promptpay',
         ]);
+        
+        if($source['object'] == 'source'){
+            $charge = OmiseCharge::create([
+                // 'amount' => $request->amount * 100,
+                'amount' => $amount * 100,
+                'currency' => 'THB',
+                'source' => $source['id'],
+                'return_uri' => 'http://example.com/orders/345678/complete',
+            ]);
+
+        }
+        return $charge['source']['scannable_code']['image']['download_uri'];
     }
     public function redirect(Request $request)
     {

@@ -22,5 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('createqr', [PaymentController::class, 'createqr'])->name('createqr');
+Route::post('getCharge', [PaymentController::class, 'getCharge'])->name('getCharge');
 Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect');
