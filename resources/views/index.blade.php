@@ -466,7 +466,7 @@
                             <input id="company" name="company" placeholder="บริษัท" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
-                            <p>เลขประจำตัวผู้เสียภาษี (ถ้ามี)</p>
+                            <p >เลขประจำตัวผู้เสียภาษี (ถ้ามี)</p>
                             <input id="vatnumber" name="vatnumber" placeholder="เลขที่ผู้เสียภาษี" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
@@ -474,8 +474,8 @@
                             <input id="promocode" name="promocode" placeholder="โค้ดส่วนลด" type="text" class="input-text" >
                         </div>
                     </div>
-                    <div style="text-align:right">
-                        <button id="btnGetCharge" class="btn btn-sm btn-circle float-right" type="button">ชำระเงิน</button>
+                    <div style="text-align:right" >
+                         <button id="btnGetCharge" class="btn btn-sm btn-circle float-right" type="button"><i id="spinner" class="fa-solid fa-spinner spinner" style="margin-right: 5px" ></i> ชำระเงิน</button>
                         {{-- <button class="btn btn-sm btn-circle float-right" type="submit">ชำระเงิน</button> --}}
                     </div>
                     <div class="success-box">
@@ -504,6 +504,7 @@
 
     @push('js')
         <script type="text/javascript">
+            $("#spinner").hide();
             $('.popup-with-zoom-anim').magnificPopup({
                 type: 'inline',
 
@@ -521,7 +522,8 @@
             });
 
             $(document).on('click', '#btnGetCharge', function(e) {
-                // $("#loading").show();
+                $("#spinner").show();
+                $('#btnGetCharge').prop('disabled', true);
                 makeCharge($('#name').val(),$('#surname').val()).then(data => {
                     console.log(data)
 
@@ -545,6 +547,8 @@
                             mainClass: 'my-mfp-zoom-in',
                             callbacks: {
                                 elementParse: function(item) {
+                                    $("#spinner").hide();
+                                    $('#btnGetCharge').prop('disabled', false);
                                     console.log(item); // Do whatever you want with "item" object
                                 }
                             }

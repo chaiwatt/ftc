@@ -19,10 +19,12 @@
     <link rel="stylesheet" href="{{asset('assets/css/media-box.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/skin.css')}}">
     
+    
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/transition.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/spinner.css')}}">
 </head>
 <body>
     <div id="preloader"></div>
