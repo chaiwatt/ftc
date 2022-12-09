@@ -33,7 +33,7 @@ class PaymentController extends Controller
             ]);
 
         }
-        dd($charge);
+        // dd($charge);
         return $charge['source']['scannable_code']['image']['download_uri'];
     }
     public function redirect(Request $request)
