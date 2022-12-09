@@ -155,7 +155,7 @@
                     <li>เรียนรู้โครงสร้างและหน้าที่ของ HTML5 และ CSS</li>
                     <li>เรียนรู้การ HTML tag ชนิด single tag และ dual tage</li>
                     <li>เรียนรู้การกำหนดค่าให้ Selector ด้วย CSS เช่น element, id, class</li>
-                    <li>เรียนรู้การใช้ Layout สำหรับการออกแบบ Responsive เช่น Flex, Grid</li>
+                    <li>เรียนรู้การออกแบบ Layout สำหรับการออกแบบ Responsive ด้วย Flex, Grid</li>
                     <li>เรียนรู้การใช้คำสั่ง Animation เช่น Transform, Transition</li>
                     <li>เรียนรู้การใช้ Media Queries เพื่อกำหนด Layout ตามขนาดหน้าจอ</li>
                 </ul>
