@@ -17,7 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Full-Stack Training Class| คอร์สเรียน Full-Stack developper</title>
-    <meta name="description" content="">
+    <meta name="description" content="Full-Stack Training Class เป็นสถาบันสอน Full-Stack developper, คอร์สเรียน Laravel Full-Stack, คอร์สเรียน System admin เรามีประสบการณ์การสอนกว่าสิบปี และพัฒนาเว็บแอพลิเคชั่นโครงการตั้งแต่ 1 ล้านถึง 10 ล้านบาท เรียนกับเราคุณจะรับงานเองได้อย่างแน่นอน">
+    <meta name="keywords" content="สอน Full-Stack developper, สอน Laravel Full-Stack, สอน System admin">
 
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-grid.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
