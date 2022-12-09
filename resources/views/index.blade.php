@@ -217,7 +217,7 @@
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
-                <h2>ติดตั้งเว็บเซิร์ฟเวอร์<br />และ Deploy โปรเจคจาก Github</h2>
+                <h2>ติดตั้งเว็บเซิร์ฟเวอร์<br />และ pull โปรเจคจาก Github</h2>
                 <p style="font-size: 20px">
                     เรียนรู้การสร้างคลาวด์เซิร์ฟเวอร์ Digital Ocean, การติดตั้ง Apache webserver, PHP8, PHP MyAdmin, การโคลนโปรเจคจาก Github
                 </p>
