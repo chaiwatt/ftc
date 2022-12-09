@@ -12,7 +12,7 @@
         </p>
 
         <a href="#purchase" class="btn btn-sm btn-circle shadow-1 full-width-sm btnBuycourse" data-anima="fade-in" data-time="1000" style="z-index: 1000">ซื้อคอร์สเรียน</a><span class="space hidden-sm"></span>
-        <a href="#" class="btn btn-sm btn-circle shadow-1 full-width-sm btnDownload" data-anima="fade-in" data-time="1000" style="z-index: 1001">ตารางเรียน</a><span class="space hidden-sm"></span>
+        <a href="{{asset('assets/upload/course_syllabus.pdf')}}" class="btn btn-sm btn-circle shadow-1 full-width-sm btnDownload" data-anima="fade-in" data-time="1000" style="z-index: 1001">ตารางเรียน</a><span class="space hidden-sm"></span>
         
         <hr class="space-sm visible-sm" />
         <hr class="space-50" />
@@ -153,7 +153,7 @@
                 </p>
                 <ul class="icon-list icon-circle">
                     <li>เรียนรู้โครงสร้างและหน้าที่ของ HTML5 และ CSS</li>
-                    <li>เรียนรู้การ HTML tag ชนิด single tag และ dual tage</li>
+                    <li>เรียนรู้ HTML Tag ชนิด single tag และ dual tage</li>
                     <li>เรียนรู้การกำหนดค่าให้ Selector ด้วย CSS เช่น element, id, class</li>
                     <li>เรียนรู้การออกแบบ Layout Responsive ด้วย Flex, Grid</li>
                     <li>เรียนรู้การใช้คำสั่ง Animation เช่น Transform, Transition</li>
@@ -169,12 +169,12 @@
                 <img class="margin-23" src="{{asset('assets/images/responsive.png')}}" alt="HTML และ CSS ที่สำคัญสำหรับการออกแบบ Responsive เว็บไซต์" />
             </div>
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
-                <h2>Workshop เว็บไซต์<br />พัฒนาหน้าแดชบอร์ด ลงทะเบียนและฟอร์ม</h2>
+                <h2>Workshop เว็บไซต์<br />สร้างหน้าแดชบอร์ด หน้าลงทะเบียนและฟอร์มกรอกข้อมูล</h2>
                 <p style="font-size: 20px">
                     Workshop เว็บไซต์หน้าแดชบอร์ด หน้าสมัคร/ลงทะเบียนและ HTML ฟอร์ม
                 </p>
                 <ul class="icon-list icon-circle ">
-                    <li>พัฒนาหน้าแดชบอร์ดสำหรับการทำงานหลังบ้าน และออกแบบให้แสดงผลให้เหมาะสมกับทุกหน้าจอและแพลทฟอร์ม</li>
+                    <li>พัฒนาหน้าแดชบอร์ดสำหรับการทำงานหลังบ้าน และออกแบบให้แสดงผลให้เหมาะสมกับทุกหน้าจอและแพลตฟอร์ม</li>
                     <li>พัฒนาหน้าสมัคร/ลงทะเบียน สามารถทำงานสลับในหน้าเดียวโดยใช้ Animation ควบคุมการทำงาน</li>
                     <li>พัฒนาหน้า HTML ฟอร์มสำหรับการบันทึกข้อมูลและแก้ไขข้อมูล และการปรับแต่ง Input element ให้มีหน้าตาสวยงาม</li>
                 </ul>
@@ -182,14 +182,14 @@
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
-                <h2>สร้างโปรเจคด้วย Laravel9<br />และเชื่อมต่อฐานข้อมูล</h2>
+                <h2>สร้างโปรเจคด้วย Laravel9<br />และการเชื่อมต่อฐานข้อมูล</h2>
                 <p style="font-size: 20px">
                     เรียนรู้การสร้างโปรเจคด้วย Laravel9 ,การเชื่อมต่อกับเทมเพลตเว็บไซต์ Workshop ,การทำระบบ Authentication, CRUD ฐานข้อมูล
                 </p>
                 <ul class="icon-list icon-circle ">
                     <li>สร้างโปรเจคด้วย Laravel9</li>
                     <li>สร้างระบบ Authentication สำหรับการลงทะเบียนและเข้าสู่ระบบ</li>
-                    <li>เชื่อมต่อหน้า Login จาก Workshop เข้ากับ Laravel Authenication</li>
+                    <li>เชื่อมต่อหน้า Login จาก Workshop เข้ากับ Laravel Authentication</li>
                     <li>เชื่อมต่อหน้า Dashboard จาก Workshop และเชื่อมต่อฐานข้อมูลเพื่อแสดงผล</li>
                     <li>เชื่อมต่อหน้า Html Form จาก Workshop ให้เพิ่ม / แก้ไขรายการได้</li>
                 </ul>
@@ -239,7 +239,7 @@
                 <img class="margin-23" src="{{asset('assets/images/secure.png')}}" alt="สมัครโดเมนการคอนฟิก DNS และ SSL" />
             </div>
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
-                <h2>สมัครโดเมน<br />การคอนฟิก DNS และ SSL</h2>
+                <h2>สมัครโดเมน<br />และการคอนฟิก DNS และ SSL</h2>
                 <p style="font-size: 20px">
                     เรียนรู้การสมัครโดเมนจาก NameCheap.com ,การคอนฟิก DNS ให้เชื่อมต่อกับ IP ของคลาวด์เซิร์ฟเวอร์ การติดตั้ง SSL และ Auto Renew SSL
                 </p>
@@ -282,7 +282,7 @@
                 </p>
                 <ul class="icon-list icon-circle">
                     <li>แหล่งหางานโครงการหลักแสน - ล้านบาท</li>
-                    <li>เทคนิคการเขียน  Propersal ตาม Requirement</li>
+                    <li>เทคนิคการเขียน Proposal ตาม Requirement</li>
                     <li>การวิเคราะห์ระบบ (System Analysis)</li>
                     <li>การออกแบบ Flow diagram</li>
                     <li>การออกแบบ ER diagram</li>
