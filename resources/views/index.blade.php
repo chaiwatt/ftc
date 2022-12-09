@@ -440,7 +440,7 @@
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนเงิน (บาท)</p>
-                            <input id="price" name="price" placeholder="" type="text" value="15000" class="input-text" readonly >
+                            <input id="amount" name="amount" placeholder="" type="text" value="20" class="input-text" readonly >
                         </div>
                         <div class="col-lg-6">
                             <p>วันที่เรียน เดือนธันวาคม 2565</p>
@@ -524,9 +524,7 @@
             $(document).on('click', '#btnGetCharge', function(e) {
                 $("#spinner").show();
                 $('#btnGetCharge').prop('disabled', true);
-                makeCharge($('#name').val(),$('#surname').val()).then(data => {
-                    console.log(data)
-
+                makeCharge($('#name').val(),$('#surname').val(),$('#amount').val()).then(data => {
                     $('#qrcode').attr("src", data);
                         $("#qrcode").on("load", function() {
                             $.magnificPopup.open({
@@ -549,7 +547,7 @@
                                 elementParse: function(item) {
                                     $("#spinner").hide();
                                     $('#btnGetCharge').prop('disabled', false);
-                                    console.log(item); // Do whatever you want with "item" object
+                                    // console.log(item);
                                 }
                             }
                         });
@@ -557,7 +555,7 @@
                 })   
             });
 
-            function makeCharge(name,surname){
+            function makeCharge(name,surname,amount){
                 return new Promise((resolve, reject) => {
                     $.ajax({
                     url: `${route.url}/getCharge`,
@@ -565,7 +563,8 @@
                     headers: {"X-CSRF-TOKEN":route.token},
                     data: {
                         'name': name,
-                        'surname': surname
+                        'surname': surname,
+                        'amount': amount
                     },
                     success: function(data) {
                         resolve(data)

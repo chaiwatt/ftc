@@ -24,3 +24,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('getCharge', [PaymentController::class, 'getCharge'])->name('getCharge');
 Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect');
+Route::get('webhook', [PaymentController::class, 'redirect'])->name('webhook');
