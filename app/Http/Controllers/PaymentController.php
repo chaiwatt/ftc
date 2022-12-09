@@ -22,7 +22,7 @@ class PaymentController extends Controller
             'currency' => 'THB',
             'type' => 'promptpay',
         ]);
-        dd($source);
+        
         if($source['object'] == 'source'){
             $charge = OmiseCharge::create([
                 // 'amount' => $request->amount * 100,
@@ -33,6 +33,7 @@ class PaymentController extends Controller
             ]);
 
         }
+        dd($charge);
         return $charge['source']['scannable_code']['image']['download_uri'];
     }
     public function redirect(Request $request)
