@@ -112,8 +112,8 @@
                 <div class="col-lg-3">
                     <h4>Follow us</h4>
                     <div class="icon-links icon-social icon-links-grid social-colors">
-                        <a class="facebook"><i class="icon-facebook"></i></a>
-                        <a class="youtube"><i class="icon-youtube"></i></a>
+                        <a href="facebook.com/fullstacktrainingclassofficial" class="facebook"><i class="icon-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCIvpCh8hEqkNK-UwXOGEbLg" class="youtube"><i class="icon-youtube"></i></a>
                     </div>
                 </div>
             </div>
