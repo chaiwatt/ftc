@@ -75,9 +75,9 @@
                     <div class="cnt-box cnt-box-top boxed">
                         <a href="https://www.youtube.com/watch?v=dpnNEjBHbTU" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-4.svg')}}" alt="การพัฒนา Responsive เว็บไซต์" /></a>
                         <div class="caption">
-                            <h2>การพัฒนา Responsive เว็บไซต์</h2>
+                            <h2>การสร้าง Responsive เว็บไซต์</h2>
                             <p>
-                                ออกแบบเว็บไซต์ด้วย CSS เพื่อให้แสดงผลได้เหมาะสมกับทุก device
+                                ออกสร้างเว็บไซต์ด้วย CSS เพื่อให้แสดงผลได้เหมาะสมกับทุก device
                             </p>
                             <a href="https://www.youtube.com/watch?v=dpnNEjBHbTU" data-lightbox-anima="fade-top" class="btn-text lightbox">เรียนอะไรบ้าง</a>
                         </div>
@@ -99,7 +99,7 @@
                     <div class="cnt-box cnt-box-top boxed">
                         <a href="https://www.youtube.com/watch?v=Rz59qOXlXn4" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-1.svg')}}" alt="จัดการคลาวด์และติดตั้งโดเมน" /></a>
                         <div class="caption">
-                            <h2>จัดการคลาวด์และติดตั้งโดเมน</h2>
+                            <h2>จัดการคลาวด์และติดตั้ง SSL โดเมน</h2>
                             <p>
                                 Deploy เว็บไซต์เข้าสู่คลาวด์เซิร์ฟเวอร์และเข้ารหัสโดเมนให้ปลอดภัยด้วย SSL
                             </p>
@@ -111,7 +111,7 @@
                     <div class="cnt-box cnt-box-top boxed">
                         <a href="https://www.youtube.com/watch?v=xXGMaJS39gU" data-lightbox-anima="fade-top" class="img-box lightbox"><img src="{{asset('assets/images/icon-2.svg')}}" alt="จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์" /></a>
                         <div class="caption">
-                            <h2>จัดการเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์</h2>
+                            <h2>ติดตั้งเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์</h2>
                             <p>
                                 ติดตั้งเว็บเซิร์ฟเวอร์และเมลเซิร์ฟเวอร์สำหรับใช้ในแอพลิเคชั่นและอีเมลองค์กร
                             </p>
@@ -132,14 +132,14 @@
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2>ติดตั้งโปรแกรม<br />และเครื่องมือที่ใช้ในการพัฒนาเว็บไซต์</h2>
                 <p style="font-size: 20px">
-                    เริ่มต้นเราจะสอนให้ติดตั้งเครื่องมือที่จำเป็นในการพัฒนาเว็บไซต์และการจำลองเซิร์ฟเวอร์
+                    ติดตั้งเครื่องมือที่จำเป็นในการพัฒนาเว็บไซต์และโปรแกรมการจำลองเซิร์ฟเวอร์ ประกอบด้วย
                 </p>
                 <ul class="icon-list icon-circle ">
-                    <li>Visual Studio Code และ Extension</li>
-                    <li>Xampp และ PHP8 โปรแกรมจำลองเซิร์ฟเวอร์</li>
-                    <li>Composer โปรแกรมสำหรับการติดตั้ง PHP Package</li>
-                    <li>NodeJs โปรแกรมสำหรับการติดตั้ง Js Package</li>
-                    <li>Git โปรแกรม terminal และการเชื่อมต่อ Github</li>
+                    <li>โปรแกรมอิดิเตอร์ Visual Studio Code และ Extension</li>
+                    <li>โปรแกรมจำลองเซิร์ฟเวอร์ Xampp และ PHP8</li>
+                    <li>โปรแกรมสำหรับการติดตั้ง PHP Package Composer</li>
+                    <li>โปรแกรมสำหรับการติดตั้ง Js Package NodeJs</li>
+                    <li>โปรแกรม terminal และการเชื่อมต่อ Github</li>
                 </ul>
             </div>
         </div>
@@ -149,12 +149,12 @@
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
                 <h2>HTML และ CSS ที่สำคัญ<br />สำหรับการออกแบบ Responsive เว็บไซต์</h2>
                 <p style="font-size: 20px">
-                    เรียนรู้การโครงสร้าง HTML, tag, selector การเขียน code css เพื่อกำหนดให้กำหนดรูปแบบ layout
+                    เรียนรู้โครงสร้างภาษา HTML, Tag, Selector การเขียน code css เพื่อกำหนดการแสดงผลของ Selector
                 </p>
                 <ul class="icon-list icon-circle">
                     <li>เรียนรู้โครงสร้างและหน้าที่ของ HTML5 และ CSS</li>
                     <li>เรียนรู้การ HTML tag ชนิด single tag และ dual tage</li>
-                    <li>เรียนรู้การกำหนดรูปแบบ Selector ด้วย CSS เช่น element, id, class</li>
+                    <li>เรียนรู้การกำหนดค่าให้ Selector ด้วย CSS เช่น element, id, class</li>
                     <li>เรียนรู้การใช้ Layout สำหรับการออกแบบ Responsive เช่น Flex, Grid</li>
                     <li>เรียนรู้การใช้คำสั่ง Animation เช่น Transform, Transition</li>
                     <li>เรียนรู้การใช้ Media Queries เพื่อกำหนด Layout ตามขนาดหน้าจอ</li>
@@ -174,9 +174,9 @@
                     Workshop เว็บไซต์หน้าแดชบอร์ด หน้าสมัคร/ลงทะเบียนและ HTML ฟอร์ม
                 </p>
                 <ul class="icon-list icon-circle ">
-                    <li>พัฒนาหน้าแดชบอร์ดสำหรับการทำงานหลังบ้าน และออกแบบให้แสดงผลใหม้เหมาะสมกับทุกหน้าจอและแพลทฟอร์ม</li>
+                    <li>พัฒนาหน้าแดชบอร์ดสำหรับการทำงานหลังบ้าน และออกแบบให้แสดงผลให้เหมาะสมกับทุกหน้าจอและแพลทฟอร์ม</li>
                     <li>พัฒนาหน้าสมัคร/ลงทะเบียน สามารถทำงานสลับในหน้าเดียวโดยใช้ Animation ควบคุมการทำงาน</li>
-                    <li>พัฒนาหน้า HTML ฟอร์มสำหรับการบันทึกข้อมูลและแก้ไขข้อมูล โดยการปรับแต่ง Input เดิมให้มีหน้าตาสวยงาม</li>
+                    <li>พัฒนาหน้า HTML ฟอร์มสำหรับการบันทึกข้อมูลและแก้ไขข้อมูล และการปรับแต่ง Input element ให้มีหน้าตาสวยงาม</li>
                 </ul>
             </div>
         </div>
@@ -184,7 +184,7 @@
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
                 <h2>สร้างโปรเจคด้วย Laravel9<br />และเชื่อมต่อฐานข้อมูล</h2>
                 <p style="font-size: 20px">
-                    เรียนรู้การสร้างโปรเจคด้วย Laravel9 ,การเชื่อมต่อกับ เว็บไซต์ Workshop ,การทำระบบ Authentication, CRUD ฐานข้อมูล
+                    เรียนรู้การสร้างโปรเจคด้วย Laravel9 ,การเชื่อมต่อกับเทมเพลตเว็บไซต์ Workshop ,การทำระบบ Authentication, CRUD ฐานข้อมูล
                 </p>
                 <ul class="icon-list icon-circle ">
                     <li>สร้างโปรเจคด้วย Laravel9</li>
@@ -205,11 +205,12 @@
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2>สร้าง Github Repository<br />และ Push โปรเจค</h2>
                 <p style="font-size: 20px">
-                    เรียนรู้การสร้าง Github Repository สำหรับเป็น  version control ของ Source code
+                    เรียนรู้การสร้าง Github Repository สำหรับเป็นที่เก็บ  version control ของ Source code
                 </p>
                 <ul class="icon-list icon-circle">
                     <li>สมัครการใช้งาน Github</li>
                     <li>สร้าง Repository บน Github</li>
+                    <li>เรียนรู้สำสั่ง Github เบื้องต้น</li>
                     <li>Add โปรเจค Laravel และ Push เข้าสู่ Github</li>
                 </ul>
             </div>
@@ -222,11 +223,11 @@
                 </p>
                 <ul class="icon-list icon-circle ">
                     <li>สร้างคลาวด์เซิร์ฟเวอร์ Digital Ocean (CentOS8)</li>
-                    <li>การติดตั้งและอัพเอท Linux package</li>
-                    <li>ติดตั้ง PHP8 คลาวด์เซิร์ฟเวอร์</li>
-                    <li>ติดตั้ง PHP MyAdmin คลาวด์เซิร์ฟเวอร์</li>
+                    <li>การติดตั้งและอัพเดท Linux package</li>
+                    <li>ติดตั้ง PHP8 บนคลาวด์เซิร์ฟเวอร์</li>
+                    <li>ติดตั้ง PHP MyAdmin บนคลาวด์เซิร์ฟเวอร์</li>
                     <li>การสร้างฐานข้อมูล</li>
-                    <li>การโคลนโปรเจค Laravel จาก Github และการ Deploy</li>
+                    <li>การโคลนโปรเจค Laravel จาก Github</li>
                 </ul>
             </div>
             <div class="col-lg-6 col-md-6" data-anima="fade-right" data-time="1000">
@@ -240,13 +241,13 @@
             <div class="col-lg-6 col-md-6 " data-anima="fade-right" data-time="1000">
                 <h2>สมัครโดเมน<br />การคอนฟิก DNS และ SSL</h2>
                 <p style="font-size: 20px">
-                    เรียนรู้การสมัครโดเมนจาก NameCheap.com ,การคอนฟิก DNS ให้เชื่อมต่อกับ IP คลาวด์เซิร์ฟเวอร์ การติดตั้ง SSL และ Auto Renew SSL
+                    เรียนรู้การสมัครโดเมนจาก NameCheap.com ,การคอนฟิก DNS ให้เชื่อมต่อกับ IP ของคลาวด์เซิร์ฟเวอร์ การติดตั้ง SSL และ Auto Renew SSL
                 </p>
                 <ul class="icon-list icon-circle">
-                    <li>สมัครและซื้อโดเมนจาก NameCheap.com</li>
-                    <li>คอนฟิก DNS ให้เชื่อมต่อกับ IP คลาวด์เซิร์ฟเวอร์</li>
+                    <li>สมัครซื้อโดเมนจาก NameCheap.com</li>
+                    <li>คอนฟิก DNS ให้เชื่อมต่อกับ IP ของคลาวด์เซิร์ฟเวอร์</li>
                     <li>ติดตั้ง SSL package เพื่อให้สามารถใช้งาน HTTPS(Hypertext Transfer Protocol over Secure Socket Layer)</li>
-                    <li>ตั้งค่า Cron ให้ทำ Auto Renew SSL</li>
+                    <li>ตั้งค่า Cronjob ให้ทำ Auto Renew SSL</li>
                 </ul>
             </div>
         </div>
@@ -254,7 +255,7 @@
             <div class="col-lg-6 col-md-6" data-anima="fade-left" data-time="1000">
                 <h2>ติดตั้งเมลเซิร์ฟเวอร์<br />และการทำ SMTP Relay</h2>
                 <p style="font-size: 20px">
-                    เรียนรู้การติดตั้งเมลเซิร์ฟเวอร์สำหรับใช้ส่งอีเมลในแอพลิเคชั่นและเมลในองค์กร
+                    เรียนรู้การติดตั้งเมลเซิร์ฟเวอร์สำหรับใช้ส่งอีเมลในแอพลิเคชั่นและรับ/ส่งอีเมลในองค์กร
                 </p>
                 <ul class="icon-list icon-circle ">
                     <li>การติดตั้ง Postfix</li>
@@ -280,7 +281,7 @@
                     โบนัสพิเศษสุด เทคนิคการหางานโครงการหลักแสน - ล้าน และการเขียน proposal 
                 </p>
                 <ul class="icon-list icon-circle">
-                    <li>เทคนิคการหางานโครงการหลักแสน - ล้านบาท</li>
+                    <li>แหล่งหางานโครงการหลักแสน - ล้านบาท</li>
                     <li>เทคนิคการเขียน  Propersal ตาม Requirement</li>
                     <li>การวิเคราะห์ระบบ (System Analysis)</li>
                     <li>การออกแบบ Flow diagram</li>
@@ -374,20 +375,29 @@
             <div class="col-lg-12" style="text-align: center">
                 <h2>ผลงานบางส่วน</h2>
                 <p style="font-size: 18px">
-                    Full-stack developper ไม่จำเป็นต้องทำงานเป็นลูกจ้างเสมอไป คุณก็สามารถรับงานเองได้ใช้คนแค่ 1-2 คน จะทำที่บ้านหรือ Co-working space ก็ยังได้ ลูกค้าไม่ได้สนใจว่าคุณต้องทำงานในออฟฟิศหรือที่ไหนเพราะเขาสนใจแค่ผลงาน งานเว็บแอพลิเคชั่นส่วนใหญ่จะมีพื้นฐานความต้องการไม่ต่างกัน คุณต้องเข้าใจว่าลูกค้าต้องการอะไร จะออกแบบ UX/UI และฐานข้อมูลยังไง เมื่อได้ requirement ครบก็ทำการ coding และอัพโหลดเข้าสู่คลาวด์ก็เป็นอันสำเร็จ รับเงินแสนเงินล้านสบาย ๆ
+                    Full-stack developper ไม่จำเป็นต้องทำงานเป็นลูกจ้างเสมอไป คุณก็สามารถรับงานเองได้ใช้คนแค่ 1-2 คน จะทำที่บ้านหรือ Co-working space ก็ยังได้ ลูกค้าไม่ได้สนใจว่าคุณต้องทำงานในออฟฟิศหรือที่ไหนเพราะเขาสนใจแค่<u>ผลงานกับเวลา</u> งานพัฒนาเว็บแอพลิเคชั่นส่วนใหญ่จะมีพื้นฐานความต้องการไม่ต่างกันมากนัก คุณต้องเข้าใจว่าลูกค้าต้องการอะไร จะออกแบบ UX/UI และฐานข้อมูลยังไง เมื่อได้ requirement ครบก็ทำการ coding และอัพโหลดเข้าสู่คลาวด์ก็เป็นอันสำเร็จ รับเงินแสนเงินล้านสบาย ๆ
                 </p>
             </div>
         </div>
         <hr class="space" />
         <div class="row">
             <div class="col-lg-4" >
-                <img src="{{asset('assets/images/contract1.png')}}"  alt="">
+                <a class="img-box lightbox icon-photo" href="{{asset('assets/images/contract1.png')}}" data-lightbox-anima="fade-top">
+                    <img src="{{asset('assets/images/contract1.png')}}" alt="">
+                    <i class="im-instagram"></i>
+                </a>
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('assets/images/contract2.png')}}"  alt="">
+                <a class="img-box lightbox icon-photo" href="{{asset('assets/images/contract2.png')}}" data-lightbox-anima="fade-top">
+                    <img src="{{asset('assets/images/contract2.png')}}" alt="">
+                    <i class="im-instagram"></i>
+                </a>
             </div>
             <div class="col-lg-4">
-                <img src="{{asset('assets/images/contract3.png')}}"  alt="">
+                <a class="img-box lightbox icon-photo" href="{{asset('assets/images/contract3.png')}}" data-lightbox-anima="fade-top">
+                    <img src="{{asset('assets/images/contract3.png')}}" alt="">
+                    <i class="im-instagram"></i>
+                </a>
             </div>
         </div>
     </div>
