@@ -490,17 +490,9 @@
         </div>
     </div>
 
-    
-    <a class="popup-with-zoom-anim" href="#small-dialog" >Open with fade-zoom animation</a><br/>
-
-
     <div id="small-dialog" class="mfp-hide">
-      {{-- <h2 id='loading'>Loading...</h2> --}}
-      {{-- <p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p> --}}
       <img id="qrcode" src="" alt="">
-      {{-- <button class="btn mfp-close" style="font-weight: 300">ปิด</button> --}}
     </div>
-
 
     @push('js')
         <script type="text/javascript">
