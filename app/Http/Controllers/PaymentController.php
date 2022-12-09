@@ -22,7 +22,7 @@ class PaymentController extends Controller
             'currency' => 'THB',
             'type' => 'promptpay',
         ]);
-        
+        dd($source);
         if($source['object'] == 'source'){
             $charge = OmiseCharge::create([
                 // 'amount' => $request->amount * 100,
