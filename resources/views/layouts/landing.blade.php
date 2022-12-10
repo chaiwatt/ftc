@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/media-box.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/skin.css')}}">
     
-    
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
@@ -41,7 +40,7 @@
     <nav class="menu-subtitle menu-fixed menu-transparent menu-one-page light" data-menu-anima="fade-bottom" data-scroll-detect="true">
         <div class="container">
             <div class="menu-brand">
-                <a href="#">
+                <a href="{{ url('/') }}">
                     <img class="logo-default" src="assets/images/logo.png" alt="logo" />
                     <img class="logo-retina" src="assets/images/logo.png" alt="logo" />
                 </a>
