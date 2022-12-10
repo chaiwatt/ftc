@@ -14,15 +14,13 @@ class PaymentController extends Controller
     public function getCharge(Request $request)
     {
         // $data = $request->all();
-        $data = json_decode($request->getContent());
-        dd($request->getContent());
-        dd($request->getContent());
         $charge = null;
         $source = OmiseSource::create([
             'amount' => $request->amount * 100,
-            // 'phone_number' => $request->phoneNo,
+            'phone_number' => $request->phoneNo,
             'currency' => 'THB',
-            'type' => 'promptpay',
+            // 'type' => 'promptpay',
+            'type' => 'phone_number',
         ]);
         
         if($source['object'] == 'source'){
