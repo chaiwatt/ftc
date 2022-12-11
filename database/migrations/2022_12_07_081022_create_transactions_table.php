@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('source_id')->nullable();
             $table->string('charge_id')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
