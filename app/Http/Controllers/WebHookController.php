@@ -35,7 +35,7 @@ class WebHookController extends Controller
     }
 
     public function sendNotify($message){
-      $lineapi = config('line.linetoken');
+      $lineapi = 'NgUog6LoVij7JHkH4pJXhj2DPLhiE2hnGnJL5khDuhx';  // config('line.linetoken');
       $mms =  trim($message); // ข้อความที่ต้องการส่ง
       date_default_timezone_set("Asia/Bangkok");
       $chOne = curl_init(); 
