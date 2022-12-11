@@ -17,10 +17,10 @@ class PaymentController extends Controller
         $charge = null;
         $source = OmiseSource::create([
             'amount' => $request->amount * 100,
-            'phone_number' => $request->phone,
+            // 'phone_number' => $request->phone,
             'currency' => 'THB',
-            // 'type' => 'promptpay',
-            'type' => 'truemoney',
+            'type' => 'promptpay',
+            // 'type' => 'truemoney',
         ]);
         
         if($source['object'] == 'source'){
