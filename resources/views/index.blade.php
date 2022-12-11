@@ -5,7 +5,7 @@
         <hr class="space-lg in-visible-sm" />
         
         <h1 data-anima="fade-in" data-time="1000">
-            คุณกำลังมองหาคอร์ส Full-Stack<br class="hidden-md" /> ที่เรียนแล้วสามารถ <span> รับงานได้จริง </span>  อยู่ใช่ไหม?.
+            คุณกำลังมองหาคอร์ส Full-Stack ออนไซต์<br class="hidden-md" /> ที่เรียนแล้วสามารถ <span> รับงานได้จริง </span>  อยู่ใช่ไหม?.
         </h1>
         <p class="width-900" data-anima="fade-in" data-time="1000">
             ที่นี่คุณจะได้เรียน Font-end และ Back-end (Laravel9), ติดตั้งเว็บเซิร์ฟเวอร์(CentOS8 &PHP8), Deploy แอพลิเคชั่นจากสู่คลาวด์, คอนฟิก SSL โดเมน และการติดตั้งเมลเซิร์ฟเวอร์(Postfix, Dovecot) เรียนจบพร้อมรับงานได้เลย ตั้งแต่หลักแสนถึงหลักล้าน
