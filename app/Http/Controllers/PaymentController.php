@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
 use ox01code\Omise\process\OmiseCharge;
 use ox01code\Omise\process\OmiseSource;
+use Config;
 
 class PaymentController extends Controller
 {
     public function getCharge(Request $request)
     {
-        // $data = $request->all();
         $charge = null;
         $source = OmiseSource::create([
             'amount' => $request->amount * 100,
