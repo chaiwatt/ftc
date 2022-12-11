@@ -94,7 +94,7 @@ class WebHookController extends Controller
         // ];
         
         // Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', json_encode($result,JSON_PRETTY_PRINT));
-        Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', $request->getContent());
+        Storage::disk('public')->put('hook/hello.txt', $request->getContent());
 
     }
 }
