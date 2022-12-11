@@ -77,7 +77,8 @@ class WebHookController extends Controller
             }
           }';
 
-        $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
+        // $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
+        $payload = $request->all();// //json_decode($request->getContent(),JSON_PRETTY_PRINT);
         // $payload = json_decode($data,JSON_PRETTY_PRINT);
 
         $result = [
