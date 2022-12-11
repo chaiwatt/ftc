@@ -15,6 +15,7 @@ class PaymentController extends Controller
 {
     public function getCharge(Request $request)
     {
+        
     //    dd(config('line.linetoken')) ;
         // $data = $request->all();
         $charge = null;
@@ -56,4 +57,6 @@ class PaymentController extends Controller
     {
         dd('thank you');
     }
+
+
 }
