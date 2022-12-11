@@ -17,10 +17,10 @@ class PaymentController extends Controller
         $charge = null;
         $source = OmiseSource::create([
             'amount' => $request->amount * 100,
-            'phone_number' => $request->phoneNo,
+            'phone_number' => $request->phone,
             'currency' => 'THB',
             // 'type' => 'promptpay',
-            'type' => 'phone_number',
+            'type' => 'truemoney',
         ]);
         
         if($source['object'] == 'source'){
@@ -31,6 +31,7 @@ class PaymentController extends Controller
                 'return_uri' => URL::to('/redirect'),
             ]);
         }
+        dd($charge);
         return $charge['source']['scannable_code']['image']['download_uri'];
     }
     public function webhook(Request $request)

@@ -426,7 +426,7 @@
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>
-                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" >
+                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text"  value="0882514258" >
                         </div>
                         <div class="col-lg-12">
                             <p>ที่อยู่</p>
