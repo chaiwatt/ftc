@@ -78,6 +78,7 @@ class WebHookController extends Controller
           }';
 
         $payload = json_decode($request->getContent());
+        
         // $payload = $request->all();// //json_decode($request->getContent(),JSON_PRETTY_PRINT);
         // $payload = json_decode($data,JSON_PRETTY_PRINT);
 
@@ -94,7 +95,7 @@ class WebHookController extends Controller
         // ];
         
         // Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', json_encode($result,JSON_PRETTY_PRINT));
-        Storage::disk('public')->put('hook/hello1.txt', $payload);
+        Storage::disk('public')->put('hook/hello1.txt', $payload['id']);
 
     }
 }
