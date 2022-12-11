@@ -43,7 +43,7 @@ class PaymentController extends Controller
             $customer->save();
         }
 
-        EmailBox::send('joerocknpc@gmail.com','มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ');
+        // EmailBox::send('joerocknpc@gmail.com','มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ');
         return $charge['source']['scannable_code']['image']['download_uri'];
     }
     public function webhook(Request $request)

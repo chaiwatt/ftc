@@ -17,6 +17,8 @@ class WebHookController extends Controller
             'status' => trim($payload['data']['status'])
           ]);
           EmailBox::send('joerocknpc@gmail.com','ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']));
-        }        
+        } else if(trim($payload['data']['status']) == 'pending'){
+          EmailBox::send('joerocknpc@gmail.com','มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ');
+        }      
     }
 }
