@@ -10,8 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 class WebHookController extends Controller
 {
     public function webhook(Request $request){
-        // dd($request->all());
-
         $data = '{
             "object": "event",
             "id": "evnt_test_56vp5pfwjf1fqjn4ryy",
@@ -81,7 +79,6 @@ class WebHookController extends Controller
 
         // $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
         $payload = json_decode($data,JSON_PRETTY_PRINT);
-        // $hook_event = json_decode($data,JSON_PRETTY_PRINT);
 
         $result = [
             "id" => $payload['id'],
@@ -92,15 +89,10 @@ class WebHookController extends Controller
             'transaction' => $payload['data']['transaction'],
             'source_of_fund' => $payload['data']['source_of_fund'],
             'paid' => $payload['data']['paid'],
-            'paid' => $payload['data']['paid'],
             'created' => $payload['data']['created'],  
         ];
         
         Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', json_encode($result,JSON_PRETTY_PRINT));
 
-        // Storage::disk('public')->put('log.txt', json_encode($request->all(),JSON_PRETTY_PRINT));
-
-        // $response = json_decode(file_get_contents('php://input'));
-        // Storage::disk('public')->put('log.txt', json_encode($response,JSON_PRETTY_PRINT));
     }
 }

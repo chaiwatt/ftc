@@ -25,4 +25,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('getCharge', [PaymentController::class, 'getCharge'])->name('getCharge');
 Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect');
-Route::get('webhook', [WebHookController::class, 'webhook'])->name('webhook');
+Route::post('webhook', [WebHookController::class, 'webhook'])->name('webhook');
