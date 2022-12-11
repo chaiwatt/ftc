@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Mail;
 
 class EmailBox
 {
-    public static function send(Transaction $transaction,$type,$title,$message){
+    public static function send(Transaction $transaction,$title,$message,$type){
         $mailto = "fullstacktrainingclass@gmail.com";
         if ($type == 'customer'){
             $mailto = $transaction->email;
