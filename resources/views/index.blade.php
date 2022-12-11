@@ -414,15 +414,15 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
-                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" >
+                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" value="ชัยวัฒน์" >
                         </div>
                         <div class="col-lg-6">
                             <p>นามสกุล</p>
-                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" >
+                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" value="ทวีจันทร์" >
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" >
+                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" value="joerocknpc@gmail.com" >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>

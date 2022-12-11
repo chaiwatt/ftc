@@ -94,7 +94,12 @@ class WebHookController extends Controller
         //     // 'paid' => $payload['data']['paid'],
         //     // 'created' => $payload['data']['created'],  
         // ];
-        // $transaction = Transaction::where('source_id',);
+        if ($payload['data']['status'] == 'successful'){
+          Transaction::where('charge_id',$payload['data']['id'])->where('source_id',$payload['data']['source']['id'])->update([
+            'status' => 'successful'
+          ]);
+        }
+
         // $transaction->event_id = $payload['id'];
         // $transaction->event_key = $payload['key'];
         // $transaction->save();
