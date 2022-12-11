@@ -22,14 +22,14 @@ class WebHookController extends Controller
             'status' => trim($payload['data']['status'])
           ]);
 
-          // $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          // EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
-          // EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
+          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
+          EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
+          EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           // $this->sendNotify('ทำคำสั่งซื้อเสร็จสิ้น');
           
         } else if(trim($payload['data']['status']) == 'pending'){
-          // $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          // EmailBox::send($transaction,'มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ','admin');
+          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
+          EmailBox::send($transaction,'มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ','admin');
           // $this->sendNotify('มีรายการสั่งซื้อ');
         }      
     }
