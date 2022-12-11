@@ -20,28 +20,18 @@ class FTCMail extends Mailable
         $this->mailData = $mailData;
     }
 
-    // public function envelope()
-    // {
-    //     return new Envelope(
-    //         subject: 'F T C Mail',
-    //     );
-    // }
-
-
-    // public function content()
-    // {
-    //     return new Content(
-    //         view: 'view.name',
-    //     );
-    // }
-
     public function attachments()
     {
         return [];
     }
     public function build()
     {
-        return $this->view('mail.index')
+        $mailview  = 'mail.index';
+        if ($this->mailData['type']  == 'customer'){
+            $mailview  = 'mail.customer'; 
+        }
+
+        return $this->view($mailview)
                     ->from($this->mailData['sendermail'], $this->mailData['sendername'])
                     ->subject($this->mailData['title'])
                     ->with([

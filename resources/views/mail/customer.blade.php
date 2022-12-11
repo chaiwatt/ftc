@@ -10,8 +10,7 @@
     <h1>{{ $mailData['title'] }}</h1>
     <p>{{ $mailData['message'] }}</p>
   
-    <p>Admin โปรดตรวจสอบรายการสั่งซื้อ</p>
+    <p>รายการสั่งซื้อของคุณสำเร็จแล้ว</p>
      
-    <p>Thank you</p>
 </body>
 </html>

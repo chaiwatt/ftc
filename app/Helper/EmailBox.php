@@ -1,20 +1,23 @@
 <?php
 namespace App\Helper;
 
-use App\User;
-use App\Mail\EmailSystem;
 use App\Mail\FTCMail;
-use App\Model\GeneralInfo;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Mail;
 
 class EmailBox
 {
-    public static function send($mailto,$title,$message){
+    public static function send(Transaction $transaction,$type,$title,$message){
+        $mailto = "fullstacktrainingclass@gmail.com";
+        if ($type == 'customer'){
+            $mailto = $transaction->email;
+        }
         $data = [
             'sendermail' => env('MAIL_FROM_ADDRESS'),
             'sendername' => 'FTC',
             'title' => $title,
-            'message' => $message
+            'message' => $message,
+            'type' => $type,
             ];
 
             Mail::to($mailto)->send(new FTCMail($data));
