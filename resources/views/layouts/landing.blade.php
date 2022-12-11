@@ -105,9 +105,28 @@
                         </ul>
                     </div>
                 </div>
-                {{-- <div class="col-lg-3">
+                <div class="col-lg-5">
+                    <h4>นโยบายของธุรกิจ</h4>
+                    <div class="menu-inner menu-inner-vertical">
+                        <ul>
+                            <li>
+                                <a href="/policy">เงื่อนไขและข้อตกลงในการใช้บริการ</a>
+                            </li>
+                            <li>
+                                <a href="/policy">นโยบายความเป็นส่วนตัว</a>
+                            </li>
+                            <li>
+                                <a href="/policy">นโยบายคุ้มครองข้อมูล</a>
+                            </li>
+                            <li>
+                                <a href="/policy">นโยบายการคืนเงิน</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-1">
                     
-                </div> --}}
+                </div>
                 <div class="col-lg-3">
                     <h4>Follow us</h4>
                     <div class="icon-links icon-social icon-links-grid social-colors">
@@ -129,7 +148,7 @@
         <script src="{{asset('assets/js/main.js')}}"></script>
         <script src="{{asset('assets/js/glide.min.js')}}"></script>
         <script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
-        {{-- <script src="{{asset('assets/js/tab-accordion.js')}}"></script> --}}
+        <script src="{{asset('assets/js/tab-accordion.js')}}"></script>
         {{-- <script src="{{asset('assets/js/pagination.min.js')}}"></script> --}}
         {{-- <script src="{{asset('assets/js/imagesloaded.min.js')}}"></script> --}}
         {{-- <script src="{{asset('assets/js/contact-form.js')}}"></script> --}}

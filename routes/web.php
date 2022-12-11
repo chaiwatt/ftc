@@ -29,3 +29,7 @@ Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect')
 // Route::post('webhook', [WebHookController::class, 'webhook'])->name('webhook');
 
 Route::get('sendmail', [FTCMailController::class, 'sendmail'])->name('sendmail');
+
+Route::get('/policy', function () {
+    return view('policy');
+});
