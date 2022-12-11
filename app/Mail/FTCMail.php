@@ -20,12 +20,12 @@ class FTCMail extends Mailable
         $this->mailData = $mailData;
     }
 
-    public function envelope()
-    {
-        return new Envelope(
-            subject: 'F T C Mail',
-        );
-    }
+    // public function envelope()
+    // {
+    //     return new Envelope(
+    //         subject: 'F T C Mail',
+    //     );
+    // }
 
 
     // public function content()
