@@ -31,7 +31,7 @@ class PaymentController extends Controller
                 'return_uri' => URL::to('/redirect'),
             ]);
         }
-        dd($charge);
+        // dd($charge);
         return $charge['source']['scannable_code']['image']['download_uri'];
     }
     public function webhook(Request $request)
