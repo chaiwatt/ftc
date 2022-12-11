@@ -400,6 +400,50 @@
                 </a>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12" style="text-align: center">
+                <hr class="space-sm" />
+                <h2>รูปการเรียนบางส่วน</h2>
+                {{-- <p>
+                    ชั้น 1 (อาคาร B) อาคารอำนวยการอุทยานวิทยาศาสตร์ภาคเหนือ (จังหวัดเชียงใหม่)<br> 155 หมู่ 2 ต.แม่เหียะ อ.เมือง จ.เชียงใหม่ 50100
+                </p> --}}
+            </div>
+            <div class="col-lg-12">
+                <hr class="space-sm" />
+                <div class="container">
+                    <ul class="slider slider-zoom-center" data-options="type:carousel,perView:5,perViewMd:3,perViewSm:1,focusAt:center,gap:10,nav:true,controls:out,autoplay:3000">
+                        <li>
+                            <a class="img-box lightbox icon-photo" href="{{asset('assets/images/training/training1.png')}}" data-lightbox-anima="fade-top">
+                                <img src="{{asset('assets/images/training/training1.png')}}" alt="">
+                                <i class="im-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="img-box lightbox icon-photo" href="{{asset('assets/images/training/training2.png')}}" data-lightbox-anima="fade-top">
+                                <img src="{{asset('assets/images/training/training2.png')}}" alt="">
+                                <i class="im-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="img-box lightbox icon-photo" href="{{asset('assets/images/training/training3.png')}}" data-lightbox-anima="fade-top">
+                                <img src="{{asset('assets/images/training/training3.png')}}" alt="">
+                                <i class="im-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="img-box lightbox icon-photo" href="{{asset('assets/images/training/training4.png')}}" data-lightbox-anima="fade-top">
+                                <img src="{{asset('assets/images/training/training4.png')}}" alt="">
+                                <i class="im-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+             
+    
+             
+                
+            </div>
+        </div>
     </div>
 </section>
 
