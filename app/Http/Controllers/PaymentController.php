@@ -30,6 +30,15 @@ class PaymentController extends Controller
                 'source' => $source['id'],
                 'return_uri' => URL::to('/redirect'),
             ]);
+            
+            $customer = new Transaction();
+            $customer->name = $request->name;
+            $customer->amount = $request->amount;
+            $customer->lastname = $request->name;
+            $customer->email = $request->email;
+            $customer->phone = $request->phone;
+            $customer->source_id = $source['id'];
+            $customer->charge_id = $charge['id'];
         }
         // dd($charge);
         return $charge['source']['scannable_code']['image']['download_uri'];

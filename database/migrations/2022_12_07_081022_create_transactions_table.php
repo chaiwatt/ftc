@@ -15,8 +15,14 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('event_id');
-            $table->string('event_key');
+            $table->string('name')->nullable();
+            $table->string('lastname')->nullable();
+            $table->double('amount',10,2);
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('source_id')->nullable();
+            $table->string('charge_id')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

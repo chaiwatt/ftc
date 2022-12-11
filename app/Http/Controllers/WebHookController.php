@@ -94,17 +94,10 @@ class WebHookController extends Controller
         //     // 'paid' => $payload['data']['paid'],
         //     // 'created' => $payload['data']['created'],  
         // ];
-
-        $transaction = new Transaction();
-        $transaction->event_id = $payload['id'];
-        $transaction->event_key = $payload['key'];
-        $transaction->save();
-
-        
-        // Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', json_encode($result,JSON_PRETTY_PRINT));
-        // Storage::disk('public')->put('hook/hello1.txt', $request->getContent());
-        // Storage::disk('public')->put('hook/'.$payload['id'].'.txt', $payload_id);
-        // Storage::disk('public')->put('hook/'.$payload['id'].'.txt', $payload_id);
+        // $transaction = Transaction::where('source_id',);
+        // $transaction->event_id = $payload['id'];
+        // $transaction->event_key = $payload['key'];
+        // $transaction->save();
 
     }
 }

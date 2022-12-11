@@ -418,11 +418,11 @@
                         </div>
                         <div class="col-lg-6">
                             <p>นามสกุล</p>
-                            <input id="surname" name="surname" placeholder="นามสกุล" type="text" class="input-text" >
+                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email2" name="email2" placeholder="อีเมล" type="email" class="input-text" >
+                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>
@@ -526,7 +526,7 @@
             $(document).on('click', '#btnGetCharge', function(e) {
                 $("#spinner").show();
                 $('#btnGetCharge').prop('disabled', true);
-                makeCharge($('#name').val(),$('#surname').val(),$('#amount').val()).then(data => {
+                makeCharge($('#name').val(),$('#lastname').val(),$('#email').val(),$('#phone').val(),$('#amount').val()).then(data => {
                     $('#qrcode').attr("src", data);
                         $("#qrcode").on("load", function() {
                             $.magnificPopup.open({
@@ -557,7 +557,7 @@
                 })   
             });
 
-            function makeCharge(name,surname,amount){
+            function makeCharge(name,lastname,email,phone,amount){
                 return new Promise((resolve, reject) => {
                     $.ajax({
                     url: `${route.url}/getCharge`,
@@ -565,7 +565,9 @@
                     headers: {"X-CSRF-TOKEN":route.token},
                     data: {
                         'name': name,
-                        'surname': surname,
+                        'lastname': lastname,
+                        'email': email,
+                        'phone': phone,
                         'amount': amount
                     },
                     success: function(data) {
