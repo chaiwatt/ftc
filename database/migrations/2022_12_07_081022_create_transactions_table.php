@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
@@ -20,6 +16,12 @@ return new class extends Migration
             $table->double('amount',10,2);
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
+            $table->string('address')->nullable();
+            $table->string('participant')->nullable();
+            $table->string('trainingdate')->nullable();
+            $table->string('company')->nullable();
+            $table->string('vatnumber')->nullable();
+            $table->string('promocode')->nullable();
             $table->string('source_id')->nullable();
             $table->string('charge_id')->nullable();
             $table->string('status')->default('pending');
@@ -27,11 +29,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('transactions');

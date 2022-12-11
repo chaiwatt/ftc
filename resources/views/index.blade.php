@@ -414,27 +414,27 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
-                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" value="ชัยวัฒน์" >
+                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required>
                         </div>
                         <div class="col-lg-6">
                             <p>นามสกุล</p>
-                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" value="ทวีจันทร์" >
+                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" required>
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" value="joerocknpc@gmail.com" >
+                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>
-                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text"  value="0882514258" >
+                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required>
                         </div>
                         <div class="col-lg-12">
                             <p>ที่อยู่</p>
-                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่" ></textarea>
+                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่"></textarea>
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนผู้เข้าเรียน</p>
-                            <select class="input-select" name="number" id="number">
+                            <select class="input-select" name="participant" id="participant" required>
                                 <option value="">==เลือกจำนวนผู้เข้าเรียน==</option>
                                 <option value="1" selected>1</option>
                                 <option value="2">2</option>
@@ -450,11 +450,11 @@
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนเงิน (บาท)</p>
-                            <input id="amount" name="amount" placeholder="" type="text" value="20" class="input-text" readonly >
+                            <input id="amount" name="amount" placeholder="" type="text" class="input-text" value="15000" readonly required>
                         </div>
                         <div class="col-lg-6">
                             <p>วันที่เรียน เดือนธันวาคม 2565</p>
-                            <select class="input-select" name="number" id="number">
+                            <select class="input-select" name="trainingdate" id="trainingdate" required>
                                 <option value="" selected="">==เลือกวันที่เข้าเรียน==</option>
                                 <option value="1">1 ธ.ค.-2 ธ.ค.</option>
                                 <option value="2">3 ธ.ค.-4 ธ.ค.</option>
@@ -524,9 +524,24 @@
             });
 
             $(document).on('click', '#btnGetCharge', function(e) {
+                if (validateInput() == false){
+                    return;
+                }
                 $("#spinner").show();
                 $('#btnGetCharge').prop('disabled', true);
-                makeCharge($('#name').val(),$('#lastname').val(),$('#email').val(),$('#phone').val(),$('#amount').val()).then(data => {
+                makeCharge(
+                    $('#name').val(),
+                    $('#lastname').val(),
+                    $('#email').val(),
+                    $('#phone').val(),
+                    $('#address').val(),
+                    $('#participant').val(),
+                    $('#amount').val(),
+                    $('#trainingdate').val(),
+                    $('#company').val(),
+                    $('#vatnumber').val(),
+                    $('#promocode').val(),
+                ).then(data => {
                     $('#qrcode').attr("src", data);
                         $("#qrcode").on("load", function() {
                             $.magnificPopup.open({
@@ -557,7 +572,7 @@
                 })   
             });
 
-            function makeCharge(name,lastname,email,phone,amount){
+            function makeCharge(name,lastname,email,phone,address,participant,amount,trainingdate,company,vatnumber,promocode){
                 return new Promise((resolve, reject) => {
                     $.ajax({
                     url: `${route.url}/getCharge`,
@@ -568,7 +583,13 @@
                         'lastname': lastname,
                         'email': email,
                         'phone': phone,
-                        'amount': amount
+                        'address': address,
+                        'participant': participant,
+                        'amount': amount,
+                        'trainingdate': trainingdate,
+                        'company': company,
+                        'vatnumber': vatnumber,
+                        'promocode': promocode,
                     },
                     success: function(data) {
                         resolve(data)
@@ -579,6 +600,19 @@
                     })
                 })
             }
+
+            function validateInput(){
+                if($('#name').val() !== '' && $('#lastname').val() !== '' && $('#email').val() !== '' && $('#phone').val() !== '' && $('#amount').val() !== '' && $('#trainingdate').val() !== '' && $('#participant').val() !== '' ){
+                    return true
+                }else{
+                    return false
+                }
+
+            }
+
+            $(document).on('change', '#participant', function(e) {
+                $('#amount').val($(this).val()*15000)
+            });
 
         </script>
     @endpush
