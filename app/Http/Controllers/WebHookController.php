@@ -97,6 +97,7 @@ class WebHookController extends Controller
 
         $transaction = new Transaction();
         $transaction->event_id = $payload['id'];
+        $transaction->event_id = $payload['data']['key'];
         $transaction->save();
 
         
