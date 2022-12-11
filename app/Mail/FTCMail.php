@@ -41,7 +41,11 @@ class FTCMail extends Mailable
     }
     public function build()
     {
-        return $this->subject('มีรายการสั่งซื้อ')
-                    ->view('mail.index');
+        return $this->view('mail.index')
+                    ->from($this->mailData['sendermail'], $this->mailData['sendername'])
+                    ->subject($this->mailData['title'])
+                    ->with([
+                        'message' => $this->mailData['message']
+                    ]);;
     }
 }

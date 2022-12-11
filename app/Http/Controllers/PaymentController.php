@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\EmailBox;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -41,7 +42,8 @@ class PaymentController extends Controller
             $customer->charge_id = $charge['id'];
             $customer->save();
         }
-        // dd($charge);
+
+        EmailBox::send('joerocknpc@gmail.com','มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ');
         return $charge['source']['scannable_code']['image']['download_uri'];
     }
     public function webhook(Request $request)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\EmailBox;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +16,9 @@ class WebHookController extends Controller
           Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
             'status' => trim($payload['data']['status'])
           ]);
+          EmailBox::send('joerocknpc@gmail.com','ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' + trim($payload['data']['status']));
         }
-        return redirect()->route('sendmail');
+        // return redirect()->route('sendmail');
+        
     }
 }
