@@ -78,22 +78,23 @@ class WebHookController extends Controller
           }';
 
         // $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
-        $payload = $request->all();// //json_decode($request->getContent(),JSON_PRETTY_PRINT);
+        // $payload = $request->all();// //json_decode($request->getContent(),JSON_PRETTY_PRINT);
         // $payload = json_decode($data,JSON_PRETTY_PRINT);
 
-        $result = [
-            "id" => $payload['id'],
-            "object" => $payload['data']['object'],
-            "object_id" => $payload['data']['id'],
-            "title" => $payload['data']['status'],
-            'amount' => $payload['data']['amount'],
-            'transaction' => $payload['data']['transaction'],
-            'source_of_fund' => $payload['data']['source_of_fund'],
-            'paid' => $payload['data']['paid'],
-            'created' => $payload['data']['created'],  
-        ];
+        // $result = [
+        //     "id" => $payload['id'],
+        //     "object" => $payload['data']['object'],
+        //     "object_id" => $payload['data']['id'],
+        //     "title" => $payload['data']['status'],
+        //     'amount' => $payload['data']['amount'],
+        //     'transaction' => $payload['data']['transaction'],
+        //     'source_of_fund' => $payload['data']['source_of_fund'],
+        //     'paid' => $payload['data']['paid'],
+        //     'created' => $payload['data']['created'],  
+        // ];
         
-        Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', json_encode($result,JSON_PRETTY_PRINT));
+        // Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', json_encode($result,JSON_PRETTY_PRINT));
+        Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', $request->getContent());
 
     }
 }
