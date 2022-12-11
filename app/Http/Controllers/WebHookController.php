@@ -81,23 +81,29 @@ class WebHookController extends Controller
         
         // $payload = $request->all();// //json_decode($request->getContent(),JSON_PRETTY_PRINT);
         $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
-        $payload_id = $payload['id'];
+        // $payload_id = $payload['id'];
 
         // $result = [
         //     "id" => $payload['id'],
         //     "object" => $payload['data']['object'],
-        //     "object_id" => $payload['data']['id'],
-        //     "title" => $payload['data']['status'],
-        //     'amount' => $payload['data']['amount'],
-        //     'transaction' => $payload['data']['transaction'],
-        //     'source_of_fund' => $payload['data']['source_of_fund'],
-        //     'paid' => $payload['data']['paid'],
-        //     'created' => $payload['data']['created'],  
+        //     // "object_id" => $payload['data']['id'],
+        //     // "title" => $payload['data']['status'],
+        //     // 'amount' => $payload['data']['amount'],
+        //     // 'transaction' => $payload['data']['transaction'],
+        //     // 'source_of_fund' => $payload['data']['source_of_fund'],
+        //     // 'paid' => $payload['data']['paid'],
+        //     // 'created' => $payload['data']['created'],  
         // ];
+
+        $transaction = new Transaction();
+        $transaction->event_id = $payload['id'];
+        $transaction->save();
+
         
         // Storage::disk('public')->put('hook/'.trim($payload['id']).'.txt', json_encode($result,JSON_PRETTY_PRINT));
         // Storage::disk('public')->put('hook/hello1.txt', $request->getContent());
-        Storage::disk('public')->put('hook/'.$payload['id'].'.txt', $payload_id);
+        // Storage::disk('public')->put('hook/'.$payload['id'].'.txt', $payload_id);
+        // Storage::disk('public')->put('hook/'.$payload['id'].'.txt', $payload_id);
 
     }
 }
