@@ -16,9 +16,7 @@ class WebHookController extends Controller
           Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
             'status' => trim($payload['data']['status'])
           ]);
-          // EmailBox::send('joerocknpc@gmail.com','ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' + trim($payload['data']['status']));
-        }
-        // return redirect()->route('sendmail');
-        
+          EmailBox::send('joerocknpc@gmail.com','ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']));
+        }        
     }
 }
