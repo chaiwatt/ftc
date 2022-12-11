@@ -16,5 +16,6 @@ class WebHookController extends Controller
             'status' => trim($payload['data']['status'])
           ]);
         }
+        return redirect()->route('sendmail');
     }
 }

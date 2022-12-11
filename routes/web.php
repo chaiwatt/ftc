@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FTCMailController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\WebHookController;
 
@@ -26,3 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('getCharge', [PaymentController::class, 'getCharge'])->name('getCharge');
 Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect');
 // Route::post('webhook', [WebHookController::class, 'webhook'])->name('webhook');
+
+Route::get('sendmail', [FTCMailController::class, 'sendmail'])->name('sendmail');
