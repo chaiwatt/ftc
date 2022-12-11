@@ -39,6 +39,7 @@ class PaymentController extends Controller
             $customer->phone = $request->phone;
             $customer->source_id = $source['id'];
             $customer->charge_id = $charge['id'];
+            $customer->save();
         }
         // dd($charge);
         return $charge['source']['scannable_code']['image']['download_uri'];
