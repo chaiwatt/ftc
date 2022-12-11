@@ -1,6 +1,5 @@
 @extends('layouts.landing')
 @section('content')
-
 <section class="section-image section-full-width light section-bottom-layer-2 align-center section-ovarlay-image bannerTitle" style="background-image:url({{asset('assets/images/bg.svg')}})">
     <div class="container smoothScroll">
         <hr class="space-lg in-visible-sm" />
