@@ -32,6 +32,8 @@
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/cookie/cookieconsent.css')}}">
+
     <link rel="stylesheet" href="{{asset('assets/css/transition.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/spinner.css')}}">
 </head>
@@ -113,10 +115,7 @@
                                 <a href="/policy">เงื่อนไขและข้อตกลงในการใช้บริการ</a>
                             </li>
                             <li>
-                                <a href="/policy">นโยบายความเป็นส่วนตัว</a>
-                            </li>
-                            <li>
-                                <a href="/policy">นโยบายคุ้มครองข้อมูล</a>
+                                <a href="/policy">นโยบายความเป็นส่วนตัวและคุ้มครองข้อมูล</a>
                             </li>
                             <li>
                                 <a href="/policy">นโยบายการคืนเงิน</a>
@@ -155,7 +154,8 @@
         {{-- <script src="{{asset('assets/js/progress.js')}}"></script> --}}
         <script src="{{asset('assets/js/custom.js')}}"></script>
         {{-- <script src="{{asset('assets/js/datepicker.min.js')}}"></script> --}}
-
+        <script defer src="{{asset('assets/js/cookie/cookieconsent.js')}}"></script>
+        <script defer src="{{asset('assets/js/cookie/cookieconsent-init.js')}}"></script>
         <script>
             var route = {
                 url: "{{ url('/') }}",
