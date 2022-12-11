@@ -15,6 +15,8 @@ class PaymentController extends Controller
 {
     public function getCharge(Request $request)
     {
+    //    dd(config('line.linetoken')) ;
+        // $data = $request->all();
         $charge = null;
         $source = OmiseSource::create([
             'amount' => $request->amount * 100,
