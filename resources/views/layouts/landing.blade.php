@@ -93,16 +93,16 @@
                     <div class="menu-inner menu-inner-vertical">
                         <ul>
                             <li>
-                                <a href="#overview">เรียนอะไรบ้าง</a>
+                                <a href="{{'/'}}#overview">เรียนอะไรบ้าง</a>
                             </li>
                             <li>
-                                <a href="#course">คอร์สเรียน</a>
+                                <a href="{{'/'}}#course">คอร์สเรียน</a>
                             </li>
                             <li>
-                                <a href="#trainingroom">ห้องเรียน</a>
+                                <a href="{{'/'}}#trainingroom">ห้องเรียน</a>
                             </li>
                             <li>
-                                <a href="#result">ผลงาน</a>
+                                <a href="{{'/'}}#result">ผลงาน</a>
                             </li>
                         </ul>
                     </div>
