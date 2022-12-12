@@ -22,7 +22,12 @@
             อีเมล: {{$mailData['email']}}
         </div>
         <div>โทรศัพท์: {{$mailData['phone']}}</div>
-        <div style="font-size: 24px;font-weight:600">สถานะ: {{$mailData['status']}} </div>
+        @if ($mailData['status'] == 'pending')
+                <div style="font-size: 24px;font-weight:600;color:#FB7B09">สถานะ: {{$mailData['status']}} </div>
+            @elseif($mailData['status'] == 'successful')
+                <div style="font-size: 24px;font-weight:600;color:#08D11D">สถานะ: {{$mailData['status']}} </div>
+        @endif
+        
         <hr>
         <table>
             <th>
