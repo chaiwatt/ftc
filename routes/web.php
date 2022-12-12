@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('getCharge', [PaymentController::class, 'getCharge'])->name('getCharge');
-Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect');
+Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect')->middleware('paidcheck');
 // Route::post('webhook', [WebHookController::class, 'webhook'])->name('webhook');
 
 Route::get('sendmail', [FTCMailController::class, 'sendmail'])->name('sendmail');
