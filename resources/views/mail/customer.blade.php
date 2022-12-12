@@ -21,7 +21,7 @@
         <div>
             อีเมล: joerocknpc@gmail.com
         </div>
-        <div>โทรศัพท์<b>088-2514838</b></div>
+        <div>โทรศัพท์: 088-2514838</div>
         <hr>
         <table>
             <th>
@@ -43,15 +43,20 @@
                     <td style="width:200px">0</td>
                 </tr>
                 <tr>
-                    <td style="width:500px;text-align:right" colspan="2">รวม</td>
+                    <td style="width:500px"></td>
+                    <td style="width:200px"></td>
+                    <td style="width:200px"></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right;padding-right:50px" colspan="2">รวม</td>
                     <td style="width:200px">1</td>
                 </tr>
                 <tr>
-                    <td style="width:500px;text-align:right" colspan="2">ภาษี 7%</td>
+                    <td style="width:500px;text-align:right;padding-right:50px" colspan="2">ภาษี 7%</td>
                     <td style="width:200px">1</td>
                 </tr>
                 <tr>
-                    <td style="width:500px;text-align:right" colspan="2">ส่วนลด</td>
+                    <td style="width:500px;text-align:right;padding-right:50px" colspan="2">ส่วนลด</td>
                     <td style="width:200px">1</td>
                 </tr>
                 <tr>
