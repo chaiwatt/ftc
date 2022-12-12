@@ -16,11 +16,13 @@ class EmailBox
 
         // dd($transaction);
 
+        $suffix = strtoupper(substr($sourceid, strpos($sourceid, "_") + 1));
+
         $data = [
             'sendermail' => env('MAIL_FROM_ADDRESS'),
             'sendername' => 'Full-Stack Training Class',
             'type' => $type,
-            'title' => $title,
+            'title' => $title.'_'.$suffix,
             'message' => $message,
             'name' => $transaction->name,
             'lastname' => $transaction->lastname,
