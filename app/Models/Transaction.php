@@ -24,5 +24,6 @@ class Transaction extends Model
         'source_id',
         'charge_id',
         'status',
+        'discount'
     ];
 }
