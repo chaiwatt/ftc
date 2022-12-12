@@ -13,6 +13,9 @@
     </div>
     <div class="text-grey-m2">
         <div>
+            บริษัท: {{$mailData['company']}}
+        </div>
+        <div>
             ที่อยู่: {{$mailData['address']}}
         </div>
         <div>
