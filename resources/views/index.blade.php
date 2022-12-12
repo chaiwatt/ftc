@@ -445,7 +445,7 @@
 
 <section id="purchase" class="section-base section-color">
     <div class="container">
-        <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือนธันวาคม 2565 
+        <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือน{{$month}} {{$year}}
             @if (!empty($promocode))
                 <span class="promotionMessage blink_me"> พิเศษ!! {{$promocode->campaignname}} ใช้โค้ด {{$promocode->name}} ลด {{$promocode->percentdiscount}}%</span>
             @endif
@@ -497,22 +497,12 @@
                             <input id="amount" name="amount" placeholder="" type="text" class="input-text" value="15000" readonly required>
                         </div>
                         <div class="col-lg-6">
-                            <p>วันที่เรียน เดือนธันวาคม 2565</p>
+                            <p>วันที่เรียน เดือน{{$month}} {{$year}}</p>
                             <select class="input-select" name="trainingdate" id="trainingdate" required>
                                 <option value="" selected="">==เลือกวันที่เข้าเรียน==</option>
-                                <option value="1">1 ธ.ค.-2 ธ.ค.</option>
-                                <option value="2">3 ธ.ค.-4 ธ.ค.</option>
-                                <option value="3">5 ธ.ค.-6 ธ.ค.</option>
-                                <option value="4">7 ธ.ค.-8 ธ.ค.</option>
-                                <option value="5">9 ธ.ค.-10 ธ.ค.</option>
-                                <option value="6">12 ธ.ค.-13 ธ.ค.</option>
-                                <option value="7">14 ธ.ค.-15 ธ.ค.</option>
-                                <option value="8">16 ธ.ค.-17 ธ.ค.</option>
-                                <option value="9">19 ธ.ค.-20 ธ.ค.</option>
-                                <option value="10">21 ธ.ค.-22 ธ.ค.</option>
-                                <option value="11">23 ธ.ค.-24 ธ.ค.</option>
-                                <option value="12">26 ธ.ค.-27 ธ.ค.</option>
-                                <option value="13">28 ธ.ค.-29 ธ.ค.</option>
+                                @foreach ($schdules as $schedule)
+                                    <option value="{{$schedule->day1}}-{{$schedule->month}}-{{$schedule->year}}">{{$schedule->day1}} {{$schedule->thaimonth}}.-{{$schedule->day2}} {{$schedule->thaimonth}}.</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-lg-6">
