@@ -33,6 +33,6 @@ class Transaction extends Model
     {
         $schedule = Schedule::find($this->schedule_id);
         // dd($schedule);
-        return $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) .'-'.  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
+        return $schedule->day1 . ' -'.  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
     }
 }
