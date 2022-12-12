@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('startdate')->nullable();
             $table->date('finishdate')->nullable();
             $table->char('status',1)->default(0);
+            $table->char('showpage',1)->default(0);
             $table->char('percentdiscount',2)->default(0);
             $table->timestamps();
         });
