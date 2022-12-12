@@ -32,6 +32,7 @@ class Transaction extends Model
     public function getTrainingDateAttribute()
     {
         $schedule = Schedule::find($this->schedule_id);
-        return $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) -  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
+        // dd($schedule);
+        return $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) .'-'.  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
     }
 }
