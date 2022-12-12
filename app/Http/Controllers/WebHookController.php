@@ -18,7 +18,7 @@ class WebHookController extends Controller
         
         $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
         if (trim($payload['data']['status']) != 'pending'){
-          $paymentdate = Carbon::parse($payload['created_at']);
+          $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
           Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
             'status' => trim($payload['data']['status']),
             'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
