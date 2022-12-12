@@ -16,7 +16,7 @@ class EmailBox
 
         // dd($transaction);
 
-        $suffix = strtoupper(substr($sourceid, strpos($sourceid, "_") + 1));
+        $suffix = strtoupper(substr($sourceid, -10));
 
         $data = [
             'sendermail' => env('MAIL_FROM_ADDRESS'),
