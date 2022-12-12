@@ -18,7 +18,7 @@ class PaidCheck
     public function handle(Request $request, Closure $next)
     {
         if ($request->source){
-            $transaction = Transaction::where('source',trim($request->source))->first();
+            $transaction = Transaction::where('source_id',trim($request->source))->first();
             if ($transaction->status == 'successful'){
                 return $next($request);
             }else{
