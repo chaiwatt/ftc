@@ -452,8 +452,8 @@
         </h2>    
         <div class="row" data-anima="fade-bottom" data-time="1000">
             <div class="col-lg-12">
-                {{-- <form class="form-box form-ajax boxed-area paymentForm" > --}}
-                <form class="form-box form-ajax boxed-area paymentForm" action="{{route('getCharge')}}" method="POST" >
+                <form class="form-box form-ajax boxed-area paymentForm" >
+                {{-- <form class="form-box form-ajax boxed-area paymentForm" action="{{route('getCharge')}}" method="POST" > --}}
                     @csrf
                     <div class="row">
                         <div class="col-lg-6">
@@ -519,8 +519,8 @@
                         </div>
                     </div>
                     <div style="text-align:right" >
-                        {{-- <button id="btnGetCharge" class="btn btn-sm btn-circle float-right" type="button"><i id="spinner" class="fa-solid fa-spinner spinner" style="margin-right: 5px" ></i> ชำระเงิน</button> --}}
-                        <button class="btn btn-sm btn-circle float-right" type="submit">ชำระเงิน</button>
+                        <button id="btnGetCharge" class="btn btn-sm btn-circle float-right" type="button"><i id="spinner" class="fa-solid fa-spinner spinner" style="margin-right: 5px" ></i> ชำระเงิน</button>
+                        {{-- <button class="btn btn-sm btn-circle float-right" type="submit">ชำระเงิน</button> --}}
                     </div>
                     <div class="success-box">
                         <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
