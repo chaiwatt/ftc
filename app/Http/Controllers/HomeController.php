@@ -30,6 +30,6 @@ class HomeController extends Controller
     }
 
     public function testsendmail(){
-        EmailBox::send('src_test_5u3vbj3h2z93v0aq8ec','chrg_test_5u3vbj5s9arilcwfcna','ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ','customer');
+        EmailBox::send('src_test_5u3veu8sq9b1rtorwd1','chrg_test_5u3veuaj4fmry5d2qyx','ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ','customer');
     }
 }
