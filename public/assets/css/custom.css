@@ -60,7 +60,7 @@
 }
 .paiddetails li p
 {
-    font-weight: 300;
+    font-weight: 300 !important;
 }
 .blink_me {
     animation: blinker 1s linear infinite;
