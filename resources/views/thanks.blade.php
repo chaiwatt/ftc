@@ -20,38 +20,38 @@
             </li>
             <li>
                 <h3>อีเมล</h3>
-                <p>
+                <p style="font-weight: 300">
                     {{$transaction->email}}
                 </p>
             </li>
             <li>
                 <h3>โทรศัพท์</h3>
-                <p>
+                <p style="font-weight: 300">
                     {{$transaction->phone}}
                 </p>
             </li>
             <li>
                 <h3>ที่อยู่</h3>
-                <p>
+                <p style="font-weight: 300">
                     {{$transaction->address}}
                 </p>
             </li>
             <li>
                 <h3>บริษัท</h3>
-                <p>
+                <p style="font-weight: 300">
                     {{$transaction->company}}
                 </p>
             </li>
             <li>
                 <h3>วันที่เรียน</h3>
-                <p>
+                <p style="font-weight: 300">
                     {{$transaction->trainingdate}}
                 </p>
             </li>
             <li>
                 <h3>ยอดชำระ</h3>
-                <p>
-                    {{$transaction->amount}}
+                <p style="font-weight: 300">
+                    {{$transaction->amount}} บาท
                 </p>
             </li>
         </ul>
