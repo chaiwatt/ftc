@@ -31,6 +31,8 @@ Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect')
 
 Route::get('sendmail', [FTCMailController::class, 'sendmail'])->name('sendmail');
 
+Route::get('testsendmail', [HomeController::class, 'testsendmail'])->name('testsendmail');
+
 Route::get('/policy', function () {
     return view('policy');
 });

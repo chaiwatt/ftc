@@ -14,7 +14,7 @@ class EmailBox
             $mailto = $transaction->email;
         }
 
-        // dd($transaction);
+        dd($transaction);
 
         $data = [
             'sendermail' => env('MAIL_FROM_ADDRESS'),

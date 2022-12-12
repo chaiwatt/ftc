@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Helper\DateConversion;
 use Carbon\Carbon;
-use App\Models\PromoCode;
+use App\Helper\EmailBox;
 use App\Models\Schedule;
+use App\Models\PromoCode;
 use Illuminate\Http\Request;
+use App\Helper\DateConversion;
 
 class HomeController extends Controller
 {
@@ -26,5 +27,9 @@ class HomeController extends Controller
             'month' => DateConversion::thaiMonthLong(Carbon::now()->month),
             'year' => intVal(Carbon::now()->year) + 543,
         ]);
+    }
+
+    public function testsendmail(){
+        EmailBox::send('src_test_5u3vbj3h2z93v0aq8ec','chrg_test_5u3vbj5s9arilcwfcna','ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ','customer');
     }
 }
