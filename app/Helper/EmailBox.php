@@ -14,7 +14,7 @@ class EmailBox
         }
         $data = [
             'sendermail' => env('MAIL_FROM_ADDRESS'),
-            'sendername' => 'FTC',
+            'sendername' => 'Full-Stack Training Class',
             'title' => $title,
             'message' => $message,
             'type' => $type,
