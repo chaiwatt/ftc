@@ -447,8 +447,9 @@
     <div class="container">
         <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือนธันวาคม 2565 
             @if (!empty($promocode))
-                <span class="promotionMessage blink_me"> พิเศษ!! {{$promocode->campaignname}} ใช้โค้ด {{$promocode->name}} ลด {{$promocode->percentdiscount}}%</span></h2>
+                <span class="promotionMessage blink_me"> พิเศษ!! {{$promocode->campaignname}} ใช้โค้ด {{$promocode->name}} ลด {{$promocode->percentdiscount}}%</span>
             @endif
+        </h2>    
         <div class="row" data-anima="fade-bottom" data-time="1000">
             <div class="col-lg-12">
                 <form class="form-box form-ajax boxed-area paymentForm" >

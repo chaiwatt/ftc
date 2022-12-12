@@ -17,13 +17,13 @@ use App\Http\Controllers\WebHookController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/', function () {
+    return view('index');
+});
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::post('getCharge', [PaymentController::class, 'getCharge'])->name('getCharge');
 Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect')->middleware('paidcheck');
 // Route::post('webhook', [WebHookController::class, 'webhook'])->name('webhook');
