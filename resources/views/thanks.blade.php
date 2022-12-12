@@ -11,8 +11,8 @@
 
 <section class="section-base section-color">
     <div class="container">
-        <div class="cnt-box cnt-call">
-            <div class="caption">
+        {{-- <div class="cnt-box cnt-call">
+            <div class="caption"> --}}
                 <ul class="text-list text-list-side boxed-area">
                     <li>
                         <h3>Software Engineer</h3>
@@ -44,8 +44,8 @@
                     </li>
                 </ul>
 
-            </div>
-        </div>
+            {{-- </div>
+        </div> --}}
     </div>
 </section>
 @endsection
