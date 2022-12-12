@@ -13,34 +13,30 @@
     <div class="container">
         {{-- <div class="cnt-box cnt-call">
             <div class="caption"> --}}
-                <ul class="text-list text-list-side boxed-area">
+                <ul class="text-list text-list-side boxed-area paiddetails">
                     <li>
                         <h3>Software Engineer</h3>
                         <p>
                             Placeat orci commodo, amet quo rem architecto possimus, accumsa.
                         </p>
-                        <div>Dublin, Ireland</div>
                     </li>
                     <li>
                         <h3>Community Manager</h3>
                         <p>
                             Placeat orci commodo, amet quo exercitation ullamco labori rem architecto possimus, accumsa.
                         </p>
-                        <div>Dublin, Ireland</div>
                     </li>
                     <li>
                         <h3>Sales supervisor</h3>
                         <p>
                             Placeat orci commodo, amet quo rem architecto possimus exercitation ullamco accumsa.
                         </p>
-                        <div>Dublin, Ireland</div>
                     </li>
                     <li>
                         <h3>React Developer</h3>
                         <p>
                             Placeat orci commodo, amet quo rem architecto possimus, accumsa.
                         </p>
-                        <div>Dublin, Ireland</div>
                     </li>
                 </ul>
 

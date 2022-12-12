@@ -52,12 +52,16 @@
 .promotionMessage{
     color: #ff3374;
 }
-.frontendSection .container p{
+.frontendSection .container p
+{
     font-size: 22px;
     font-weight: 300;
     line-height: 32px;
 }
-
+.paiddetails p
+{
+    font-weight: 300;
+}
 .blink_me {
     animation: blinker 1s linear infinite;
 }
