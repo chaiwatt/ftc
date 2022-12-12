@@ -22,6 +22,8 @@ return new class extends Migration
             // $table->string('trainingdate')->nullable();
             $table->unsignedBigInteger('schedule_id');
             $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
+            // $table->unsignedBigInteger('user_id')->comment('ID ผู้เชี่ยวชาญ');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('company')->nullable();
             $table->string('vatnumber')->nullable();
             $table->string('promocode')->nullable();
