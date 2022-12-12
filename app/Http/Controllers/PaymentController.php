@@ -56,7 +56,10 @@ class PaymentController extends Controller
     public function redirect(Request $request)
     {
         $transaction = Transaction::where('source_id',trim($request->source))->first();
-        dd($transaction);
+        // dd($transaction)
+        return view('thanks',[
+            'transaction' => $transaction
+        ]);
     }
 
 
