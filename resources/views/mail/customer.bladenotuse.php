@@ -7,18 +7,21 @@
     <title>Notification</title>
 </head>
 <body>
+    <h1>{{ $mailData['title'] }}</h1>
+    <p>{{ $mailData['name'] }}</p> 
+    {{-- <hr>
     <div>
         <span class="text-sm text-grey-m2 align-middle">ลูกค้า:</span>
-        <span class="text-600 text-110 text-blue align-middle">คุณ{{$transaction->name}} {{$transaction->lastname}}</span>
+        <span class="text-600 text-110 text-blue align-middle">ชัยวัฒน์ ทวีจันทร์</span>
     </div>
     <div class="text-grey-m2">
         <div>
-            ที่อยู่: {{$transaction->address}}
+            ที่อยู่: 105 หมู่ 8 ต.เหมืองง่า อ.เมือง จ.ลำพูน 51000
         </div>
         <div>
-            อีเมล: {{$transaction->email}}
+            อีเมล: joerocknpc@gmail.com
         </div>
-        <div>โทรศัพท์: {{$transaction->phone}}</div>
+        <div>โทรศัพท์: 088-2514838</div>
         <hr>
         <table>
             <th>
@@ -30,9 +33,9 @@
             </th>
             <tbody>
                 <tr>
-                    <td style="width:500px">คอร์สเรียนออนไซต์ Full-Stack developper</td>
-                    <td style="width:200px">{{$transaction->participant}}</td>
-                    <td style="width:200px">{{$transaction->amount}}</td>
+                    <td style="width:500px">อบรมคอร์ส Full-Stack developper</td>
+                    <td style="width:200px">2</td>
+                    <td style="width:200px">3000</td>
                 </tr>
                 <tr>
                     <td style="width:500px">โดเมน</td>
@@ -46,19 +49,19 @@
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">รวม</td>
-                    <td style="width:200px">{{($transaction->amount - $transaction->discount)*0.93}}</td>
+                    <td style="width:200px">1</td>
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ภาษี 7%</td>
-                    <td style="width:200px">{{($transaction->amount - $transaction->discount)*0.07}}</td>
+                    <td style="width:200px">1</td>
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ส่วนลด</td>
-                    <td style="width:200px">{{$transaction->discount}}</td>
+                    <td style="width:200px">1</td>
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2"><b>รวมทั้งสิ้น</b></td>
-                    <td style="width:200px">{{($transaction->amount - $transaction->discount)}}</td>
+                    <td style="width:200px">1000</td>
                 </tr>
             </tbody>
         </table>
