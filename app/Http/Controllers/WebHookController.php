@@ -25,12 +25,12 @@ class WebHookController extends Controller
           ]);
 
           EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'โปรดตรวจสอบทำคำสั่งซื้อ','โปรดตรวจสอบทำคำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
-          
+
           if($payload['data']['status'] == 'successful'){
-            EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
+            EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           }
 
-          // $this->sendNotify('ทำคำสั่งซื้อเสร็จสิ้น');
+          // $this->sendNotify('ทำคำสั่งซื้อสำเร็จ');
           
         } else if($payload['data']['status'] == 'pending'){
           EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อใหม่','มีรายการสั่งซื้อใหม่','admin');
