@@ -12,30 +12,30 @@
     {{-- <hr> --}}
     <div>
         <span class="text-sm text-grey-m2 align-middle">ลูกค้า:</span>
-        <span class="text-600 text-110 text-blue align-middle">ชัยวัฒน์ ทวีจันทร์</span>
+        <span class="text-600 text-110 text-blue align-middle">คุณ{{$transaction->name}} {{$transaction->lastname}}</span>
     </div>
     <div class="text-grey-m2">
         <div>
-            ที่อยู่: 105 หมู่ 8 ต.เหมืองง่า อ.เมือง จ.ลำพูน 51000
+            ที่อยู่: {{$transaction->address}}
         </div>
         <div>
-            อีเมล: joerocknpc@gmail.com
+            อีเมล: {{$transaction->email}}
         </div>
-        <div>โทรศัพท์: 088-2514838</div>
+        <div>โทรศัพท์: {{$transaction->phone}}</div>
         <hr>
         <table>
             <th>
                 <tr>
-                    <td style="width:500px"><b>รายการ</b></td>
-                    <td style="width:200px"><b>จำนวน</b></td>
-                    <td style="width:200px"><b>ราคา</b></td>
+                    <td style="width:400px"><b>รายการ</b></td>
+                    <td style="width:150px"><b>จำนวน</b></td>
+                    <td style="width:150px"><b>ราคา</b></td>
                 </tr>
             </th>
             <tbody>
                 <tr>
                     <td style="width:500px">อบรมคอร์ส Full-Stack developper</td>
-                    <td style="width:200px">2</td>
-                    <td style="width:200px">3000</td>
+                    <td style="width:200px">{{$transaction->participant}}</td>
+                    <td style="width:200px">{{$transaction->amount}}</td>
                 </tr>
                 <tr>
                     <td style="width:500px">โดเมน</td>
@@ -48,20 +48,20 @@
                     <td style="width:200px"></td>
                 </tr>
                 <tr>
-                    <td style="width:500px;text-align:right;padding-right:50px" colspan="2">รวม</td>
-                    <td style="width:200px">1</td>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">รวม</td>
+                    <td style="width:200px">{{($transaction->amount - $transaction->discount)*0.93}}</td>
                 </tr>
                 <tr>
-                    <td style="width:500px;text-align:right;padding-right:50px" colspan="2">ภาษี 7%</td>
-                    <td style="width:200px">1</td>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ภาษี 7%</td>
+                    <td style="width:200px">{{($transaction->amount - $transaction->discount)*0.07}}</td>
                 </tr>
                 <tr>
-                    <td style="width:500px;text-align:right;padding-right:50px" colspan="2">ส่วนลด</td>
-                    <td style="width:200px">1</td>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ส่วนลด</td>
+                    <td style="width:200px">{{$transaction->discount}}</td>
                 </tr>
                 <tr>
-                    <td style="width:500px;text-align:right" colspan="2"><b>รวมทั้งสิ้น</b></td>
-                    <td style="width:200px">1000</td>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2"><b>รวมทั้งสิ้น</b></td>
+                    <td style="width:200px">{{($transaction->amount - $transaction->discount)}}</td>
                 </tr>
             </tbody>
         </table>
