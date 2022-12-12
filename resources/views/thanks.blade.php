@@ -16,7 +16,7 @@
                 <ul class="text-list text-list-side boxed-area paiddetails">
                     <li>
                         <h3>Software Engineer</h3>
-                        <p>
+                        <p style="font-weight: 300">
                             Placeat orci commodo, amet quo rem architecto possimus, accumsa.
                         </p>
                     </li>
