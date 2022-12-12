@@ -40,7 +40,7 @@
                 <tr>
                     <td style="width:500px">คอร์สเรียนออนไซต์ Full-Stack developper</td>
                     <td style="width:200px">{{$mailData['participant']}}</td>
-                    <td style="width:200px">{{$mailData['amount']}}</td>
+                    <td style="width:200px">{{number_format($mailData['amount'], 2)}}</td>
                 </tr>
                 <tr>
                     <td style="width:500px">โดเมน (ฟรี)</td>
