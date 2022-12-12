@@ -18,15 +18,15 @@ class WebHookController extends Controller
         
         $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
         if (trim($payload['data']['status']) != 'pending'){
-          // $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
-          // Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
-          //   'status' => trim($payload['data']['status']),
-          //   'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
-          // ]);
+          $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
+          Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
+            'status' => trim($payload['data']['status']),
+            'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
+          ]);
 
-          // $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          // EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
-          // EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
+          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
+          EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
+          EmailBox::send($transaction,'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           // $this->sendNotify('ทำคำสั่งซื้อเสร็จสิ้น');
           
         } else if(trim($payload['data']['status']) == 'pending'){
