@@ -7,9 +7,9 @@
     <title>Notification</title>
 </head>
 <body>
-    {{-- <h1>{{ $mailData['title'] }}</h1>
+    <h1>{{ $mailData['title'] }}</h1>
     <p>{{ $mailData['message'] }}</p> --}}
-    {{-- <hr> --}}
+    {{-- <hr>
     <div>
         <span class="text-sm text-grey-m2 align-middle">ลูกค้า:</span>
         <span class="text-600 text-110 text-blue align-middle">ชัยวัฒน์ ทวีจันทร์</span>
