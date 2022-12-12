@@ -38,9 +38,15 @@ class PaymentController extends Controller
             $customer = new Transaction();
             $customer->name = $request->name;
             $customer->amount = $request->amount;
+            $customer->address = $request->address;
             $customer->lastname = $request->name;
             $customer->email = $request->email;
             $customer->phone = $request->phone;
+            $customer->participant = $request->participant;
+            $customer->trainingdate = $request->trainingdate;
+            $customer->company = $request->company;
+            $customer->vatnumber = $request->vatnumber;
+            $customer->promocode = $request->promocode;
             $customer->source_id = $source['id'];
             $customer->charge_id = $charge['id'];
             $customer->save();
