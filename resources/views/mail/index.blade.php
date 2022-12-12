@@ -41,7 +41,7 @@
                 <tr>
                     <td style="width:500px">คอร์สเรียนออนไซต์ Full-Stack developper</td>
                     <td style="width:200px">{{$mailData['participant']}}</td>
-                    <td style="width:200px">{{$mailData['amount']}}</td>
+                    <td style="width:200px">{{ number_format($mailData['amount'], 2) }}</td>
                 </tr>
                 <tr>
                     <td style="width:500px">โดเมน (ฟรี)</td>
@@ -55,19 +55,19 @@
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">รวม</td>
-                    <td style="width:200px">{{($mailData['amount']-$mailData['discount'])*0.93}}</td>
+                    <td style="width:200px">{{ number_format(($mailData['amount']-$mailData['discount'])*0.93, 2)}}</td>
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ภาษี 7%</td>
-                    <td style="width:200px">{{($mailData['amount']-$mailData['discount'])*0.07}}</td>
+                    <td style="width:200px">{{ number_format(($mailData['amount']-$mailData['discount'])*0.07, 2)}} {{}}</td>
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ส่วนลด</td>
-                    <td style="width:200px">{{$mailData['discount']}}</td>
+                    <td style="width:200px">{{ number_format($mailData['discount'], 2) }}</td>
                 </tr>
                 <tr>
                     <td style="width:500px;text-align:right;padding-right:30px" colspan="2"><b>รวมทั้งสิ้น</b></td>
-                    <td style="width:200px">{{$mailData['amount']-$mailData['discount']}}</td>
+                    <td style="width:200px">{{ number_format($mailData['amount']-$mailData['discount'], 2) }}</td>
                 </tr>
             </tbody>
         </table>
