@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('promo_codes', function (Blueprint $table) {
             $table->id();
+            $table->string('campaignname')->nullable();
             $table->string('name')->nullable();
             $table->date('startdate')->nullable();
             $table->date('finishdate')->nullable();
