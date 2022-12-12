@@ -7,11 +7,15 @@ use Illuminate\Support\Facades\Mail;
 
 class EmailBox
 {
-    public static function send(Transaction $transaction,$title,$message,$type){
+    public static function send($sourceid,$chargeid,$title,$message,$type){
+        $transaction = Transaction::where('charge_id',$chargeid)->where('source_id',$sourceid)->first();
         $mailto = "fullstacktrainingclass@gmail.com";
         if ($type == 'customer'){
             $mailto = $transaction->email;
         }
+
+        // dd($transaction);
+
         $data = [
             'sendermail' => env('MAIL_FROM_ADDRESS'),
             'sendername' => 'Full-Stack Training Class',
