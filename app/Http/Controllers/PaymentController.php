@@ -32,7 +32,7 @@ class PaymentController extends Controller
                 'amount' => $request->amount * 100,
                 'currency' => 'THB',
                 'source' => $source['id'],
-                'return_uri' => URL::to('/redirect'),
+                'return_uri' => URL::to('/redirect',[$source['id']]),
             ]);
             
             $customer = new Transaction();
@@ -55,7 +55,7 @@ class PaymentController extends Controller
     }
     public function redirect(Request $request)
     {
-        dd('thank you');
+        dd($request->all());
     }
 
 
