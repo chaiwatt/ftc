@@ -48,7 +48,7 @@ class PaymentController extends Controller
             $customer = new Transaction();
             $customer->name = $request->name;
             $customer->amount = $request->amount;
-            $customer->discount = $request->amount * $discount;
+            $customer->discount = floatval($request->amount) * $discount;
             $customer->address = $request->address;
             $customer->lastname = $request->name;
             $customer->email = $request->email;
