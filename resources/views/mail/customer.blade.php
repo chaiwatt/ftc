@@ -33,7 +33,7 @@
                 <tr>
                     <td style="width:400px"><b>รายการ</b></td>
                     <td style="width:150px"><b>จำนวน</b></td>
-                    <td style="width:150px"><b>ราคา</b></td>
+                    <td style="width:150px"><b>ราคา (บาท)</b></td>
                 </tr>
             </th>
             <tbody>
