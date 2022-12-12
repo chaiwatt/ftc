@@ -14,7 +14,7 @@ class EmailBox
             $mailto = $transaction->email;
         }
 
-        dd($transaction);
+        // dd($transaction);
 
         $data = [
             'sendermail' => env('MAIL_FROM_ADDRESS'),
@@ -36,7 +36,7 @@ class EmailBox
             // 'status' => $transaction->status
             ];
 
-
+            // dd($data)
             Mail::to($mailto)->send(new FTCMail($data));
          
     } 
