@@ -2,27 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\PromoCode;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        $promocode = PromoCode::whereDate('startdate', '<=', Carbon::today())
+                    ->whereDate('enddate', '>=', Carbon::now())
+                    ->where('status',1)
+                    ->where('showpage',1)
+                    ->latest('id')
+                    ->first(); 
+    
+        return view('index',[
+            'promocode' => $promocode
+        ]);
     }
 }

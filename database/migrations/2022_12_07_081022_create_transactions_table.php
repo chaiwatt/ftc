@@ -13,7 +13,8 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('lastname')->nullable();
-            $table->double('amount',10,2);
+            $table->double('amount',10,2)->default(0);
+            $table->double('discount',10,2)->default(0);
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('address')->nullable();

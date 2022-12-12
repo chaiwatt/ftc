@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('campaignname')->nullable();
             $table->string('name')->nullable();
-            $table->date('startdate')->nullable();
-            $table->date('finishdate')->nullable();
+            $table->dateTime('startdate')->nullable();
+            $table->dateTime('enddate')->nullable();
             $table->char('status',1)->default(0);
             $table->char('showpage',1)->default(0);
             $table->char('percentdiscount',2)->default(0);

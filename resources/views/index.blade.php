@@ -438,10 +438,6 @@
                         </li>
                     </ul>
                 </div>
-             
-    
-             
-                
             </div>
         </div>
     </div>
@@ -449,7 +445,10 @@
 
 <section id="purchase" class="section-base section-color">
     <div class="container">
-        <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือนธันวาคม 2565 <span class="promotionMessage blink_me"> พิเศษ!! โปรท้ายปีใช้โค้ด ENDY65 ลด 20%</span></h2>
+        <h2 class="align-center" style="margin-bottom: 15px">คอร์สเรียน เดือนธันวาคม 2565 
+            @if (!empty($promocode))
+                <span class="promotionMessage blink_me"> พิเศษ!! {{$promocode->campaignname}} ใช้โค้ด {{$promocode->name}} ลด {{$promocode->percentdiscount}}%</span></h2>
+            @endif
         <div class="row" data-anima="fade-bottom" data-time="1000">
             <div class="col-lg-12">
                 <form class="form-box form-ajax boxed-area paymentForm" >
@@ -569,8 +568,34 @@
                 mainClass: 'my-mfp-zoom-in'
             });
 
+            // $('#promocode').on("paste",function(e) {
+            //     // e.preventDefault();
+            //     console.log('paste')
+            // });
+
+            // $(document).on('paste', '#promocode', function(e) {
+            // $("#promocode").bind("paste", function(e){    
+            //     checkPromo($(this).val()).then(data => {
+            //         if(data == '0'){
+            //             $(this).val('');
+            //             Swal.fire(
+            //             {
+            //                 title: 'ผิดพลาด',
+            //                 text: "ไม่พบโค้ดส่วนลด! ",
+            //                 icon: 'error',
+            //                 confirmButtonText: 'ตกลง',
+            //                 confirmButtonColor: '#47b2e4',
+            //             }
+                        
+            //         )
+            //         return;
+            //         }
+            //     }).catch(error => {}) ;
+            // } );
+
             $(document).on('change', '#promocode', function(e) {
                 checkPromo($(this).val()).then(data => {
+                    console.log(data)
                     if(data == '0'){
                         $(this).val('');
                         Swal.fire(

@@ -2,25 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use Config;
+use Carbon\Carbon;
 use App\Helper\EmailBox;
+use App\Models\PromoCode;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Storage;
 use ox01code\Omise\process\OmiseCharge;
 use ox01code\Omise\process\OmiseSource;
-use Config;
 
 class PaymentController extends Controller
 {
     public function getCharge(Request $request)
     {
         
-    //    dd(config('line.linetoken')) ;
-        // $data = $request->all();
+        $promocode = PromoCode::where('name',trim($request->promocode))
+                            ->whereDate('startdate', '<=', Carbon::today())
+                            ->whereDate('enddate', '>=', Carbon::now())
+                            ->where('status',1)
+                            ->first(); 
+        $discount = 0;                    
+        if (!empty($promocode)){
+            $discount = $promocode->percentdiscount / 100 ;
+        }                    
+        
         $charge = null;
         $source = OmiseSource::create([
-            'amount' => $request->amount * 100,
+            'amount' => $request->amount * (1-$discount) * 100,
             // 'phone_number' => $request->phone,
             'currency' => 'THB',
             'type' => 'promptpay',
@@ -29,7 +39,7 @@ class PaymentController extends Controller
         
         if($source['object'] == 'source'){
             $charge = OmiseCharge::create([
-                'amount' => $request->amount * 100,
+                'amount' => $request->amount * (1-$discount) * 100,
                 'currency' => 'THB',
                 'source' => $source['id'],
                 'return_uri' => URL::to('/redirect?source='.$source['id']),
@@ -38,6 +48,7 @@ class PaymentController extends Controller
             $customer = new Transaction();
             $customer->name = $request->name;
             $customer->amount = $request->amount;
+            $customer->discount = $request->amount * ($discount);
             $customer->address = $request->address;
             $customer->lastname = $request->name;
             $customer->email = $request->email;
