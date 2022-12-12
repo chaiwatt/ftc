@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>{{ $mailData['title'] }}</h1>
-    <p>{{ $mailData['message'] }}</p> 
+    <p>{{ $mailData['name'] }}</p> 
     {{-- <hr>
     <div>
         <span class="text-sm text-grey-m2 align-middle">ลูกค้า:</span>

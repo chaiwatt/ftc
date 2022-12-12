@@ -21,9 +21,21 @@ class EmailBox
             'sendername' => 'Full-Stack Training Class',
             'title' => $title,
             'message' => $message,
-            'type' => $type,
-            // 'transaction' => $transaction,
+            'name' => $transaction->name,
+            'lastname' => $transaction->lastname,
+            'amount' => $transaction->amount,
+            'discount' => $transaction->discount,
+            'phone' => $transaction->phone,
+            'email' => $transaction->email,
+            'address' => $transaction->address,
+            'participant' => $transaction->participant,
+            'trainingdate' => $transaction->trainingdate,
+            'company' => $transaction->company,
+            'vatnumber' => $transaction->vatnumber,
+            'paymentdate' => $transaction->paymentdate,
+            'status' => $transaction->status
             ];
+
 
             Mail::to($mailto)->send(new FTCMail($data));
          
