@@ -22,7 +22,7 @@ class EmailBox
             'sendermail' => env('MAIL_FROM_ADDRESS'),
             'sendername' => 'Full-Stack Training Class',
             'type' => $type,
-            'title' => $title.'_'.$suffix,
+            'title' => $title.' '.$suffix,
             'message' => $message,
             'name' => $transaction->name,
             'lastname' => $transaction->lastname,
