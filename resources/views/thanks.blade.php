@@ -11,37 +11,50 @@
 
 <section class="section-base section-color">
     <div class="container">
-        {{-- <div class="cnt-box cnt-call">
-            <div class="caption"> --}}
-                <ul class="text-list text-list-side boxed-area paiddetails">
-                    <li>
-                        <h3>Software Engineer</h3>
-                        <p style="font-weight: 300">
-                            Placeat orci commodo, amet quo rem architecto possimus, accumsa.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Community Manager</h3>
-                        <p>
-                            Placeat orci commodo, amet quo exercitation ullamco labori rem architecto possimus, accumsa.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Sales supervisor</h3>
-                        <p>
-                            Placeat orci commodo, amet quo rem architecto possimus exercitation ullamco accumsa.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>React Developer</h3>
-                        <p>
-                            Placeat orci commodo, amet quo rem architecto possimus, accumsa.
-                        </p>
-                    </li>
-                </ul>
-
-            {{-- </div>
-        </div> --}}
+        <ul class="text-list text-list-side boxed-area paiddetails">
+            <li>
+                <h3>ชื่อ-สกุล</h3>
+                <p style="font-weight: 300">
+                    {{$transaction->name}}  {{$transaction->lastname}}
+                </p>
+            </li>
+            <li>
+                <h3>อีเมล</h3>
+                <p>
+                    {{$transaction->email}}
+                </p>
+            </li>
+            <li>
+                <h3>โทรศัพท์</h3>
+                <p>
+                    {{$transaction->phone}}
+                </p>
+            </li>
+            <li>
+                <h3>ที่อยู่</h3>
+                <p>
+                    {{$transaction->address}}
+                </p>
+            </li>
+            <li>
+                <h3>บริษัท</h3>
+                <p>
+                    {{$transaction->company}}
+                </p>
+            </li>
+            <li>
+                <h3>วันที่เรียน</h3>
+                <p>
+                    {{$transaction->trainingdate}}
+                </p>
+            </li>
+            <li>
+                <h3>ยอดชำระ</h3>
+                <p>
+                    {{$transaction->amount}}
+                </p>
+            </li>
+        </ul>
     </div>
 </section>
 @endsection
