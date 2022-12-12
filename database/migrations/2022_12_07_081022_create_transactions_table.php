@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('promocode')->nullable();
             $table->string('source_id')->nullable();
             $table->string('charge_id')->nullable();
+            $table->string('paymentdate')->nullable();
             $table->string('status')->default('pending');
             $table->timestamps();
         });

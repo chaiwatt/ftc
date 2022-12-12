@@ -54,6 +54,12 @@
                     {{$transaction->amount}} บาท
                 </p>
             </li>
+            <li>
+                <h3>วันที่ชำระ</h3>
+                <p style="font-weight: 300">
+                    {{$transaction->paymentdate}} น.
+                </p>
+            </li>
         </ul>
     </div>
 </section>
