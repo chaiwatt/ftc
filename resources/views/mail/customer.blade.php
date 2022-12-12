@@ -33,7 +33,7 @@
             </th>
             <tbody>
                 <tr>
-                    <td style="width:500px">อบรมคอร์ส Full-Stack developper</td>
+                    <td style="width:500px">คอร์สเรียนออนไซต์ Full-Stack developper</td>
                     <td style="width:200px">{{$transaction->participant}}</td>
                     <td style="width:200px">{{$transaction->amount}}</td>
                 </tr>
