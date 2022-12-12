@@ -55,7 +55,7 @@ class PaymentController extends Controller
             $customer->email = $request->email;
             $customer->phone = $request->phone;
             $customer->participant = $request->participant;
-            $customer->trainingdate = $request->trainingdate;
+            $customer->schedule_id = $request->trainingdate;
             $customer->company = $request->company;
             $customer->vatnumber = $request->vatnumber;
             $customer->promocode = $request->promocode;

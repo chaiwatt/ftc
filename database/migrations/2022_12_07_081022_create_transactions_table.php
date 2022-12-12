@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('address')->nullable();
             $table->string('participant')->nullable();
-            $table->string('trainingdate')->nullable();
+            // $table->string('trainingdate')->nullable();
+            $table->unsignedBigInteger('schedule_id');
+            $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
             $table->string('company')->nullable();
             $table->string('vatnumber')->nullable();
             $table->string('promocode')->nullable();

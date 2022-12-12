@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Schedule;
+use App\Helper\DateConversion;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Transaction extends Model
 {
@@ -17,7 +19,7 @@ class Transaction extends Model
         'email',
         'address',
         'participant',
-        'trainingdate',
+        'schedule_id',
         'company',
         'vatnumber',
         'promocode',
@@ -26,4 +28,10 @@ class Transaction extends Model
         'status',
         'discount'
     ];
+
+    public function getTrainingDateAttribute()
+    {
+        $schedule = Schedule::find($this->schedule_id);
+        return $schedule->day1 . ' ' . DateConversion::getThaiMonth($schedule->month) -  $schedule->day1 . ' ' . DateConversion::getThaiMonth($schedule->month) . ' ' . $schedule->year;
+    }
 }

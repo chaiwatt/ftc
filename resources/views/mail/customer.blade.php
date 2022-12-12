@@ -35,7 +35,7 @@
                     <td style="width:200px">{{$mailData['amount']}}</td>
                 </tr>
                 <tr>
-                    <td style="width:500px">โดเมน</td>
+                    <td style="width:500px">โดเมน (ฟรี)</td>
                     <td style="width:200px">1</td>
                     <td style="width:200px">0</td>
                 </tr>

@@ -501,7 +501,7 @@
                             <select class="input-select" name="trainingdate" id="trainingdate" required>
                                 <option value="" selected="">==เลือกวันที่เข้าเรียน==</option>
                                 @foreach ($schdules as $schedule)
-                                    <option value="{{$schedule->day1}}-{{$schedule->month}}-{{$schedule->year}}">{{$schedule->day1}} {{$schedule->thaimonth}}.-{{$schedule->day2}} {{$schedule->thaimonth}}.</option>
+                                    <option value="{{$schedule->id}}">{{$schedule->day1}} {{$schedule->thaimonth}}.-{{$schedule->day2}} {{$schedule->thaimonth}}.</option>
                                 @endforeach
                             </select>
                         </div>
