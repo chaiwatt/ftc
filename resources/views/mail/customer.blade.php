@@ -42,6 +42,22 @@
                     <td style="width:200px">1</td>
                     <td style="width:200px">0</td>
                 </tr>
+                <tr>
+                    <td style="width:500px;text-align:right" colspan="2">รวม</td>
+                    <td style="width:200px">1</td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right" colspan="2">ภาษี 7%</td>
+                    <td style="width:200px">1</td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right" colspan="2">ส่วนลด</td>
+                    <td style="width:200px">1</td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right" colspan="2"><b>รวมทั้งสิ้น</b></td>
+                    <td style="width:200px">1000</td>
+                </tr>
             </tbody>
         </table>
     </div>
