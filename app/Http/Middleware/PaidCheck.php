@@ -19,12 +19,15 @@ class PaidCheck
     {
         if ($request->source){
             $transaction = Transaction::where('source_id',trim($request->source))->first();
-            if ($transaction->status == 'successful'){
-                return $next($request);
+            if (!empty($transaction)){
+                if ($transaction->status == 'successful'){
+                    return $next($request);
+                }else{
+                    return abort(403, 'Unauthorized action.');
+                }
             }else{
                 return abort(403, 'Unauthorized action.');
             }
-            
         }else{
             return abort(403, 'Unauthorized action.');
         }
