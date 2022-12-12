@@ -31,7 +31,7 @@ class WebHookController extends Controller
           
         } else if(trim($payload['data']['status']) == 'pending'){
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          EmailBox::send($transaction,'มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ','admin');
+          // EmailBox::send($transaction,'มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ','admin');
           // $this->sendNotify('มีรายการสั่งซื้อ');
         }      
     }
