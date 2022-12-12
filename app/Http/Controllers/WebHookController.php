@@ -25,13 +25,10 @@ class WebHookController extends Controller
           ]);
 
           // $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          // if($payload['data']['status'] == 'successful'){
-          // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
-          // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
-          // }
-
-          // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ','admin');
-          EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อ','คำสั่งซื้อของคุณ','customer');
+          if($payload['data']['status'] == 'successful'){
+            EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
+            EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
+          }
 
           // $this->sendNotify('ทำคำสั่งซื้อเสร็จสิ้น');
           
