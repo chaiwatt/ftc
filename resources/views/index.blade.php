@@ -524,7 +524,7 @@
                             <input id="vatnumber" name="vatnumber" placeholder="เลขที่ผู้เสียภาษี" type="text" class="input-text" >
                         </div>
                         <div class="col-lg-6">
-                            <p>โค้ดส่วนลด</p>
+                            <p>โค้ดส่วนลด (ถ้ามี)</p>
                             <input id="promocode" name="promocode" placeholder="โค้ดส่วนลด" type="text" class="input-text" >
                         </div>
                     </div>
@@ -549,7 +549,9 @@
     </div>
 
     @push('js')
+    
         <script type="text/javascript">
+            // const Swal = require('sweetalert2')
             $("#spinner").hide();
             $('.popup-with-zoom-anim').magnificPopup({
                 type: 'inline',
@@ -569,6 +571,15 @@
 
             $(document).on('click', '#btnGetCharge', function(e) {
                 if (validateInput() == false){
+                    Swal.fire(
+                        {
+                            title: 'ผิดพลาด',
+                            text: "กรุณากรอกข้อมูลให้ครบถ้วน!",
+                            icon: 'warning',
+                            confirmButtonText: 'ตกลง',
+                            confirmButtonColor: '#47b2e4',
+                        }
+                    )
                     return;
                 }
                 $("#spinner").show();

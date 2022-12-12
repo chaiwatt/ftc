@@ -156,6 +156,7 @@
         {{-- <script src="{{asset('assets/js/datepicker.min.js')}}"></script> --}}
         <script defer src="{{asset('assets/js/cookie/cookieconsent.js')}}"></script>
         <script defer src="{{asset('assets/js/cookie/cookieconsent-init.js')}}"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             var route = {
                 url: "{{ url('/') }}",
