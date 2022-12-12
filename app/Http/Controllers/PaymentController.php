@@ -30,18 +30,16 @@ class PaymentController extends Controller
         
         $charge = null;
         $source = OmiseSource::create([
-            // 'amount' => $request->amount * (1-$discount) * 100,
-            'amount' => $request->amount * 100,
+            'amount' => $request->amount * (1-$discount) * 100,
             // 'phone_number' => $request->phone,
             'currency' => 'THB',
             'type' => 'promptpay',
             // 'type' => 'truemoney',
         ]);
-       
+        
         if($source['object'] == 'source'){
             $charge = OmiseCharge::create([
-                // 'amount' => $request->amount * (1-$discount) * 100,
-                'amount' => $request->amount * 100,
+                'amount' => $request->amount * (1-$discount) * 100,
                 'currency' => 'THB',
                 'source' => $source['id'],
                 'return_uri' => URL::to('/redirect?source='.$source['id']),
@@ -50,8 +48,7 @@ class PaymentController extends Controller
             $customer = new Transaction();
             $customer->name = $request->name;
             $customer->amount = $request->amount;
-            // $customer->discount = $request->amount * ($discount);
-            $customer->discount = 0;
+            $customer->discount = $request->amount * $discount;
             $customer->address = $request->address;
             $customer->lastname = $request->name;
             $customer->email = $request->email;
