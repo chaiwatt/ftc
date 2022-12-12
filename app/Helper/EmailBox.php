@@ -22,7 +22,7 @@ class EmailBox
             'title' => $title,
             'message' => $message,
             'type' => $type,
-            'transaction' => $transaction,
+            // 'transaction' => $transaction,
             ];
 
             Mail::to($mailto)->send(new FTCMail($data));
