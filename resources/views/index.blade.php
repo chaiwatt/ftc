@@ -569,6 +569,45 @@
                 mainClass: 'my-mfp-zoom-in'
             });
 
+            $(document).on('change', '#promocode', function(e) {
+                checkPromo($(this).val()).then(data => {
+                    if(data == '0'){
+                        $(this).val('');
+                        Swal.fire(
+                        {
+                            title: 'ผิดพลาด',
+                            text: "ไม่พบโค้ดส่วนลด! ",
+                            icon: 'error',
+                            confirmButtonText: 'ตกลง',
+                            confirmButtonColor: '#47b2e4',
+                        }
+                        
+                    )
+                    return;
+                    }
+                }).catch(error => {}) ;
+            });
+
+            function checkPromo(promocode){
+                return new Promise((resolve, reject) => {
+                    $.ajax({
+                    url: `${route.url}/api/checkpromo`,
+                    type: 'POST',
+                    headers: {"X-CSRF-TOKEN":route.token},
+                    data: {
+                        'promocode': promocode,
+                    },
+                    success: function(data) {
+                        resolve(data)
+                    },
+                    error: function(error) {
+                        reject(error)
+                    },
+                    })
+                })
+            }
+
+
             $(document).on('click', '#btnGetCharge', function(e) {
                 if (validateInput() == false){
                     Swal.fire(
@@ -584,47 +623,47 @@
                 }
                 $("#spinner").show();
                 $('#btnGetCharge').prop('disabled', true);
-                makeCharge(
-                    $('#name').val(),
-                    $('#lastname').val(),
-                    $('#email').val(),
-                    $('#phone').val(),
-                    $('#address').val(),
-                    $('#participant').val(),
-                    $('#amount').val(),
-                    $('#trainingdate').val(),
-                    $('#company').val(),
-                    $('#vatnumber').val(),
-                    $('#promocode').val(),
-                ).then(data => {
-                    $('#qrcode').attr("src", data);
-                        $("#qrcode").on("load", function() {
-                            $.magnificPopup.open({
-                            items: {
-                                src: '#small-dialog',
-                            },
-                            type: 'inline',        
-                            fixedContentPos: false,
-                            fixedBgPos: true,
+                    makeCharge(
+                        $('#name').val(),
+                        $('#lastname').val(),
+                        $('#email').val(),
+                        $('#phone').val(),
+                        $('#address').val(),
+                        $('#participant').val(),
+                        $('#amount').val(),
+                        $('#trainingdate').val(),
+                        $('#company').val(),
+                        $('#vatnumber').val(),
+                        $('#promocode').val(),
+                    ).then(data => {
+                        $('#qrcode').attr("src", data);
+                            $("#qrcode").on("load", function() {
+                                $.magnificPopup.open({
+                                items: {
+                                    src: '#small-dialog',
+                                },
+                                type: 'inline',        
+                                fixedContentPos: false,
+                                fixedBgPos: true,
 
-                            overflowY: 'auto',
+                                overflowY: 'auto',
 
-                            closeBtnInside: true,
-                            preloader: false,
-                            
-                            midClick: true,
-                            removalDelay: 300,
-                            mainClass: 'my-mfp-zoom-in',
-                            callbacks: {
-                                elementParse: function(item) {
-                                    $("#spinner").hide();
-                                    $('#btnGetCharge').prop('disabled', false);
-                                    // console.log(item);
+                                closeBtnInside: true,
+                                preloader: false,
+                                
+                                midClick: true,
+                                removalDelay: 300,
+                                mainClass: 'my-mfp-zoom-in',
+                                callbacks: {
+                                    elementParse: function(item) {
+                                        $("#spinner").hide();
+                                        $('#btnGetCharge').prop('disabled', false);
+                                        // console.log(item);
+                                    }
                                 }
-                            }
-                        });
-                    })
-                })   
+                            });
+                        })
+                    })   
             });
 
             function makeCharge(name,lastname,email,phone,address,participant,amount,trainingdate,company,vatnumber,promocode){
