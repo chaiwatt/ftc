@@ -24,17 +24,16 @@ class WebHookController extends Controller
             'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
           ]);
 
-          // $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
+          EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'โปรดตรวจสอบทำคำสั่งซื้อ','โปรดตรวจสอบทำคำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
+          
           if($payload['data']['status'] == 'successful'){
-            EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
             EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'ทำคำสั่งซื้อเสร็จสิ้น','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           }
 
           // $this->sendNotify('ทำคำสั่งซื้อเสร็จสิ้น');
           
         } else if($payload['data']['status'] == 'pending'){
-          // $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ','admin');
+          EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อใหม่','มีรายการสั่งซื้อใหม่','admin');
           // $this->sendNotify('มีรายการสั่งซื้อ');
         }      
     }

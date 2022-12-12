@@ -7,11 +7,73 @@
     <title>Notification</title>
 </head>
 <body>
-    <h1>{{ $mailData['title'] }}</h1>
-    <p>{{ $mailData['message'] }}</p>
-  
-    <p>Admin โปรดตรวจสอบรายการสั่งซื้อ</p>
-     
-    <p>Thank you</p>
+    <div>
+        <span class="text-sm text-grey-m2 align-middle">ลูกค้า:</span>
+        <span class="text-600 text-110 text-blue align-middle">คุณ{{$mailData['name']}} {{$mailData['lastname']}}</span>
+    </div>
+    <div class="text-grey-m2">
+        <div>
+            บริษัท: {{$mailData['company']}}
+        </div>
+        <div>
+            ที่อยู่: {{$mailData['address']}}
+        </div>
+        <div>
+            อีเมล: {{$mailData['email']}}
+        </div>
+        <div>โทรศัพท์: {{$mailData['phone']}}</div>
+        <div style="font-size: 24px;font-weight:600">สถานะ: {{$mailData['status']}} </div>
+        <hr>
+        <table>
+            <th>
+                <tr>
+                    <td style="width:400px"><b>รายการ</b></td>
+                    <td style="width:150px"><b>จำนวน</b></td>
+                    <td style="width:150px"><b>ราคา</b></td>
+                </tr>
+            </th>
+            <tbody>
+                <tr>
+                    <td style="width:500px">คอร์สเรียนออนไซต์ Full-Stack developper</td>
+                    <td style="width:200px">{{$mailData['participant']}}</td>
+                    <td style="width:200px">{{$mailData['amount']}}</td>
+                </tr>
+                <tr>
+                    <td style="width:500px">โดเมน (ฟรี)</td>
+                    <td style="width:200px">1</td>
+                    <td style="width:200px">0</td>
+                </tr>
+                <tr>
+                    <td style="width:500px"></td>
+                    <td style="width:200px"></td>
+                    <td style="width:200px"></td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">รวม</td>
+                    <td style="width:200px">{{($mailData['amount']-$mailData['discount'])*0.93}}</td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ภาษี 7%</td>
+                    <td style="width:200px">{{($mailData['amount']-$mailData['discount'])*0.07}}</td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ส่วนลด</td>
+                    <td style="width:200px">{{$mailData['discount']}}</td>
+                </tr>
+                <tr>
+                    <td style="width:500px;text-align:right;padding-right:30px" colspan="2"><b>รวมทั้งสิ้น</b></td>
+                    <td style="width:200px">{{$mailData['amount']-$mailData['discount']}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <h3>รายละเอียดการอบรม</h3>
+    <ul>
+        <li>วันที่: {{ $mailData['trainingdate']}}</li>
+        <li>เวลา: 08:30-16:00 น.</li>
+    </ul>
+    
 </body>
 </html>
+
