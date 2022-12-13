@@ -128,10 +128,10 @@
                     <div class="menu-inner menu-inner-vertical">
                         <ul>
                             <li>
-                                <span>บริษัท เอ็นพีซีโซลูชั่น แอนด์ เซอร์วิส จำกัด</span>
+                                <span style="font-size: 15px">บริษัท เอ็นพีซีโซลูชั่น แอนด์ เซอร์วิส จำกัด</span>
                             </li>
                             <li>
-                               <span style="font-size: 16px;font-weight:300"> 105 หมู่ที่ 8 ตำบลเหมืองง่า อำเภอเมือง จังหวัดลำพูน 51000<br>อีเมล: contact@npcsolutionandservice.com<br>โทรศัพท์: 053-093254</span>
+                               <span style="font-size: 15px;font-weight:300"> 105 หมู่ที่ 8 ตำบลเหมืองง่า อำเภอเมือง จังหวัดลำพูน 51000<br>อีเมล: contact@npcsolutionandservice.com<br>โทรศัพท์: 053-093254</span>
                             </li>
                         </ul>
                     </div>
