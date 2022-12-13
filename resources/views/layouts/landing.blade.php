@@ -88,7 +88,7 @@
                         </ul>
                     </div>
                 </div> --}}
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <h4>เมนู</h4>
                     <div class="menu-inner menu-inner-vertical">
                         <ul>
@@ -107,7 +107,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <h4>นโยบายของธุรกิจ</h4>
                     <div class="menu-inner menu-inner-vertical">
                         <ul>
@@ -123,11 +123,21 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-1">
-                    
+                <div class="col-lg-4">
+                    <h4>ติดต่อเรา</h4>
+                    <div class="menu-inner menu-inner-vertical">
+                        <ul>
+                            <li>
+                                <span>บริษัท เอ็นพีซีโซลูชั่น แอนด์ เซอร์วิส จำกัด</span>
+                            </li>
+                            <li>
+                               <span style="font-size: 16px;font-weight:300"> 105 หมู่ที่ 8 ตำบลเหมืองง่า อำเภอเมือง จังหวัดลำพูน 51000<br>อีเมล: contact@npcsolutionandservice.com<br>โทรศัพท์: 053-093254</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-3">
-                    <h4>Follow us</h4>
+                <div class="col-lg-2">
+                    <h4>ติดตาม</h4>
                     <div class="icon-links icon-social icon-links-grid social-colors">
                         <a href="facebook.com/fullstacktrainingclassofficial" class="facebook"><i class="icon-facebook"></i></a>
                         <a href="https://www.youtube.com/channel/UCIvpCh8hEqkNK-UwXOGEbLg" class="youtube"><i class="icon-youtube"></i></a>
