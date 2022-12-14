@@ -139,7 +139,7 @@
                 <div class="col-lg-2">
                     <h4>ติดตาม</h4>
                     <div class="icon-links icon-social icon-links-grid social-colors">
-                        <a href="facebook.com/fullstacktrainingclassofficial" class="facebook"><i class="icon-facebook"></i></a>
+                        <a href="https://www.facebook.com/fullstacktrainingclassofficial" class="facebook"><i class="icon-facebook"></i></a>
                         <a href="https://www.youtube.com/channel/UCIvpCh8hEqkNK-UwXOGEbLg" class="youtube"><i class="icon-youtube"></i></a>
                     </div>
                 </div>
