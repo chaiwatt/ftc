@@ -149,7 +149,7 @@
             <div class="container">
                 {{-- <span>© Copyright 2022. บริษัท เอ็นพีซี โซลูชั่น แอนด์ เซอร์วิส จำกัด <a target="_blank" href="https://npcsolutionandservice.com/">>>เข้าสู่เว็บไซต์</a></span> --}}
                 <span>© Copyright 2022-2023. <a target="_blank" href="{{url('/')}}">Full-Stack Training Class</a></span>
-                <span><img src="{{asset('assets/images/npclogo.png')}}" alt="" /></span>
+                {{-- <span><img src="{{asset('assets/images/npclogo.png')}}" alt="" /></span> --}}
             </div>
         </div>
 
