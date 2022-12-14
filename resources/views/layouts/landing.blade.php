@@ -127,11 +127,11 @@
                     <h4>ติดต่อเรา</h4>
                     <div class="menu-inner menu-inner-vertical">
                         <ul>
-                            <li>
+                            {{-- <li>
                                 <span style="font-size: 15px;color:#c2cad8">บริษัท เอ็นพีซีโซลูชั่น แอนด์ เซอร์วิส จำกัด</span>
-                            </li>
+                            </li> --}}
                             <li>
-                               <span style="font-size: 15px;font-weight:300;color:#c2cad8"> 105 หมู่ที่ 8 ตำบลเหมืองง่า อำเภอเมือง จังหวัดลำพูน 51000<br>อีเมล: contact@npcsolutionandservice.com<br>โทรศัพท์: 053-093254</span>
+                               <span style="font-size: 15px;font-weight:300;color:#c2cad8"> 105 หมู่ที่ 8 ตำบลเหมืองง่า อำเภอเมือง จังหวัดลำพูน 51000<br>อีเมล: fullstacktrainingclass@gmail.com<br>โทรศัพท์: 053-093254</span>
                             </li>
                         </ul>
                     </div>
@@ -147,7 +147,8 @@
         </div>
         <div class="footer-bar">
             <div class="container">
-                <span>© Copyright 2022. บริษัท เอ็นพีซี โซลูชั่น แอนด์ เซอร์วิส จำกัด <a target="_blank" href="https://npcsolutionandservice.com/">>>เข้าสู่เว็บไซต์</a></span>
+                {{-- <span>© Copyright 2022. บริษัท เอ็นพีซี โซลูชั่น แอนด์ เซอร์วิส จำกัด <a target="_blank" href="https://npcsolutionandservice.com/">>>เข้าสู่เว็บไซต์</a></span> --}}
+                <span>© Copyright 2022-2023. <a target="_blank" href="{{url('/')}}">Full-Stack Training Class</a></span>
                 <span><img src="{{asset('assets/images/npclogo.png')}}" alt="" /></span>
             </div>
         </div>
