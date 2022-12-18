@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Config; 
 use Carbon\Carbon;
+use App\Models\User;
 use App\Helper\EmailBox;
 use App\Helper\LineNotify;
 use App\Models\Transaction;
@@ -50,6 +51,7 @@ class WebHookController extends Controller
               ];
               $this->sendmail($pacakage_success);
               $pacakage_success = [
+                'sender' => 'joerocknpc@gmail.com',
                 'email' => 'joerocknpc@gmail.com',
                 'name' => 'Admin',
                 'title' => 'คำสั่งซื้อสำเร็จ',
@@ -74,8 +76,9 @@ class WebHookController extends Controller
               'status' => $transaction->status
           ];
           $pacakage = [
+            'sender' => 'joerocknpc@gmail.com',
             'email' => 'joerocknpc@gmail.com',
-            'name' => 'noreply',
+            'name' => 'Admin',
             'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
             'sourceinfo' => $sourceinfo
           ];
@@ -84,9 +87,11 @@ class WebHookController extends Controller
     }
 
     public function sendmail($pacakage){
-        Notification::route('mail', [
-          $pacakage['email'] => $pacakage['name'],
-      ])->notify(new OrderPlacedNotification($pacakage));
+      //   Notification::route('mail', [
+      //     $pacakage['email'] => $pacakage['name'],
+      // ])->notify(new OrderPlacedNotification($pacakage));
+
+      Notification::send(User::first(), new OrderPlacedNotification($pacakage));
     }
 
     public function sendNotify($message){
