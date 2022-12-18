@@ -93,9 +93,6 @@
 ขอขอบพระคุณ,<br>
 Full-Stack Training Class
 
-@component('mail::footer')
-Full-Stack Training Class. All rights reserved.
-@endcomponent
 
 @endcomponent
 
