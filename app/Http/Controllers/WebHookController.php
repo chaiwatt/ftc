@@ -31,34 +31,34 @@ class WebHookController extends Controller
           //   EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           // }
 
-          $sourceinfo = [
-            'name' => $transaction->name, 
-            'lastname' => $transaction->lastname,
-            'phone' => $transaction->phone,
-            'email' => $transaction->email,
-            'company' => $transaction->company,
-            'address' => $transaction->address,
-            'amount' => $transaction->amount,
-            'participant' => $transaction->participant,
-            'trainingdate' => $transaction->trainingdate,
-            'discount' => $transaction->discount,
-            'status' => $transaction->status
-          ];
+          // $sourceinfo = [
+          //   'name' => $transaction->name, 
+          //   'lastname' => $transaction->lastname,
+          //   'phone' => $transaction->phone,
+          //   'email' => $transaction->email,
+          //   'company' => $transaction->company,
+          //   'address' => $transaction->address,
+          //   'amount' => $transaction->amount,
+          //   'participant' => $transaction->participant,
+          //   'trainingdate' => $transaction->trainingdate,
+          //   'discount' => $transaction->discount,
+          //   'status' => $transaction->status
+          // ];
 
-          $pacakage = [
-            'email' => 'joerocknpc@gmail.com',
-            'name' => 'noreply',
-            'title' => 'คำสั่งซื้อสำเร็จ',
-            'transaction' => $sourceinfo
-          ];
-          $this->sendmail($pacakage);
-          $pacakage = [
-            'email' => $transaction->email,
-            'name' => 'noreply',
-            'title' => 'คำสั่งซื้อสำเร็จ',
-            'transaction' => $sourceinfo
-          ];
-          $this->sendmail($pacakage);
+          // $pacakage = [
+          //   'email' => 'joerocknpc@gmail.com',
+          //   'name' => 'noreply',
+          //   'title' => 'คำสั่งซื้อสำเร็จ',
+          //   'transaction' => $sourceinfo
+          // ];
+          // $this->sendmail($pacakage);
+          // $pacakage = [
+          //   'email' => $transaction->email,
+          //   'name' => 'noreply',
+          //   'title' => 'คำสั่งซื้อสำเร็จ',
+          //   'transaction' => $sourceinfo
+          // ];
+          // $this->sendmail($pacakage);
           
         } else if($payload['data']['status'] == 'pending'){
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
