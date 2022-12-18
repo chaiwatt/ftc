@@ -4,10 +4,12 @@
 
 The body of your message.
 @component('mail::table')
-| Laravel       | Table         | Example  |
+| รายการ       | จำนวน         | ราคา  |
 | ------------- |:-------------:| --------:|
 | Col 2 is      | Centered      | $10      |
 | Col 3 is      | Right-Aligned | $20      |
 @endcomponent
 
+Thanks,
+Full-Stack Training Class
 @endcomponent
