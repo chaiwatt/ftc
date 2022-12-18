@@ -94,7 +94,7 @@
 Full-Stack Training Class
 
 @component('mail::footer')
-© {{ date('Y') }} Full-Stack Training Class. All rights reserved.
+Full-Stack Training Class. All rights reserved.
 @endcomponent
 
 @endcomponent
