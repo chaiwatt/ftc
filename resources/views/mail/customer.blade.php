@@ -6,7 +6,7 @@
 @if ($package['sourceinfo']['status'] == 'pending')
         {{$package['title']}}
     @elseif($package['sourceinfo']['status'] == 'successful')
-        <b>รายละเอียดการสั่งซื้อ</b><br>
+        <strong>รายละเอียดการสั่งซื้อ</strong><br>
 @endif
 
 ลูกค้า: คุณ{{$package['sourceinfo']['name']}} {{$package['sourceinfo']['lastname']}}<br>
@@ -14,15 +14,15 @@
 ที่อยู่: {{$package['sourceinfo']['address']}}<br>
 อีเมล: {{$package['sourceinfo']['email']}}<br>
 โทรศัพท์: {{$package['sourceinfo']['phone']}}<br>
-สถานะ: {{$package['sourceinfo']['status']}}<br>
+{{-- สถานะ: {{$package['sourceinfo']['status']}}<br> --}}
+
+@if ($package['sourceinfo']['status'] == 'pending')
+<div style="font-size: 18px;font-weight:600;color:#FB7B09">สถานะ: {{$package['sourceinfo']['status']}} </div><br>
+@elseif($package['sourceinfo']['status'] == 'successful')
+<div style="font-size: 18px;font-weight:600;color:#08D11D">สถานะ: {{$package['sourceinfo']['status']}} </div><br>
+@endif
 
 @component('mail::table')
-| รายการ       | จำนวน         | ราคา  |
-| ------------- |:-------------:| --------:|
-| คอร์สเรียนออนไซต์ Full-Stack developper     | {{$package['sourceinfo']['participant']}}      | {{$package['sourceinfo']['amount']}}     |
-| โดเมน (ฟรี)    | 1 | 0      |
-{{-- | โดเมน (ฟรี)    | 1 | 0      | --}}
-
 <table>
     <thead>
         <tr>
@@ -34,13 +34,13 @@
     <tbody>
         <tr>
             <td>คอร์สเรียนออนไซต์ Full-Stack developper</td>
-            <td style="text-align:right">{{$package['sourceinfo']['participant']}}</td>
-            <td style="text-align:right">{{$package['sourceinfo']['amount']}}</td>
+            <td style="text-align:center">{{$package['sourceinfo']['participant']}}</td>
+            <td style="text-align:right">{{number_format($package['sourceinfo']['amount'], 2)}}</td>
         </tr>
         <tr>
             <td>โดเมน (ฟรี)</td>
-            <td style="text-align:right">1</td>
-            <td style="text-align:right">0</td>
+            <td style="text-align:center">1</td>
+            <td style="text-align:right">0.00</td>
         </tr>
         <tr>
             <td style="width:500px"></td>
@@ -90,6 +90,6 @@
 วันที่: {{ $package['sourceinfo']['trainingdate']}}<br>
 เวลา: 08:30-16:00 น.<br>
 
-Thanks,
+ขอขอบพระคุณ,<br>
 Full-Stack Training Class
 @endcomponent
