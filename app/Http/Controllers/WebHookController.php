@@ -43,7 +43,14 @@ class WebHookController extends Controller
 
         if($payload['data']['status'] == 'successful'){
               $pacakage_success = [
-                'email' => 'fahsaitharnchanok@gmail.com',
+                'email' => $transaction->email,
+                'name' => 'noreply',
+                'title' => 'คำสั่งซื้อสำเร็จ',
+                'sourceinfo' => $sourceinfo
+              ];
+              $this->sendmail($pacakage_success);
+              $pacakage_success = [
+                'email' => 'joerocknpc@gmail.com',
                 'name' => 'noreply',
                 'title' => 'คำสั่งซื้อสำเร็จ',
                 'sourceinfo' => $sourceinfo
