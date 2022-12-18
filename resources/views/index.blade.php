@@ -466,7 +466,7 @@
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="joerocknpc@gmail.com" >
+                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="fahsaitharnchanok@gmail.com" >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>

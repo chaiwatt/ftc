@@ -48,7 +48,14 @@ class WebHookController extends Controller
           $pacakage = [
             'email' => 'joerocknpc@gmail.com',
             'name' => 'noreply',
-            'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+            'title' => 'คำสั่งซื้อสำเร็จ',
+            'transaction' => $sourceinfo
+          ];
+          $this->sendmail($pacakage);
+          $pacakage = [
+            'email' => $transaction->email,
+            'name' => 'noreply',
+            'title' => 'คำสั่งซื้อสำเร็จ',
             'transaction' => $sourceinfo
           ];
           $this->sendmail($pacakage);
