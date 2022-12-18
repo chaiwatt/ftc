@@ -511,7 +511,7 @@
                         </div>
                         <div class="col-lg-6">
                             <p >เลขประจำตัวผู้เสียภาษี (ถ้ามี)</p>
-                            <input id="vatnumber" name="vatnumber" placeholder="เลขที่ผู้เสียภาษี" type="text" class="input-text" value="1510101516944" >
+                            <input id="vatnumber" name="vatnumber" placeholder="เลขที่ผู้เสียภาษี" type="text" class="input-text" value="" >
                         </div>
                         <div class="col-lg-6">
                             <p>โค้ดส่วนลด (ถ้ามี)</p>
