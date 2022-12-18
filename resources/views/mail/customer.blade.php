@@ -6,15 +6,15 @@
 @if ($package['sourceinfo']['status'] == 'pending')
         {{$package['title']}}
     @elseif($package['sourceinfo']['status'] == 'successful')
-        รายละเอียดการสั่งซื้อ
+        <b>รายละเอียดการสั่งซื้อ</b><br>
 @endif
 
-ลูกค้า: คุณ{{$package['sourceinfo']['name']}} {{$package['sourceinfo']['lastname']}}
-บริษัท: {{$package['sourceinfo']['company']}}
-ที่อยู่: {{$package['sourceinfo']['address']}}
-อีเมล: {{$package['sourceinfo']['email']}}
-โทรศัพท์: {{$package['sourceinfo']['phone']}}
-สถานะ: {{$package['sourceinfo']['status']}}
+ลูกค้า: คุณ{{$package['sourceinfo']['name']}} {{$package['sourceinfo']['lastname']}}<br>
+บริษัท: {{$package['sourceinfo']['company']}}<br>
+ที่อยู่: {{$package['sourceinfo']['address']}}<br>
+อีเมล: {{$package['sourceinfo']['email']}}<br>
+โทรศัพท์: {{$package['sourceinfo']['phone']}}<br>
+สถานะ: {{$package['sourceinfo']['status']}}<br>
 
 @component('mail::table')
 | รายการ       | จำนวน         | ราคา  |
@@ -24,9 +24,6 @@
 {{-- | โดเมน (ฟรี)    | 1 | 0      | --}}
 
 
-| One    | Two | Three | Four    | Five  | Six 
-| -
-| Span <td colspan=3>triple  <td colspan=2>double
 
 {{-- 
 <tr>
@@ -46,12 +43,11 @@
     <td style="width:200px">{{number_format($mailData['amount']-$mailData['discount'], 2)}}</td>
 </tr> --}}
 
-
-<b>รายละเอียดการอบรม<b>
-วันที่: {{ $package['sourceinfo']['trainingdate']}}</li>
-เวลา: 08:30-16:00 น.
-
 @endcomponent
+
+<br><b>รายละเอียดการอบรม</b><br>
+วันที่: {{ $package['sourceinfo']['trainingdate']}}<br>
+เวลา: 08:30-16:00 น.<br>
 
 Thanks,
 Full-Stack Training Class
