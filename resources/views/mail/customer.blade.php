@@ -4,9 +4,9 @@
 
 
 @if ($package['sourceinfo']['status'] == 'pending')
-        {{$package['title']}}
+        <b>{{$package['title']}}</b><br>
     @elseif($package['sourceinfo']['status'] == 'successful')
-        <strong>รายละเอียดการสั่งซื้อ</strong><br>
+        <b>รายละเอียดการสั่งซื้อ</b><br>
 @endif
 
 ลูกค้า: คุณ{{$package['sourceinfo']['name']}} {{$package['sourceinfo']['lastname']}}<br>
