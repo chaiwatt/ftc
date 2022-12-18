@@ -30,7 +30,7 @@ class WebHookController extends Controller
           // if($payload['data']['status'] == 'successful'){
           //   EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           // }
-
+          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
           $sourceinfo = [
             'name' => $transaction->name, 
             'lastname' => $transaction->lastname,
