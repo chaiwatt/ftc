@@ -41,6 +41,7 @@ class WebHookController extends Controller
             'amount' => $transaction->amount,
             'participant' => $transaction->participant,
             'trainingdate' => $transaction->trainingdate,
+            'discount' => $transaction->discount,
             'status' => $transaction->status
           ];
 
@@ -64,6 +65,7 @@ class WebHookController extends Controller
               'amount' => $transaction->amount,
               'participant' => $transaction->participant,
               'trainingdate' => $transaction->trainingdate,
+              'discount' => $transaction->discount,
               'status' => $transaction->status
           ];
           $pacakage = [

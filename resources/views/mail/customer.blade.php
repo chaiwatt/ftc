@@ -17,10 +17,10 @@
 สถานะ: {{$package['sourceinfo']['status']}}<br>
 
 @component('mail::table')
-{{-- | รายการ       | จำนวน         | ราคา  |
+| รายการ       | จำนวน         | ราคา  |
 | ------------- |:-------------:| --------:|
 | คอร์สเรียนออนไซต์ Full-Stack developper     | {{$package['sourceinfo']['participant']}}      | {{$package['sourceinfo']['amount']}}     |
-| โดเมน (ฟรี)    | 1 | 0      | --}}
+| โดเมน (ฟรี)    | 1 | 0      |
 {{-- | โดเมน (ฟรี)    | 1 | 0      | --}}
 
 <table>
@@ -33,14 +33,14 @@
     </thead>
     <tbody>
         <tr>
-            <td style="width:500px">คอร์สเรียนออนไซต์ Full-Stack developper</td>
-            <td style="width:200px">{{$package['sourceinfo']['participant']}}</td>
-            <td style="width:200px">{{number_format($package['sourceinfo']['amount'], 2)}}</td>
+            <td>คอร์สเรียนออนไซต์ Full-Stack developper</td>
+            <td>{{$package['sourceinfo']['participant']}}</td>
+            <td>{{$package['sourceinfo']['amount']}}</td>
         </tr>
         <tr>
-            <td style="width:500px">โดเมน (ฟรี)</td>
-            <td style="width:200px">1</td>
-            <td style="width:200px">0.00</td>
+            <td>โดเมน (ฟรี)</td>
+            <td>1</td>
+            <td>0</td>
         </tr>
         <tr>
             <td style="width:500px"></td>
