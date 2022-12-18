@@ -26,10 +26,6 @@ class WebHookController extends Controller
             'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
           ]);
 
-          // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'โปรดตรวจสอบทำคำสั่งซื้อ','โปรดตรวจสอบทำคำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
-          // if($payload['data']['status'] == 'successful'){
-          //   EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
-          // }
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
           $sourceinfo = [
             'name' => $transaction->name, 
@@ -45,15 +41,15 @@ class WebHookController extends Controller
             'status' => $transaction->status
         ];
 
-        if($payload['data']['status'] == 'successful'){
+        // if($payload['data']['status'] == 'successful'){
               $pacakage_success = [
-                'email' => $transaction->email,
+                'email' => 'fahsaitharnchanok@gmail.com',
                 'name' => 'noreply',
                 'title' => 'คำสั่งซื้อสำเร็จ',
                 'transaction' => $sourceinfo
               ];
               $this->sendmail($pacakage_success);
-          }
+          // }
             
         } else if($payload['data']['status'] == 'pending'){
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
