@@ -1,7 +1,4 @@
-
 @component('mail::message')
-
-
 
 @if ($package['sourceinfo']['status'] == 'pending')
         <b>{{$package['title']}}</b><br>
@@ -65,24 +62,6 @@
         </tr>
     </tbody>
 </table>
-
-{{-- 
-<tr>
-    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">รวม</td>
-    <td style="width:200px">{{number_format(($package['sourceinfo']['amount']-$package['sourceinfo']['discount'])*0.93, 2)}}</td>
-</tr>
-<tr>
-    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ภาษี 7%</td>
-    <td style="width:200px">{{number_format(($package['sourceinfo']['amount']-$package['sourceinfo']['discount'])*0.07, 2)}}</td>
-</tr>
-<tr>
-    <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ส่วนลด</td>
-    <td style="width:200px">{{number_format($package['sourceinfo']['discount'], 2)}}</td>
-</tr>
-<tr>
-    <td style="width:500px;text-align:right;padding-right:30px" colspan="2"><b>รวมทั้งสิ้น</b></td>
-    <td style="width:200px">{{number_format($package['sourceinfo']['amount']-$package['sourceinfo']['discount'], 2)}}</td>
-</tr> --}}
 
 @endcomponent
 
