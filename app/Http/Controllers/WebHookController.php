@@ -35,17 +35,17 @@ class WebHookController extends Controller
             'email' => 'joerocknpc@gmail.com',
             'name' => 'noreply',
             'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-            // 'transaction' => $transaction
+            'transaction' => $transaction
           ];
           $this->sendmail($pacakage);
           
         } else if($payload['data']['status'] == 'pending'){
-          // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อใหม่','มีรายการสั่งซื้อใหม่','admin');
+          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
           $pacakage = [
             'email' => 'joerocknpc@gmail.com',
             'name' => 'noreply',
             'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-            // 'transaction' => $transaction
+            'transaction' => $transaction
           ];
           $this->sendmail($pacakage);
         }      
