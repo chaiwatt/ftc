@@ -17,10 +17,10 @@
 สถานะ: {{$package['sourceinfo']['status']}}<br>
 
 @component('mail::table')
-| รายการ       | จำนวน         | ราคา  |
+{{-- | รายการ       | จำนวน         | ราคา  |
 | ------------- |:-------------:| --------:|
 | คอร์สเรียนออนไซต์ Full-Stack developper     | {{$package['sourceinfo']['participant']}}      | {{$package['sourceinfo']['amount']}}     |
-| โดเมน (ฟรี)    | 1 | 0      |
+| โดเมน (ฟรี)    | 1 | 0      | --}}
 {{-- | โดเมน (ฟรี)    | 1 | 0      | --}}
 
 <table>
@@ -33,14 +33,35 @@
     </thead>
     <tbody>
         <tr>
-            <td>คอร์สเรียนออนไซต์ Full-Stack developper</td>
-            <td>{{$package['sourceinfo']['participant']}}</td>
-            <td>{{$package['sourceinfo']['amount']}}</td>
+            <td style="width:500px">คอร์สเรียนออนไซต์ Full-Stack developper</td>
+            <td style="width:200px">{{$package['sourceinfo']['participant']}}</td>
+            <td style="width:200px">{{number_format($package['sourceinfo']['amount'], 2)}}</td>
         </tr>
         <tr>
-            <td>โดเมน (ฟรี)</td>
-            <td>1</td>
-            <td>0</td>
+            <td style="width:500px">โดเมน (ฟรี)</td>
+            <td style="width:200px">1</td>
+            <td style="width:200px">0.00</td>
+        </tr>
+        <tr>
+            <td style="width:500px"></td>
+            <td style="width:200px"></td>
+            <td style="width:200px"></td>
+        </tr>
+        <tr>
+            <td style="width:500px;text-align:right;padding-right:30px" colspan="2">รวม</td>
+            <td style="width:200px">{{number_format(($package['sourceinfo']['amount']-$package['sourceinfo']['discount'])*0.93, 2)}}</td>
+        </tr>
+        <tr>
+            <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ภาษี 7%</td>
+            <td style="width:200px">{{number_format(($package['sourceinfo']['amount']-$package['sourceinfo']['discount'])*0.07, 2)}}</td>
+        </tr>
+        <tr>
+            <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ส่วนลด</td>
+            <td style="width:200px">{{number_format($package['sourceinfo']['discount'], 2)}}</td>
+        </tr>
+        <tr>
+            <td style="width:500px;text-align:right;padding-right:30px" colspan="2"><b>รวมทั้งสิ้น</b></td>
+            <td style="width:200px">{{number_format($package['sourceinfo']['amount']-$package['sourceinfo']['discount'], 2)}}</td>
         </tr>
     </tbody>
 </table>
@@ -48,19 +69,19 @@
 {{-- 
 <tr>
     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">รวม</td>
-    <td style="width:200px">{{number_format(($mailData['amount']-$mailData['discount'])*0.93, 2)}}</td>
+    <td style="width:200px">{{number_format(($package['sourceinfo']['amount']-$package['sourceinfo']['discount'])*0.93, 2)}}</td>
 </tr>
 <tr>
     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ภาษี 7%</td>
-    <td style="width:200px">{{number_format(($mailData['amount']-$mailData['discount'])*0.07, 2)}}</td>
+    <td style="width:200px">{{number_format(($package['sourceinfo']['amount']-$package['sourceinfo']['discount'])*0.07, 2)}}</td>
 </tr>
 <tr>
     <td style="width:500px;text-align:right;padding-right:30px" colspan="2">ส่วนลด</td>
-    <td style="width:200px">{{number_format($mailData['discount'], 2)}}</td>
+    <td style="width:200px">{{number_format($package['sourceinfo']['discount'], 2)}}</td>
 </tr>
 <tr>
     <td style="width:500px;text-align:right;padding-right:30px" colspan="2"><b>รวมทั้งสิ้น</b></td>
-    <td style="width:200px">{{number_format($mailData['amount']-$mailData['discount'], 2)}}</td>
+    <td style="width:200px">{{number_format($package['sourceinfo']['amount']-$package['sourceinfo']['discount'], 2)}}</td>
 </tr> --}}
 
 @endcomponent
