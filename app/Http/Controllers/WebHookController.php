@@ -31,21 +31,41 @@ class WebHookController extends Controller
           //   EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           // }
 
+          $sourceinfo = [
+            'name' => $transaction->name, 
+            'lastname' => $transaction->lastname,
+            'phone' => $transaction->phone,
+            'email' => $transaction->email,
+            'address' => $transaction->address,
+            'amount' => $transaction->amount,
+            'participant' => $transaction->participant
+          ];
+
           $pacakage = [
             'email' => 'joerocknpc@gmail.com',
             'name' => 'noreply',
             'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-            'transaction' => $transaction
+            'transaction' => $sourceinfo
           ];
           $this->sendmail($pacakage);
           
         } else if($payload['data']['status'] == 'pending'){
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
+          $sourceinfo = [
+              'name' => $transaction->name, 
+              'lastname' => $transaction->lastname,
+              'phone' => $transaction->phone,
+              'email' => $transaction->email,
+              'address' => $transaction->address,
+              'amount' => $transaction->amount,
+              'participant' => $transaction->participant,
+              'status' => $transaction->status
+          ];
           $pacakage = [
             'email' => 'joerocknpc@gmail.com',
             'name' => 'noreply',
             'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-            'transaction' => $transaction
+            'sourceinfo' => $sourceinfo
           ];
           $this->sendmail($pacakage);
         }      

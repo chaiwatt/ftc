@@ -1,7 +1,13 @@
 
 @component('mail::message')
-#Introduction
+
 {{$package['title']}}
+
+@if ($package['sourceinfo']['status'] == 'pending')
+        'pending'
+    @elseif($package['sourceinfo']['status'] == 'successful')
+        'paid'
+@endif
 
 The body of your message.
 @component('mail::table')
