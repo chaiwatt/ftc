@@ -1,6 +1,7 @@
 
 @component('mail::message')
 #Introduction
+{{$package['transaction']->name}}
 
 The body of your message.
 @component('mail::table')
