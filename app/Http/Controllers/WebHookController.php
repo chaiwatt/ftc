@@ -41,15 +41,15 @@ class WebHookController extends Controller
             'status' => $transaction->status
         ];
 
-        // if($payload['data']['status'] == 'successful'){
+        if($payload['data']['status'] == 'successful'){
               $pacakage_success = [
                 'email' => 'fahsaitharnchanok@gmail.com',
                 'name' => 'noreply',
                 'title' => 'คำสั่งซื้อสำเร็จ',
-                'transaction' => $sourceinfo
+                'sourceinfo' => $sourceinfo
               ];
               $this->sendmail($pacakage_success);
-          // }
+          }
             
         } else if($payload['data']['status'] == 'pending'){
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
