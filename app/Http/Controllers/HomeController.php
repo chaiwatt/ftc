@@ -16,21 +16,6 @@ class HomeController extends Controller
 
     public function index()
     {
-
-        // $pacakage = [
-        //     'email' => 'joerocknpc@gmail.com',
-        //     'name' => 'chaiwat'
-        // ];
-
-        // // Notification::route('mail', [
-        // //     'joerocknpc@gmail.com' => 'chaiwat',
-        // // ])->notify(new OrderPlacedNotification($post));
-
-        // // dd('done');
-
-        // $this->sendmail($pacakage);
-        // dd('ok');
-
         $promocode = PromoCode::whereDate('startdate', '<=', Carbon::today())
                     ->whereDate('enddate', '>=', Carbon::now())
                     ->where('status',1)
@@ -50,9 +35,4 @@ class HomeController extends Controller
         EmailBox::send('src_test_5u3w92i17a39jgotxal','chrg_test_5u3w92joxuhs7x1lsrd','ทำคำสั่งซื้อสำเร็จ','คำสั่งซื้อ ','admin');
     }
 
-    public function sendmail($pacakage){
-        Notification::route('mail', [
-          $pacakage['email'] => $pacakage['name'],
-      ])->notify(new OrderPlacedNotification($pacakage));
-    }
 }
