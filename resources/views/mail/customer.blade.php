@@ -93,3 +93,9 @@
 ขอขอบพระคุณ,<br>
 Full-Stack Training Class
 @endcomponent
+
+@slot('footer')
+    @component('mail::footer')
+        © {{ date('Y') }} Full-Stack Training Class. All rights reserved.
+    @endcomponent
+@endslot
