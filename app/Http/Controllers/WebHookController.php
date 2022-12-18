@@ -8,6 +8,8 @@ use App\Helper\EmailBox;
 use App\Helper\LineNotify;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\OrderPlacedNotification;
 
 class WebHookController extends Controller
 {
@@ -24,18 +26,28 @@ class WebHookController extends Controller
             'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
           ]);
 
-          EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'โปรดตรวจสอบทำคำสั่งซื้อ','โปรดตรวจสอบทำคำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
+          // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'โปรดตรวจสอบทำคำสั่งซื้อ','โปรดตรวจสอบทำคำสั่งซื้อ ' . trim($payload['data']['status']),'admin');
+          // if($payload['data']['status'] == 'successful'){
+          //   EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
+          // }
 
-          if($payload['data']['status'] == 'successful'){
-            EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
-          }
-
-          // $this->sendNotify('ทำคำสั่งซื้อสำเร็จ');
+          // $pacakage = [
+          //   'email' => 'joerocknpc@gmail.com',
+          //   'name' => 'noreply',
+          //   'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+          //   'transaction' => $transaction
+          // ];
+          // $this->sendmail($pacakage);
           
         } else if($payload['data']['status'] == 'pending'){
-          EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อใหม่','มีรายการสั่งซื้อใหม่','admin');
-          // $this->sendNotify('มีรายการสั่งซื้อ');
+          // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อใหม่','มีรายการสั่งซื้อใหม่','admin');
         }      
+    }
+
+    public function sendmail($pacakage){
+        Notification::route('mail', [
+          $pacakage['email'] => $pacakage['name'],
+      ])->notify(new OrderPlacedNotification($pacakage));
     }
 
     public function sendNotify($message){

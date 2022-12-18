@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 @section('content')
 <section class="section-image section-full-width light section-bottom-layer-2 align-center section-ovarlay-image bannerTitle" style="background-image:url({{asset('assets/images/bg.svg')}})">
-    <div class="container smoothScroll">
+    <div class="container    ">
         <hr class="space-lg in-visible-sm" />
         
         <h1 data-anima="fade-in" data-time="1000">
@@ -458,23 +458,23 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
-                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required value="">
+                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required value="ชัยวัฒน์">
                         </div>
                         <div class="col-lg-6">
                             <p>นามสกุล</p>
-                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" required value="">
+                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" required value="ทวีจันทร์">
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="" >
+                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="joerocknpc@gmail.com" >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>
-                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required value="">
+                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required value="0882514215">
                         </div>
                         <div class="col-lg-12">
                             <p>ที่อยู่</p>
-                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่"></textarea>
+                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่">105 หมู่8</textarea>
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนผู้เข้าเรียน</p>
