@@ -87,11 +87,11 @@ class WebHookController extends Controller
     }
 
     public function sendmail($pacakage){
-      //   Notification::route('mail', [
-      //     $pacakage['email'] => $pacakage['name'],
-      // ])->notify(new OrderPlacedNotification($pacakage));
+        Notification::route('mail', [
+          $pacakage['email'] => $pacakage['name'],
+      ])->notify(new OrderPlacedNotification($pacakage));
 
-      Notification::send(User::first(), new OrderPlacedNotification($pacakage));
+      // Notification::send(User::first(), new OrderPlacedNotification($pacakage));
     }
 
     public function sendNotify($message){
