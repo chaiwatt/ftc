@@ -43,7 +43,7 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
     {
         return (new MailMessage)
                     ->subject('New order placed')
-                    ->line('Order placed ' . $this->package->transaction->amount)
+                    ->line('Order placed ')
                     // ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }

@@ -35,7 +35,7 @@ class WebHookController extends Controller
             'email' => 'joerocknpc@gmail.com',
             'name' => 'noreply',
             'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-            'transaction' => $transaction
+            // 'transaction' => $transaction
           ];
           $this->sendmail($pacakage);
           
