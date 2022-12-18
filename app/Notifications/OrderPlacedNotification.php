@@ -42,6 +42,7 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->from($this->package['email'], $this->package['name'])
                     ->subject($this->package['title'])
                     ->markdown("mail.customer", [
                         'package' => $this->package,
