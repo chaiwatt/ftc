@@ -41,6 +41,13 @@ class WebHookController extends Controller
           
         } else if($payload['data']['status'] == 'pending'){
           // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อใหม่','มีรายการสั่งซื้อใหม่','admin');
+          $pacakage = [
+            'email' => 'joerocknpc@gmail.com',
+            'name' => 'noreply',
+            'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+            // 'transaction' => $transaction
+          ];
+          $this->sendmail($pacakage);
         }      
     }
 
