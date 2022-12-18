@@ -4,9 +4,9 @@
 
 
 @if ($package['sourceinfo']['status'] == 'pending')
-        {{$package['title']}}
+        <b>{{$package['title']}}</b>
     @elseif($package['sourceinfo']['status'] == 'successful')
-        <strong>รายละเอียดการสั่งซื้อ</strong><br>
+        <b>รายละเอียดการสั่งซื้อ</b><br>
 @endif
 
 ลูกค้า: คุณ{{$package['sourceinfo']['name']}} {{$package['sourceinfo']['lastname']}}<br>
@@ -14,12 +14,11 @@
 ที่อยู่: {{$package['sourceinfo']['address']}}<br>
 อีเมล: {{$package['sourceinfo']['email']}}<br>
 โทรศัพท์: {{$package['sourceinfo']['phone']}}<br>
-{{-- สถานะ: {{$package['sourceinfo']['status']}}<br> --}}
 
 @if ($package['sourceinfo']['status'] == 'pending')
-<div style="font-size: 18px;font-weight:600;color:#FB7B09">สถานะ: {{$package['sourceinfo']['status']}} </div><br>
+    <span style="font-size: 18px;font-weight:600;color:#FB7B09">สถานะ: {{$package['sourceinfo']['status']}} </span><br>
 @elseif($package['sourceinfo']['status'] == 'successful')
-<div style="font-size: 18px;font-weight:600;color:#08D11D">สถานะ: {{$package['sourceinfo']['status']}} </div><br>
+    <span style="font-size: 18px;font-weight:600;color:#08D11D">สถานะ: {{$package['sourceinfo']['status']}} </span><br>
 @endif
 
 @component('mail::table')
