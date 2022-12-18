@@ -25,7 +25,7 @@ return new class extends Migration
             // $table->unsignedBigInteger('user_id')->comment('ID ผู้เชี่ยวชาญ');
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('company')->nullable();
-            $table->unsignedBigInteger('vatnumber')->nullable();
+            $table->char('vatnumber',13)->nullable();
             $table->string('promocode')->nullable();
             $table->string('source_id')->nullable();
             $table->string('charge_id')->nullable();
