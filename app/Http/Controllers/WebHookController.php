@@ -45,7 +45,7 @@ class WebHookController extends Controller
             'status' => $transaction->status
         ];
 
-          if (trim($payload['data']['status']) == 'successful'){
+        if($payload['data']['status'] == 'successful'){
               $pacakage_success = [
                 'email' => $transaction->email,
                 'name' => 'noreply',
