@@ -458,23 +458,23 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
-                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required value="ชัยวัฒน์">
+                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required value="">
                         </div>
                         <div class="col-lg-6">
                             <p>นามสกุล</p>
-                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" required value="ทวีจันทร์">
+                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" required value="">
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="fahsaitharnchanok@gmail.com" >
+                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="" >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>
-                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required value="0882514214">
+                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required value="">
                         </div>
                         <div class="col-lg-12">
                             <p>ที่อยู่</p>
-                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่">105 หมู่ 8 ตำบลเหมืองง่า อำเภอเมือง จังหวัดลำพูน 51000</textarea>
+                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่"></textarea>
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนผู้เข้าเรียน</p>
@@ -507,7 +507,7 @@
                         </div>
                         <div class="col-lg-6">
                             <p>บริษัท (ถ้ามี)</p>
-                            <input id="company" name="company" placeholder="บริษัท" type="text" class="input-text" value="บริษัท เอ็นพีซี โซลูชั่น แอนด์ เซอร์วิส จำกัด" >
+                            <input id="company" name="company" placeholder="บริษัท" type="text" class="input-text" value="" >
                         </div>
                         <div class="col-lg-6">
                             <p >เลขประจำตัวผู้เสียภาษี (ถ้ามี)</p>
