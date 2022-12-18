@@ -21,7 +21,7 @@ class WebHookController extends Controller
         $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
         if (trim($payload['data']['status']) != 'pending'){
           $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
-          Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
+          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
             'status' => trim($payload['data']['status']),
             'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
           ]);
@@ -31,13 +31,13 @@ class WebHookController extends Controller
           //   EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'คำสั่งซื้อสำเร็จ','คำสั่งซื้อ ' . trim($payload['data']['status']),'customer');
           // }
 
-          // $pacakage = [
-          //   'email' => 'joerocknpc@gmail.com',
-          //   'name' => 'noreply',
-          //   'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-          //   'transaction' => $transaction
-          // ];
-          // $this->sendmail($pacakage);
+          $pacakage = [
+            'email' => 'joerocknpc@gmail.com',
+            'name' => 'noreply',
+            'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+            'transaction' => $transaction
+          ];
+          $this->sendmail($pacakage);
           
         } else if($payload['data']['status'] == 'pending'){
           // EmailBox::send($payload['data']['source']['id'],$payload['data']['id'],'มีรายการสั่งซื้อใหม่','มีรายการสั่งซื้อใหม่','admin');
