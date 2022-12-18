@@ -23,7 +23,27 @@
 | โดเมน (ฟรี)    | 1 | 0      |
 {{-- | โดเมน (ฟรี)    | 1 | 0      | --}}
 
-
+<table>
+    <thead>
+        <tr>
+            <th>รายการ</th>
+            <th>จำนวน</th>
+            <th>ราคา</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>คอร์สเรียนออนไซต์ Full-Stack developper</td>
+            <td>{{$package['sourceinfo']['participant']}}</td>
+            <td>{{$package['sourceinfo']['amount']}}</td>
+        </tr>
+        <tr>
+            <td>โดเมน (ฟรี)</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+</table>
 
 {{-- 
 <tr>
