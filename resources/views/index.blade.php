@@ -458,23 +458,23 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <p>ชื่อ</p>
-                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required value="">
+                            <input id="name" name="name" placeholder="ชื่อ" type="text" class="input-text" required value="โปรแกรม">
                         </div>
                         <div class="col-lg-6">
                             <p>นามสกุล</p>
-                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" required value="">
+                            <input id="lastname" name="lastname" placeholder="นามสกุล" type="text" class="input-text" required value="ทวีจันทร์">
                         </div>
                         <div class="col-lg-6">
                             <p>อีเมล</p>
-                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="" >
+                            <input id="email" name="email" placeholder="อีเมล" type="email" class="input-text" required value="fahsaitharnchanok@gmail.com" >
                         </div>
                         <div class="col-lg-6">
                             <p>โทรศัพท์</p>
-                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required value="">
+                            <input id="phone" name="phone" placeholder="โทรศัพท์" type="text" class="input-text" required value="0882541254">
                         </div>
                         <div class="col-lg-12">
                             <p>ที่อยู่</p>
-                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่"></textarea>
+                            <textarea id="address" name="address" class="input-textarea" placeholder="ที่อยู่">105 หมู่ที่ 8 ต.เหมืองง่า อ.เมือง จ.ลำพูน 51000</textarea>
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนผู้เข้าเรียน</p>
