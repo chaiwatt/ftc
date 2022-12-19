@@ -46,23 +46,24 @@ class PaymentController extends Controller
                 'return_uri' => URL::to('/redirect?source='.$source['id']),
             ]);
 
-            $customer = new Transaction();
-            $customer->name = $request->name;
-            $customer->lastname = $request->lastname;
-            $customer->amount = $request->amount;
-            $customer->discount = floatval($request->amount) * $discount;
-            $customer->address = $request->address;
+            $transaction = new Transaction();
+            $transaction->storename = $source['store_name'];
+            $transaction->name = $request->name;
+            $transaction->lastname = $request->lastname;
+            $transaction->amount = $request->amount;
+            $transaction->discount = floatval($request->amount) * $discount;
+            $transaction->address = $request->address;
             
-            $customer->email = $request->email;
-            $customer->phone = $request->phone;
-            $customer->participant = $request->participant;
-            $customer->schedule_id = $request->trainingdate;
-            $customer->company = $request->company;
-            $customer->vatnumber = $request->vatnumber;
-            $customer->promocode = $request->promocode;
-            $customer->source_id = $source['id'];
-            $customer->charge_id = $charge['id'];
-            $customer->save();
+            $transaction->email = $request->email;
+            $transaction->phone = $request->phone;
+            $transaction->participant = $request->participant;
+            $transaction->schedule_id = $request->trainingdate;
+            $transaction->company = $request->company;
+            $transaction->vatnumber = $request->vatnumber;
+            $transaction->promocode = $request->promocode;
+            $transaction->source_id = $source['id'];
+            $transaction->charge_id = $charge['id'];
+            $transaction->save();
         }
 
         // EmailBox::send('joerocknpc@gmail.com','มีรายการสั่งซื้อ','โปรดตรวจสอบรายการสั่งซื้อ');

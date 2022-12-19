@@ -24,7 +24,6 @@ class WebHookController extends Controller
           $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
             'status' => trim($payload['data']['status']),
-            'storename' => trim($payload['data']['source']['store_name']),
             'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
           ]);
 
