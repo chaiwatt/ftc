@@ -28,6 +28,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::post('getCharge', [PaymentController::class, 'getCharge'])->name('getCharge');
 Route::get('redirect', [PaymentController::class, 'redirect'])->name('redirect')->middleware('paidcheck');
 Route::post('webhook', [WebHookController::class, 'webhook'])->name('webhook');
+Route::post('webhook_demo', [WebHookController::class, 'webhook_demo'])->name('webhook_demo');
 
 Route::get('sendmail', [FTCMailController::class, 'sendmail'])->name('sendmail');
 

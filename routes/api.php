@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('webhook', [WebHookController::class, 'webhook'])->name('webhook');
+Route::post('webhook_demo', [WebHookController::class, 'webhook_demo'])->name('webhook_demo');
 Route::post('checkpromo', [ApiController::class, 'checkpromo'])->name('checkpromo');

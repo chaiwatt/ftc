@@ -49,6 +49,36 @@ class WebHookController extends Controller
       ])->notify(new OrderPlacedNotification($pacakage));
     }
 
+
+    public function webhook_demo(Request $request){ 
+      $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);    
+      if (trim($payload['data']['status']) == 'pending'){
+          $pacakage = [
+            'reciever_email' => 'joerocknpc@gmail.com',
+            'reciever_name' => 'Admin',
+            'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+            'payload' => $payload
+          ];
+          $this->sendmail($pacakage);
+      }
+        elseif(trim($payload['data']['status']) == 'successful'){
+          $pacakage = [
+            'reciever_email' => $payload['data']['source']['email'],
+            'reciever_name' => $payload['data']['source']['name'],
+            'title' => 'คำสั่งซื้อสำเร็จ',
+            'payload' => $payload
+          ];
+          $this->sendmail($pacakage);
+          $pacakage = [
+            'reciever_email' => 'joerocknpc@gmail.com',
+            'reciever_name' => 'Admin',
+            'title' => 'คำสั่งซื้อสำเร็จ',
+            'payload' => $payload
+          ];
+          $this->sendmail($pacakage);
+      } 
+  }
+
     public function sendNotify($message){
       $lineapi = 'NgUog6LoVij7JHkH4pJXhj2DPLhiE2hnGnJL5khDuhx';  // config('line.linetoken');
       $mms =  trim($message); // ข้อความที่ต้องการส่ง
