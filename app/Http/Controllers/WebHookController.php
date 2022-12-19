@@ -101,6 +101,13 @@ class WebHookController extends Controller
               'payload' => $payload
             ];
             $this->sendmail($pacakage);
+            $pacakage = [
+              'reciever_email' => 'joerocknpc@gmail.com',
+              'reciever_name' => 'Admin',
+              'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+              'payload' => $payload
+            ];
+            $this->sendmail($pacakage);
         } 
     }
     
