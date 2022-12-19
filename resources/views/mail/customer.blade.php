@@ -10,8 +10,7 @@
 บริษัท: {{$package['sourceinfo']['company']}}<br>
 ที่อยู่: {{$package['sourceinfo']['address']}}<br>
 อีเมล: {{$package['sourceinfo']['email']}}<br>
-โทรศัพท์: {{$package['sourceinfo']['phone']}}<br>
-สถานะ: {{$package['sourceinfo']['status']}}
+โทรศัพท์: {{$package['sourceinfo']['phone']}}
 
 @if ($package['sourceinfo']['status'] == 'pending')
 <div style="font-size: 18px;font-weight:600;color:#FB7B09">สถานะ: {{$package['sourceinfo']['status']}} </div>
