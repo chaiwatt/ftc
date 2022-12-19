@@ -24,12 +24,12 @@
         <tr>
             <th style="width: 60%">รายการ</th>
             <th style="width: 20%">จำนวน</th>
-            <th style="width: 20%">ราคา</th>
+            <th style="width: 20%">ราคา (บาท)</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>คอร์สเรียนออนไซต์ Full-Stack developper</td>
+            <td>คอร์สเรียนออนไซต์ Full-stack developper</td>
             <td style="text-align:center">{{$package['sourceinfo']['participant']}}</td>
             <td style="text-align:right">{{number_format($package['sourceinfo']['amount'], 2)}}</td>
         </tr>
