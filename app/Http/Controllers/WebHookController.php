@@ -44,16 +44,15 @@ class WebHookController extends Controller
 
         if($payload['data']['status'] == 'successful'){
               $pacakage_success = [
-                'email' => $transaction->email,
-                'name' => 'Admin',
+                'receiver_email' => $transaction->email,
+                'receiver_name' => $transaction->name,
                 'title' => 'คำสั่งซื้อสำเร็จ',
                 'sourceinfo' => $sourceinfo
               ];
               $this->sendmail($pacakage_success);
               $pacakage_success = [
-                'sender' => 'joerocknpc@gmail.com',
-                'email' => 'joerocknpc@gmail.com',
-                'name' => 'Admin',
+                'receiver_email' => 'joerocknpc@gmail.com',
+                'receiver_name' => 'Admin',
                 'title' => 'คำสั่งซื้อสำเร็จ',
                 'sourceinfo' => $sourceinfo
               ];
@@ -76,9 +75,8 @@ class WebHookController extends Controller
               'status' => $transaction->status
           ];
           $pacakage = [
-            'sender' => 'joerocknpc@gmail.com',
-            'email' => 'joerocknpc@gmail.com',
-            'name' => 'Admin',
+            'receiver_email' => 'joerocknpc@gmail.com',
+            'receiver_name' => 'Admin',
             'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
             'sourceinfo' => $sourceinfo
           ];
@@ -88,7 +86,7 @@ class WebHookController extends Controller
 
     public function sendmail($pacakage){
         Notification::route('mail', [
-          $pacakage['email'] => $pacakage['name'],
+          $pacakage['receiver_email'] => $pacakage['receiver_name'],
       ])->notify(new OrderPlacedNotification($pacakage));
 
       // Notification::send(User::first(), new OrderPlacedNotification($pacakage));
