@@ -31,6 +31,7 @@ class PaymentController extends Controller
         $charge = null;
         $source = OmiseSource::create([
             'amount' => floatval($request->amount) * (1-$discount) * 100,
+            'store_name' => 'ftc',
             // 'phone_number' => $request->phone,
             'currency' => 'THB',
             'type' => 'promptpay',
