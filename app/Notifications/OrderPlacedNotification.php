@@ -22,6 +22,13 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
     public function __construct($package)
     {
         $this->package = $package;
+
+        if ($this->package['payload']['data']['status'] == 'successful' && $this->package['reciever_name'] == 'Admin'){
+            Transaction::where('charge_id',trim($this->package['payload']['data']['id']))->where('source_id',trim($this->package['payload']['data']['source']['id']))->update([
+                'status' => trim($this->package['payload']['data']['status']),
+            ]);
+        }
+
         $this->delay(Carbon::now()->addSecond(10));
     }
 
@@ -48,29 +55,15 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
 
 
 
-        if ($this->package['payload']['data']['status'] == 'successful' && $this->package['reciever_name'] == 'Admin'){
-            Transaction::where('charge_id',trim($this->package['payload']['data']['id']))->where('source_id',trim($this->package['payload']['data']['source']['id']))->update([
-                'status' => trim($this->package['payload']['data']['status']),
-            ]);
-        }
+        // if ($this->package['payload']['data']['status'] == 'successful' && $this->package['reciever_name'] == 'Admin'){
+        //     Transaction::where('charge_id',trim($this->package['payload']['data']['id']))->where('source_id',trim($this->package['payload']['data']['source']['id']))->update([
+        //         'status' => trim($this->package['payload']['data']['status']),
+        //     ]);
+        // }
 
         $transaction = Transaction::where('charge_id',trim($this->package['payload']['data']['id']))
                     ->where('source_id',trim($this->package['payload']['data']['source']['id']))
                     ->first();
-        // $sourceinfo = [
-        //     'storename' => $transaction->storename,
-        //     'name' => $transaction->name, 
-        //     'lastname' => $transaction->lastname,
-        //     'phone' => $transaction->phone,
-        //     'email' => $transaction->email,
-        //     'company' => $transaction->company,
-        //     'address' => $transaction->address,
-        //     'amount' => $transaction->amount,
-        //     'participant' => $transaction->participant,
-        //     'trainingdate' => $transaction->trainingdate,
-        //     'discount' => $transaction->discount,
-        //     'status' => $transaction->status
-        // ];
 
         return (new MailMessage)
                     ->from(env('MAIL_FROM_ADDRESS'), 'Full-stack Training Class')
