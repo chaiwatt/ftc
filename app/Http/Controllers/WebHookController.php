@@ -24,12 +24,13 @@ class WebHookController extends Controller
           $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
             'status' => trim($payload['data']['status']),
+            'storename' => trim($payload['data']['source']['store_name']),
             'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
           ]);
 
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
           $sourceinfo = [
-            'storename' => $payload['data']['source']['store_name'],
+            'storename' => $transaction->storename,
             'name' => $transaction->name, 
             'lastname' => $transaction->lastname,
             'phone' => $transaction->phone,
@@ -63,6 +64,7 @@ class WebHookController extends Controller
         } else if($payload['data']['status'] == 'pending'){
           $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
           $sourceinfo = [
+              'storename' => $transaction->storename,
               'name' => $transaction->name, 
               'lastname' => $transaction->lastname,
               'phone' => $transaction->phone,
