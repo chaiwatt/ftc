@@ -5,7 +5,7 @@
     @elseif($package['sourceinfo']['status'] == 'successful')
         <b>รายละเอียดการสั่งซื้อ</b><br>
 @endif --}}
-
+{{$package['payload']['data']['store_name']}}
 {{$package['payload']['data']['status']}}
 
 ขอขอบพระคุณ,<br>
