@@ -8,7 +8,7 @@
             คุณกำลังมองหาคอร์ส Full-Stack ออนไซต์<br class="hidden-md" /> ที่เรียนแล้วสามารถ <span> รับงานได้จริง </span>  อยู่ใช่ไหม?.
         </h1>
         <p class="width-900" data-anima="fade-in" data-time="1000">
-            ที่นี่คุณจะได้เรียน Font-end และ Back-end (Laravel9), ติดตั้งเว็บเซิร์ฟเวอร์(CentOS8 &PHP8), Deploy แอพลิเคชั่นจากสู่คลาวด์, คอนฟิก SSL โดเมน และการติดตั้งเมลเซิร์ฟเวอร์(Postfix, Dovecot) เรียนจบพร้อมรับงานได้เลย ตั้งแต่หลักแสนถึงหลักล้าน
+            ที่นี่คุณจะได้เรียนรู้การเขียนโปรแกรม Front-end, Back-end (Laravel9) และทักษะ System admin ที่จำเป็น เช่น การติดตั้งเว็บเซิร์ฟเวอร์ (CentOS8 &PHP8.x), การ Deploy แอพลิเคชั่นจากคลาวด์, คอนฟิก SSL โดเมน และการติดตั้งเมลเซิร์ฟเวอร์ (Postfix, Dovecot), การทำ SMTP Relay จาก Email Service Provider เรียนจบพร้อมรับงานได้เลย ตั้งแต่หลักแสนถึงหลักล้าน
         </p>
 
         <a href="#purchase" class="btn btn-sm btn-circle shadow-1 full-width-sm btnBuycourse" data-anima="fade-in" data-time="1000" style="z-index: 1000">ซื้อคอร์สเรียน</a><span class="space hidden-sm"></span>
