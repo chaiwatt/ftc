@@ -6,6 +6,8 @@
         <b>รายละเอียดการสั่งซื้อ</b><br>
 @endif --}}
 
+{{$package['payload']['data']['status']}}
+
 ขอขอบพระคุณ,<br>
 Full-Stack Training Class
 
