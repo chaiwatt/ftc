@@ -2,10 +2,11 @@
 
 namespace App\Notifications;
 
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 
 class OrderPlacedNotification extends Notification implements ShouldQueue
 {
@@ -20,6 +21,7 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
     public function __construct($package)
     {
         $this->package = $package;
+        $this->delay(Carbon::now()->addSecond(10));
     }
 
     /**
