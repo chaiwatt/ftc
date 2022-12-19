@@ -20,71 +20,90 @@ class WebHookController extends Controller
     public function webhook(Request $request){
         
         $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);
-        if (trim($payload['data']['status']) != 'pending'){
-          $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
-          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
-            'status' => trim($payload['data']['status']),
-            'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
-          ]);
+        // if (trim($payload['data']['status']) != 'pending'){
+        //   $paymentdate = Carbon::parse($payload['created_at'])->tz('Asia/Bangkok');
+        //   $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->update([
+        //     'status' => trim($payload['data']['status']),
+        //     'paymentdate' => $paymentdate->format('d-m-Y') . ' ' . $paymentdate->format('H:i:s')
+        //   ]);
 
-          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          $sourceinfo = [
-            'storename' => $transaction->storename,
-            'name' => $transaction->name, 
-            'lastname' => $transaction->lastname,
-            'phone' => $transaction->phone,
-            'email' => $transaction->email,
-            'company' => $transaction->company,
-            'address' => $transaction->address,
-            'amount' => $transaction->amount,
-            'participant' => $transaction->participant,
-            'trainingdate' => $transaction->trainingdate,
-            'discount' => $transaction->discount,
-            'status' => $transaction->status
-        ];
+        //   $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
+        //   $sourceinfo = [
+        //     'storename' => $transaction->storename,
+        //     'name' => $transaction->name, 
+        //     'lastname' => $transaction->lastname,
+        //     'phone' => $transaction->phone,
+        //     'email' => $transaction->email,
+        //     'company' => $transaction->company,
+        //     'address' => $transaction->address,
+        //     'amount' => $transaction->amount,
+        //     'participant' => $transaction->participant,
+        //     'trainingdate' => $transaction->trainingdate,
+        //     'discount' => $transaction->discount,
+        //     'status' => $transaction->status
+        // ];
 
-        if($payload['data']['status'] == 'successful'){
-              $pacakage_success = [
-                'reciever_email' => $transaction->email,
-                'reciever_name' => $transaction->name,
-                'title' => 'คำสั่งซื้อสำเร็จ',
-                'sourceinfo' => $sourceinfo
-              ];
-              $this->sendmail($pacakage_success);
-              $pacakage_success = [
-                'reciever_email' => 'joerocknpc@gmail.com',
-                'reciever_name' => 'Admin',
-                'title' => 'คำสั่งซื้อสำเร็จ',
-                'sourceinfo' => $sourceinfo
-              ];
-              $this->sendmail($pacakage_success);
-          }
+        // if($payload['data']['status'] == 'successful'){
+        //       $pacakage_success = [
+        //         'reciever_email' => $transaction->email,
+        //         'reciever_name' => $transaction->name,
+        //         'title' => 'คำสั่งซื้อสำเร็จ',
+        //         'sourceinfo' => $sourceinfo
+        //       ];
+        //       $this->sendmail($pacakage_success);
+        //       $pacakage_success = [
+        //         'reciever_email' => 'joerocknpc@gmail.com',
+        //         'reciever_name' => 'Admin',
+        //         'title' => 'คำสั่งซื้อสำเร็จ',
+        //         'sourceinfo' => $sourceinfo
+        //       ];
+        //       $this->sendmail($pacakage_success);
+        //   }
             
-        } else if($payload['data']['status'] == 'pending'){
-          $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
-          $sourceinfo = [
-              'storename' => $transaction->storename,
-              'name' => $transaction->name, 
-              'lastname' => $transaction->lastname,
-              'phone' => $transaction->phone,
-              'email' => $transaction->email,
-              'company' => $transaction->company,
-              'address' => $transaction->address,
-              'amount' => $transaction->amount,
-              'participant' => $transaction->participant,
-              'trainingdate' => $transaction->trainingdate,
-              'discount' => $transaction->discount,
-              'status' => $transaction->status
-          ];
-          $pacakage = [
-            'reciever_email' => 'joerocknpc@gmail.com',
-            'reciever_name' => 'Admin',
-            'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-            'sourceinfo' => $sourceinfo
-          ];
-          $this->sendmail($pacakage);
-        }      
+        // } else if($payload['data']['status'] == 'pending'){
+        //   $transaction = Transaction::where('charge_id',trim($payload['data']['id']))->where('source_id',trim($payload['data']['source']['id']))->first();
+        //   $sourceinfo = [
+        //       'storename' => $transaction->storename,
+        //       'name' => $transaction->name, 
+        //       'lastname' => $transaction->lastname,
+        //       'phone' => $transaction->phone,
+        //       'email' => $transaction->email,
+        //       'company' => $transaction->company,
+        //       'address' => $transaction->address,
+        //       'amount' => $transaction->amount,
+        //       'participant' => $transaction->participant,
+        //       'trainingdate' => $transaction->trainingdate,
+        //       'discount' => $transaction->discount,
+        //       'status' => $transaction->status
+        //   ];
+        //   $pacakage = [
+        //     'reciever_email' => 'joerocknpc@gmail.com',
+        //     'reciever_name' => 'Admin',
+        //     'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+        //     'sourceinfo' => $sourceinfo
+        //   ];
+        //   $this->sendmail($pacakage);
+        // }      
+        if (trim($payload['data']['status']) == 'pending'){
+            $pacakage = [
+              'reciever_email' => 'joerocknpc@gmail.com',
+              'reciever_name' => 'Admin',
+              'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
+              'payload' => $payload
+            ];
+            $this->sendmail($pacakage);
+        }
+          elseif(trim($payload['data']['status']) == 'successful'){
+            $pacakage = [
+              'reciever_email' => $payload['data']['source']['email'],
+              'reciever_name' => $payload['data']['source']['name'],
+              'title' => 'คำสั่งซื้อสำเร็จ',
+              'payload' => $payload
+            ];
+            $this->sendmail($pacakage);
+        } 
     }
+    
 
     public function sendmail($pacakage){
         Notification::route('mail', [

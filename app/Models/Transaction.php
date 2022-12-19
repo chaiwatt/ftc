@@ -12,27 +12,16 @@ class Transaction extends Model
     use HasFactory;
 
     protected $fillable =[
-        'name',
-        'lastname',
+        'storename',
         'amount',
-        'phone',
-        'email',
-        'address',
-        'participant',
-        'schedule_id',
-        'company',
-        'vatnumber',
-        'promocode',
         'source_id',
         'charge_id',
-        'status',
-        'discount'
+        'status'
     ];
 
-    public function getTrainingDateAttribute()
-    {
-        $schedule = Schedule::find($this->schedule_id);
-        // dd($schedule);
-        return $schedule->day1 . ' -'.  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
-    }
+    // public function getTrainingDateAttribute()
+    // {
+    //     $schedule = Schedule::find($this->schedule_id);
+    //     return $schedule->day1 . ' -'.  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
+    // }
 }

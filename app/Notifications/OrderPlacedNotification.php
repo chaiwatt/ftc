@@ -3,6 +3,7 @@
 namespace App\Notifications;
 
 use Carbon\Carbon;
+use App\Models\Transaction;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -43,6 +44,12 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
+        if ($this->package['payload']['data']['status'] == 'successful' && $this->package['reciever_name'] == 'Admin'){
+            Transaction::where('charge_id',trim($this->package['payload']['data']['id']))->where('source_id',trim($this->package['payload']['data']['source']['id']))->update([
+                'status' => trim($this->package['payload']['data']['status']),
+            ]);
+        }
+
         return (new MailMessage)
                     ->from(env('MAIL_FROM_ADDRESS'), 'Full-stack Training Class')
                     ->subject($this->package['title'])
