@@ -45,17 +45,38 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         // dd($this->package['payload']);
+
+
+
         if ($this->package['payload']['data']['status'] == 'successful' && $this->package['reciever_name'] == 'Admin'){
             Transaction::where('charge_id',trim($this->package['payload']['data']['id']))->where('source_id',trim($this->package['payload']['data']['source']['id']))->update([
                 'status' => trim($this->package['payload']['data']['status']),
             ]);
         }
 
+        $transaction = Transaction::where('charge_id',trim($this->package['payload']['data']['id']))
+                    ->where('source_id',trim($this->package['payload']['data']['source']['id']))
+                    ->first();
+        // $sourceinfo = [
+        //     'storename' => $transaction->storename,
+        //     'name' => $transaction->name, 
+        //     'lastname' => $transaction->lastname,
+        //     'phone' => $transaction->phone,
+        //     'email' => $transaction->email,
+        //     'company' => $transaction->company,
+        //     'address' => $transaction->address,
+        //     'amount' => $transaction->amount,
+        //     'participant' => $transaction->participant,
+        //     'trainingdate' => $transaction->trainingdate,
+        //     'discount' => $transaction->discount,
+        //     'status' => $transaction->status
+        // ];
+
         return (new MailMessage)
                     ->from(env('MAIL_FROM_ADDRESS'), 'Full-stack Training Class')
                     ->subject($this->package['title'])
                     ->markdown("mail.customer", [
-                        'package' => $this->package,
+                        'transaction' => $transaction,
                       ]);
                     // ->subject('New order placed')
                     // ->line('Order placed ')

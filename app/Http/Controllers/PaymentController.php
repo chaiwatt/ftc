@@ -32,7 +32,7 @@ class PaymentController extends Controller
         $source = OmiseSource::create([
             'amount' => floatval($request->amount) * (1-$discount) * 100,
             'store_name' => 'ftc',
-            'name' => $request->name,
+            'name' => 'ftc',
             'email' => $request->email,
             // 'phone_number' => $request->phone,
             'currency' => 'THB',
@@ -50,19 +50,19 @@ class PaymentController extends Controller
 
             $transaction = new Transaction();
             $transaction->storename = $source['store_name'];
-            // $transaction->name = $request->name;
-            // $transaction->lastname = $request->lastname;
+            $transaction->name = $request->name;
+            $transaction->lastname = $request->lastname;
             $transaction->amount = $request->amount;
-            // $transaction->discount = floatval($request->amount) * $discount;
-            // $transaction->address = $request->address;
+            $transaction->discount = floatval($request->amount) * $discount;
+            $transaction->address = $request->address;
             
-            // $transaction->email = $request->email;
-            // $transaction->phone = $request->phone;
-            // $transaction->participant = $request->participant;
-            // $transaction->schedule_id = $request->trainingdate;
-            // $transaction->company = $request->company;
-            // $transaction->vatnumber = $request->vatnumber;
-            // $transaction->promocode = $request->promocode;
+            $transaction->email = $request->email;
+            $transaction->phone = $request->phone;
+            $transaction->participant = $request->participant;
+            $transaction->schedule_id = $request->trainingdate;
+            $transaction->company = $request->company;
+            $transaction->vatnumber = $request->vatnumber;
+            $transaction->promocode = $request->promocode;
             $transaction->source_id = $source['id'];
             $transaction->charge_id = $charge['id'];
             $transaction->save();

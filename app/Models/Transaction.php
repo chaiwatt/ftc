@@ -13,15 +13,26 @@ class Transaction extends Model
 
     protected $fillable =[
         'storename',
+        'name',
+        'lastname',
         'amount',
+        'phone',
+        'email',
+        'address',
+        'participant',
+        'schedule_id',
+        'company',
+        'vatnumber',
+        'promocode',
         'source_id',
         'charge_id',
-        'status'
+        'status',
+        'discount'
     ];
 
-    // public function getTrainingDateAttribute()
-    // {
-    //     $schedule = Schedule::find($this->schedule_id);
-    //     return $schedule->day1 . ' -'.  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
-    // }
+    public function getTrainingDateAttribute()
+    {
+        $schedule = Schedule::find($this->schedule_id);
+        return $schedule->day1 . ' -'.  $schedule->day1 . ' ' . DateConversion::thaiMonthLong($schedule->month) . ' ' . $schedule->year;
+    }
 }
