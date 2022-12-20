@@ -15,17 +15,8 @@ use App\Notifications\OrderPlacedNotification;
 class WebHookController extends Controller
 {
     public function webhook(Request $request){ 
-        $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);    
-        if (trim($payload['data']['status']) == 'pending'){
-            $pacakage = [
-              'reciever_email' => 'joerocknpc@gmail.com',
-              'reciever_name' => 'Admin',
-              'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-              'payload' => $payload
-            ];
-            $this->sendmail($pacakage);
-        }
-          elseif(trim($payload['data']['status']) == 'successful'){
+        $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT); 
+        if(trim($payload['data']['status']) == 'successful'){
             $pacakage = [
               'reciever_email' => $payload['data']['source']['email'],
               'reciever_name' => $payload['data']['source']['name'],
@@ -52,16 +43,7 @@ class WebHookController extends Controller
 
     public function webhook_demo(Request $request){ 
       $payload = json_decode($request->getContent(),JSON_PRETTY_PRINT);    
-      if (trim($payload['data']['status']) == 'pending'){
-          $pacakage = [
-            'reciever_email' => 'joerocknpc@gmail.com',
-            'reciever_name' => 'Admin',
-            'title' => 'โปรดตรวจสอบทำคำสั่งซื้อ',
-            'payload' => $payload
-          ];
-          $this->sendmail($pacakage);
-      }
-        elseif(trim($payload['data']['status']) == 'successful'){
+      if(trim($payload['data']['status']) == 'successful'){
           $pacakage = [
             'reciever_email' => $payload['data']['source']['email'],
             'reciever_name' => $payload['data']['source']['name'],
