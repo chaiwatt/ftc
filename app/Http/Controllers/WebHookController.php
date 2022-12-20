@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Helper\EmailBox;
 use App\Helper\LineNotify;
+use App\Models\MediaTransaction;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -31,6 +32,12 @@ class WebHookController extends Controller
               'payload' => $payload
             ];
             $this->sendmail($pacakage);
+            $mediatransaction = new MediaTransaction();
+            $mediatransaction->source_id = $payload['data']['source']['id'];
+            $mediatransaction->charge_id = $payload['data']['id'];
+            $mediatransaction->status = $payload['data']['status'];
+            $mediatransaction->paid_at = $payload['data']['paid_at'];
+            $mediatransaction->save();
         } 
     }
     

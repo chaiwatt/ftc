@@ -561,31 +561,6 @@
                 mainClass: 'my-mfp-zoom-in'
             });
 
-            // $('#promocode').on("paste",function(e) {
-            //     // e.preventDefault();
-            //     console.log('paste')
-            // });
-
-            // $(document).on('paste', '#promocode', function(e) {
-            // $("#promocode").bind("paste", function(e){    
-            //     checkPromo($(this).val()).then(data => {
-            //         if(data == '0'){
-            //             $(this).val('');
-            //             Swal.fire(
-            //             {
-            //                 title: 'ผิดพลาด',
-            //                 text: "ไม่พบโค้ดส่วนลด! ",
-            //                 icon: 'error',
-            //                 confirmButtonText: 'ตกลง',
-            //                 confirmButtonColor: '#47b2e4',
-            //             }
-                        
-            //         )
-            //         return;
-            //         }
-            //     }).catch(error => {}) ;
-            // } );
-
             $(document).on('change', '#promocode', function(e) {
                 checkPromo($(this).val()).then(data => {
                     console.log(data)
