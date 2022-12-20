@@ -677,7 +677,7 @@
                                         $("#spinner").hide();
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
-                                        const checkPayment = setInterval(checkCharge, 1000);
+                                        checkPayment = setInterval(checkCharge, 1000);
                                     },
                                     close: function testt(){
                                         console.log('closed')
