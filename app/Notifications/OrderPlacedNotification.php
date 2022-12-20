@@ -5,6 +5,7 @@ namespace App\Notifications;
 use Carbon\Carbon;
 use App\Models\Transaction;
 use Illuminate\Bus\Queueable;
+use App\Models\MediaTransaction;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -24,6 +25,13 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
         $this->package = $package;
 
         if ($this->package['payload']['data']['status'] == 'successful' && $this->package['reciever_name'] == 'Admin'){
+            $mediatransaction = new MediaTransaction();
+            $mediatransaction->source_id = $this->package['payload']['data']['source']['id'];
+            $mediatransaction->charge_id = $this->package['payload']['data']['id'];
+            $mediatransaction->status = $this->package['payload']['data']['status'];
+            $mediatransaction->paid_at = $this->package['payload']['data']['paid_at'];
+            $mediatransaction->save();
+            
             Transaction::where('charge_id',trim($this->package['payload']['data']['id']))->where('source_id',trim($this->package['payload']['data']['source']['id']))->update([
                 'status' => trim($this->package['payload']['data']['status']),
                 'paid_at' => trim($this->package['payload']['data']['paid_at']),
