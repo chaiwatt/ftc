@@ -26,6 +26,7 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
         if ($this->package['payload']['data']['status'] == 'successful' && $this->package['reciever_name'] == 'Admin'){
             Transaction::where('charge_id',trim($this->package['payload']['data']['id']))->where('source_id',trim($this->package['payload']['data']['source']['id']))->update([
                 'status' => trim($this->package['payload']['data']['status']),
+                'paid_at' => trim($this->package['payload']['data']['paid_at']),
             ]);
         }
 

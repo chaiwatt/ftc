@@ -35,6 +35,8 @@ Route::get('sendmail', [FTCMailController::class, 'sendmail'])->name('sendmail')
 
 // Route::get('testsendmail', [HomeController::class, 'testsendmail'])->name('testsendmail');
 
+// Route::get('/test', [HomeController::class, 'test'])->name('test');
+
 Route::get('/policy', function () {
     return view('policy');
 });

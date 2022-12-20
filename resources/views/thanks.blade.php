@@ -57,7 +57,7 @@
             <li>
                 <h3>วันที่ชำระ</h3>
                 <p style="font-weight: 300">
-                    {{$transaction->paymentdate}} น.
+                    {{$transaction->paidtime}} น.
                 </p>
             </li>
         </ul>
