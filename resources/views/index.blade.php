@@ -675,7 +675,7 @@
                                         $("#spinner").hide();
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
-                                        // const myInterval = setInterval(myTimer, 1000);
+                                        const myInterval = setInterval(myTimer, 1000);
                                     }
                                 }
                             });
