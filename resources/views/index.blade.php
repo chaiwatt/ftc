@@ -677,6 +677,9 @@
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
                                         const checkPayment = setInterval(myTimer, 1000);
+                                    },
+                                    close: function testt(){
+                                        console.log('closed')
                                     }
                                 }
                             });
