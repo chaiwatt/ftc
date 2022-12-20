@@ -677,10 +677,11 @@
                                         $("#spinner").hide();
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
-                                        checkPayment = setInterval(checkCharge, 1000);
+                                        checkPayment = setInterval(checkCharge, 5000);
                                     },
                                     close: function testt(){
                                         console.log('closed')
+                                        clearInterval(checkPayment)
                                     }
                                 }
                             });
@@ -691,7 +692,7 @@
             function checkCharge() {
                count ++
                console.log(count);
-               if (count >= 10){
+               if (count >= 20){
                 clearInterval(checkPayment)
                }
             }
