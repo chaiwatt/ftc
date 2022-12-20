@@ -65,6 +65,12 @@ class WebHookController extends Controller
             'payload' => $payload
           ];
           $this->sendmail($pacakage);
+          $mediatransaction = new MediaTransaction();
+          $mediatransaction->source_id = $payload['data']['source']['id'];
+          $mediatransaction->charge_id = $payload['data']['id'];
+          $mediatransaction->status = $payload['data']['status'];
+          $mediatransaction->paid_at = $payload['data']['paid_at'];
+          $mediatransaction->save();
       } 
   }
 
