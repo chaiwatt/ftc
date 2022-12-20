@@ -542,6 +542,7 @@
         
         <script type="text/javascript">
         var count = 0;
+        const checkPayment;
             // const Swal = require('sweetalert2')
             $("#spinner").hide();
             $('.popup-with-zoom-anim').magnificPopup({
