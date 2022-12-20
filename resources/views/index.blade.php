@@ -675,12 +675,17 @@
                                         $("#spinner").hide();
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
+                                        // const myInterval = setInterval(myTimer, 1000);
                                     }
                                 }
                             });
                         })
                     })   
             });
+
+            function myTimer() {
+               console.log( date.toLocaleTimeString());
+            }
 
             function makeCharge(name,lastname,email,phone,address,participant,amount,trainingdate,company,vatnumber,promocode){
                 return new Promise((resolve, reject) => {
