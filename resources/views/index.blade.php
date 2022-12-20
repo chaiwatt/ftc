@@ -654,7 +654,8 @@
                         $('#vatnumber').val(),
                         $('#promocode').val(),
                     ).then(data => {
-                        $('#qrcode').attr("src", data);
+
+                        $('#qrcode').attr("src", data['image']);
                             $("#qrcode").on("load", function() {
                                 $.magnificPopup.open({
                                 items: {
@@ -677,7 +678,7 @@
                                         $("#spinner").hide();
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
-                                        checkPayment = setInterval(checkCharge, 5000);
+                                        checkPayment = setInterval(checkPrompayPaymentStatus, 3000,data['source_id'],data['charge_id']);
                                     },
                                     close: function testt(){
                                         console.log('closed')
@@ -689,12 +690,25 @@
                     })   
             });
 
-            function checkCharge() {
-               count ++
-               console.log(count);
-               if (count >= 20){
-                clearInterval(checkPayment)
-               }
+            function checkPrompayPaymentStatus(source,charge) {
+                var formData = new FormData();
+                formData.append('source',source);
+                formData.append('charge',charge);
+                    $.ajax({
+                        url: `${route.url}/getPrompayPaymentStatus`,
+                        type: 'POST',
+                        headers: {"X-CSRF-TOKEN":route.token},
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function(data){
+                            // console.log(data)
+                            if (data['status'] == 1){
+                                clearInterval(checkPayment);
+                                window.location.replace(data['uri']);
+                            }
+                    }
+                });
             }
 
             function makeCharge(name,lastname,email,phone,address,participant,amount,trainingdate,company,vatnumber,promocode){
