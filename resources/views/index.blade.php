@@ -539,8 +539,9 @@
     </div>
 
     @push('js')
-    
+        
         <script type="text/javascript">
+        var count = 0;
             // const Swal = require('sweetalert2')
             $("#spinner").hide();
             $('.popup-with-zoom-anim').magnificPopup({
@@ -675,7 +676,7 @@
                                         $("#spinner").hide();
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
-                                        const myInterval = setInterval(myTimer, 1000);
+                                        const checkPayment = setInterval(myTimer, 1000);
                                     }
                                 }
                             });
@@ -684,7 +685,11 @@
             });
 
             function myTimer() {
-               console.log( date.toLocaleTimeString());
+               count ++
+               console.log(count);
+               if (count >= 10){
+                clearInterval(checkPayment)
+               }
             }
 
             function makeCharge(name,lastname,email,phone,address,participant,amount,trainingdate,company,vatnumber,promocode){
