@@ -542,7 +542,7 @@
         
         <script type="text/javascript">
         var count = 0;
-        const checkPayment;
+        const checkPayment = setInterval(checkCharge, 0);
             // const Swal = require('sweetalert2')
             $("#spinner").hide();
             $('.popup-with-zoom-anim').magnificPopup({
@@ -677,7 +677,7 @@
                                         $("#spinner").hide();
                                         $('#btnGetCharge').prop('disabled', false);
                                         // console.log(item);
-                                        const checkPayment = setInterval(myTimer, 1000);
+                                        const checkPayment = setInterval(checkCharge, 1000);
                                     },
                                     close: function testt(){
                                         console.log('closed')
@@ -688,7 +688,7 @@
                     })   
             });
 
-            function myTimer() {
+            function checkCharge() {
                count ++
                console.log(count);
                if (count >= 10){
