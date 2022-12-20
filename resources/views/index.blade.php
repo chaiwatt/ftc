@@ -494,7 +494,7 @@
                         </div>
                         <div class="col-lg-6">
                             <p>จำนวนเงิน (บาท)</p>
-                            <input id="amount" name="amount" placeholder="" type="text" class="input-text" value="15000" readonly required>
+                            <input id="amount" name="amount" placeholder="" type="text" class="input-text" value="20" readonly required>
                         </div>
                         <div class="col-lg-6">
                             <p>วันที่เรียน เดือน{{$month}} {{$year}}</p>
