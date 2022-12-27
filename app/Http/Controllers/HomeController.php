@@ -22,7 +22,7 @@ class HomeController extends Controller
                     ->where('showpage',1)
                     ->latest('id')
                     ->first(); 
-        $schdules = Schedule::where('day2','>',Carbon::now()->day)
+        $schdules = Schedule::where('day1','>',Carbon::now()->day)
                             ->where('month',Carbon::now()->month)
                             ->where('year',Carbon::now()->year)
                             ->get();
