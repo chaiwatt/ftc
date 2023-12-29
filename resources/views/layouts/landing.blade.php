@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +15,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Full-Stack Training Class| คอร์สเรียน Full-Stack developper</title>
-    <meta name="description" content="Full-Stack Training Class เป็นสถาบันสอน Full-Stack developper, คอร์สเรียน Laravel Full-Stack, คอร์สเรียน System admin เรามีประสบการณ์การสอนกว่าสิบปี และพัฒนาเว็บแอพลิเคชั่นโครงการตั้งแต่ 1 ล้านถึง 10 ล้านบาท เรียนกับเราคุณจะรับงานเองได้อย่างแน่นอน">
+    <title>คอร์สเรียน Full-Stack HTML และ Laravel | Full-Stack Training Class</title>
+    <meta name="description"
+        content="Full-Stack Training Class เป็นสถาบันสอน Full-Stack developper, คอร์สเรียน Laravel Full-Stack, คอร์สเรียน System admin เรามีประสบการณ์การสอนกว่าสิบปี และพัฒนาเว็บแอพลิเคชั่นโครงการตั้งแต่ 1 ล้านถึง 10 ล้านบาท เรียนกับเราคุณจะรับงานเองได้อย่างแน่นอน">
     <meta name="keywords" content="สอน Full-Stack developper, สอน Laravel Full-Stack, สอน System admin">
 
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-grid.css')}}">
@@ -28,18 +28,22 @@
     <link rel="stylesheet" href="{{asset('assets/css/contact-form.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/media-box.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/skin.css')}}">
-    
+
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/cookie/cookieconsent.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/css/transition.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/spinner.css')}}">
 </head>
+
 <body>
     <div id="preloader"></div>
-    <nav class="menu-subtitle menu-fixed menu-transparent menu-one-page light" data-menu-anima="fade-bottom" data-scroll-detect="true">
+    <nav class="menu-subtitle menu-fixed menu-transparent menu-one-page light" data-menu-anima="fade-bottom"
+        data-scroll-detect="true">
         <div class="container">
             <div class="menu-brand">
                 <a href="{{ url('/') }}">
@@ -66,7 +70,7 @@
                         <a href="#purchase">ซื้อคอร์ส<span>สั่งซื้อคอร์สเรียน</span></a>
                     </li>
                 </ul>
-       
+
                 <div class="clear"></div>
             </div>
         </div>
@@ -83,7 +87,8 @@
                     <div class="menu-inner menu-inner-vertical">
                         <ul>
                             <li>
-                                <a href="https://npcsolutionandservice.com/">บริษัทเอ็นพีซีโซลูชั่นแอนด์เซอร์วิสจำกัด</a>
+                                <a
+                                    href="https://npcsolutionandservice.com/">บริษัทเอ็นพีซีโซลูชั่นแอนด์เซอร์วิสจำกัด</a>
                             </li>
                         </ul>
                     </div>
@@ -128,10 +133,13 @@
                     <div class="menu-inner menu-inner-vertical">
                         <ul>
                             {{-- <li>
-                                <span style="font-size: 15px;color:#c2cad8">บริษัท เอ็นพีซีโซลูชั่น แอนด์ เซอร์วิส จำกัด</span>
+                                <span style="font-size: 15px;color:#c2cad8">บริษัท เอ็นพีซีโซลูชั่น แอนด์ เซอร์วิส
+                                    จำกัด</span>
                             </li> --}}
                             <li>
-                               <span style="font-size: 15px;font-weight:300;color:#c2cad8"> 105 หมู่ที่ 8 ตำบลเหมืองง่า อำเภอเมือง จังหวัดลำพูน 51000<br>อีเมล: fullstacktrainingclass@gmail.com<br>โทรศัพท์: 053-093254</span>
+                                <span style="font-size: 15px;font-weight:300;color:#c2cad8"> 105 หมู่ที่ 8 ตำบลเหมืองง่า
+                                    อำเภอเมือง จังหวัดลำพูน 51000<br>อีเมล:
+                                    fullstacktrainingclass@gmail.com<br>โทรศัพท์: 053-093254</span>
                             </li>
                         </ul>
                     </div>
@@ -139,15 +147,18 @@
                 <div class="col-lg-2">
                     <h4>ติดตาม</h4>
                     <div class="icon-links icon-social icon-links-grid social-colors">
-                        <a href="https://www.facebook.com/fullstacktrainingclassofficial" class="facebook"><i class="icon-facebook"></i></a>
-                        <a href="https://www.youtube.com/channel/UCIvpCh8hEqkNK-UwXOGEbLg" class="youtube"><i class="icon-youtube"></i></a>
+                        <a href="https://www.facebook.com/fullstacktrainingclassofficial" class="facebook"><i
+                                class="icon-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCIvpCh8hEqkNK-UwXOGEbLg" class="youtube"><i
+                                class="icon-youtube"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bar">
             <div class="container">
-                {{-- <span>© Copyright 2022. บริษัท เอ็นพีซี โซลูชั่น แอนด์ เซอร์วิส จำกัด <a target="_blank" href="https://npcsolutionandservice.com/">>>เข้าสู่เว็บไซต์</a></span> --}}
+                {{-- <span>© Copyright 2022. บริษัท เอ็นพีซี โซลูชั่น แอนด์ เซอร์วิส จำกัด <a target="_blank"
+                        href="https://npcsolutionandservice.com/">>>เข้าสู่เว็บไซต์</a></span> --}}
                 <span>© Copyright 2022-2023. <a href="{{url('/')}}">Full-Stack Training Class</a></span>
                 {{-- <span><img src="{{asset('assets/images/npclogo.png')}}" alt="" /></span> --}}
                 <span><img src="{{asset('assets/images/logo.png')}}" alt="" /></span>
