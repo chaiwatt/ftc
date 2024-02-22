@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FTCMailController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\WebHookController;
 
 /*
@@ -36,6 +37,8 @@ Route::get('sendmail', [FTCMailController::class, 'sendmail'])->name('sendmail')
 // Route::get('testsendmail', [HomeController::class, 'testsendmail'])->name('testsendmail');
 
 // Route::get('/test', [HomeController::class, 'test'])->name('test');
+
+Route::get('add', [TestController::class, 'add'])->name('add');
 
 Route::get('/policy', function () {
     return view('policy');

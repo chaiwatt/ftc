@@ -19,6 +19,5 @@ class ApiController extends Controller
         }else{
             return '0';
         }
-        
     }
 }
